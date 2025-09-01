@@ -24,6 +24,7 @@ const translations = {
     'hero.role': 'Analista de Dados',
     'hero.description': 'Analista de Dados Júnior, focado em transformar dados em decisões. Trabalho com limpeza e preparação de dados, análise exploratória, SQL e automações em Python, além de dashboards interativos em Power BI e Excel. Estou sempre buscando aprender e crescer na área de dados.',
     'hero.cta': 'Ver Projetos',
+    'hero.about': 'Sobre Mim',
     
     // About
     'about.title': 'Um pouco sobre mim',
@@ -75,6 +76,7 @@ const translations = {
     'hero.role': 'Data Analyst',
     'hero.description': 'Junior Data Analyst focused on transforming data into decisions. I work with data cleaning and preparation, exploratory analysis, SQL and Python automation, as well as interactive dashboards in Power BI and Excel. I am always looking to learn and grow in the data field.',
     'hero.cta': 'View Projects',
+    'hero.about': 'About Me',
     
     // About
     'about.title': 'A little about me',

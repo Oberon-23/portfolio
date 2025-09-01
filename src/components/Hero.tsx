@@ -21,11 +21,11 @@ const Hero = () => {
               {t('hero.cta')}
             </a>
             <a 
-              href="#about" 
-              className="px-6 py-3 border-2 border-white/30 text-white rounded-full hover:bg-white/10 transition-all duration-300"
-            >
-              Sobre Mim
-            </a>
+  href="#about" 
+  className="px-6 py-3 border-2 border-white/30 text-white rounded-full hover:bg-white/10 transition-all duration-300"
+>
+  {t('hero.about')}
+</a>
           </div>
         </div>
 
