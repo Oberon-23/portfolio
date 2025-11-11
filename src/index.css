@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Portfolio Design System - All colors MUST be HSL */
+@layer base {
+  :root {
+    /* Portfolio Brand Colors */
+    --portfolio-primary: 1 60% 64%; /* #e9615e */
+    --portfolio-secondary: 25 65% 64%; /* #ec9956 */
+    --portfolio-light: 220 9% 95%; /* #f3f4f6 */
+    --portfolio-dark: 240 6% 10%; /* Dark background base */
+    
+    /* Gradients */
+    --gradient-dark: linear-gradient(135deg, hsl(353 50% 32%), hsl(229 41% 19%));
+    --gradient-brand: linear-gradient(135deg, hsl(var(--portfolio-primary)), hsl(var(--portfolio-secondary)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--portfolio-dark) / 0.8), hsl(var(--portfolio-dark)));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--portfolio-primary) / 0.3);
+    --shadow-card: 0 8px 20px -5px hsl(0 0% 0% / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--portfolio-primary) / 0.4);
+    
+    /* Original shadcn colors adapted */
+    --background: var(--portfolio-dark);
+    --foreground: 0 0% 100%;
+    --card: var(--portfolio-dark);
+    --card-foreground: 0 0% 100%;
+    --popover: var(--portfolio-dark);
+    --popover-foreground: 0 0% 100%;
+    --primary: var(--portfolio-primary);
+    --primary-foreground: 0 0% 100%;
+    --secondary: var(--portfolio-secondary);
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 6% 15%;
+    --muted-foreground: 220 9% 70%;
+    --accent: var(--portfolio-secondary);
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: var(--portfolio-primary);
+    --radius: 0.5rem;
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-montserrat;
+    background: var(--gradient-dark);
+    min-height: 100vh;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Logo Component */
+  .portfolio-logo {
+    @apply inline-flex items-center justify-center w-12 h-12 text-lg font-bold text-white rounded-full;
+    background: var(--gradient-brand);
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  /* Button Variants */
+  .btn-portfolio {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white rounded-full transition-all duration-300;
+    background: var(--gradient-brand);
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .btn-portfolio:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Tech Badge */
+  .tech-badge {
+    @apply flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 backdrop-blur-sm;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .tech-badge:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Portfolio Card */
+  .portfolio-card {
+    @apply relative overflow-hidden rounded-xl transition-all duration-300 cursor-pointer;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .portfolio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Section Container */
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 py-20;
+  }
+  
+  /* Section Header */
+  .section-header {
+    @apply text-3xl md:text-4xl font-bold text-center mb-4;
+  }
+  
+  /* Section Description */
+  .section-description {
+    @apply text-center text-muted-foreground max-w-2xl mx-auto leading-relaxed;
+  }
+
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Hover pause animation */
+  .hover\:pause-animation:hover {
+    animation-play-state: paused;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
