@@ -22,13 +22,13 @@ const translations = {
     // Hero
     'hero.title': 'Breno',
     'hero.role': 'Analista de Dados',
-    'hero.description': 'Analista de Dados Júnior, focado em transformar dados em decisões. Trabalho com limpeza e preparação de dados, análise exploratória, SQL e automações em Python, além de dashboards interativos em Power BI e Excel. Estou sempre buscando aprender e crescer na área de dados.',
+    'hero.description': 'Analista de Dados, focado em transformar dados em decisões. Trabalho com limpeza e preparação de dados, análise exploratória, SQL e automações em Python, além de dashboards interativos em Power BI e Excel. Estou sempre buscando aprender e crescer na área de dados.',
     'hero.cta': 'Ver Projetos',
     'hero.about': 'Sobre Mim',
     
     // About
     'about.title': 'Um pouco sobre mim',
-    'about.description': 'Atuei como Engenheiro de Software Júnior (Front-End), com foco em integração de APIs, performance e entrega de produtos digitais. Atualmente, venho aplicando Python, SQL, Power BI e Excel em projetos de coleta, tratamento, análise e visualização de dados. Meu objetivo é criar soluções simples, reutilizáveis e úteis para o negócio, com comunicação clara e documentação adequada.',
+    'about.description': 'Atuei como Engenheiro de Software (Front-End), com foco em integração de APIs, performance e entrega de produtos digitais. Atualmente, venho aplicando Python, SQL, Power BI e Excel em projetos de coleta, tratamento, análise e visualização de dados. Meu objetivo é criar soluções concretas, reutilizáveis e úteis para o negócio, com comunicação clara e documentação adequada.',
     'about.download': 'Baixar CV',
     
     // Technology
@@ -57,7 +57,7 @@ const translations = {
     
     // Contact
     'contact.title': 'Venha conversar comigo!',
-    'contact.description': 'Aberto a oportunidades como Analista de Dados Júnior e colaborações. Vamos conversar sobre como transformar dados em decisões?',
+    'contact.description': 'Aberto a oportunidades como Analista de Dados e colaborações. Vamos conversar sobre como transformar dados em decisões?',
     'contact.cta': 'Entrar em Contato',
     
     // Footer
@@ -74,13 +74,13 @@ const translations = {
     // Hero
     'hero.title': 'Breno',
     'hero.role': 'Data Analyst',
-    'hero.description': 'Junior Data Analyst focused on transforming data into decisions. I work with data cleaning and preparation, exploratory analysis, SQL and Python automation, as well as interactive dashboards in Power BI and Excel. I am always looking to learn and grow in the data field.',
+    'hero.description': 'Data Analyst focused on transforming data into decisions. I work with data cleaning and preparation, exploratory analysis, SQL and Python automation, as well as interactive dashboards in Power BI and Excel. I am always looking to learn and grow in the data field.',
     'hero.cta': 'View Projects',
     'hero.about': 'About Me',
     
     // About
     'about.title': 'A little about me',
-    'about.description': 'I worked as a Junior Software Engineer (Front-End), focusing on API integration, performance and digital product delivery. Currently, I have been applying Python, SQL, Power BI and Excel in data collection, treatment, analysis and visualization projects. My goal is to create simple, reusable and useful business solutions with clear communication and adequate documentation.',
+    'about.description': 'I worked as a Software Engineer (Front-End), focusing on API integration, performance and digital product delivery. Currently, I have been applying Python, SQL, Power BI and Excel in data collection, treatment, analysis and visualization projects. My goal is to create concrete, reusable and useful business solutions with clear communication and adequate documentation.',
     'about.download': 'Download CV',
     
     // Technology
@@ -109,7 +109,7 @@ const translations = {
     
     // Contact
     'contact.title': 'Let\'s talk!',
-    'contact.description': 'Open to opportunities as a Junior Data Analyst and collaborations. Let\'s talk about how to transform data into decisions?',
+    'contact.description': 'Open to opportunities as a Data Analyst and collaborations. Let\'s talk about how to transform data into decisions?',
     'contact.cta': 'Get in Touch',
     
     // Footer
