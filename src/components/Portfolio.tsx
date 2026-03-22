@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import projectImage from '@/assets/project-placeholder.jpg.jpg';
 import titanicImage from '@/assets/TitanicProject.jpg.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -30,7 +30,7 @@ const Portfolio = () => {
   }, []);
 
   const projects: Project[] = [
-     {
+    {
       id: 1,
       title: t('project.dashboard.title'),
       description: t('project.dashboard.description'),
@@ -101,10 +101,6 @@ const Portfolio = () => {
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  };
-
-  const handleSwipe = () => {
     if (touchStartX - touchEndX > 50) nextSlide();
     if (touchEndX - touchStartX > 50) prevSlide();
   };
@@ -166,19 +162,7 @@ const Portfolio = () => {
             </div>
           </div>
 
-          <button
-            onClick={prevSlide}
-            className="absolute left-2 top-1/2 -translate-y-1/2 btn-portfolio p-2"
-          >
-            <ChevronLeft size={20} />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-2 top-1/2 -translate-y-1/2 btn-portfolio p-2"
-          >
-            <ChevronRight size={20} />
-          </button>
-
+          {/* Dots Indicator */}
           <div className="flex justify-center gap-2 mt-6">
             {projects.map((_, index) => (
               <button
