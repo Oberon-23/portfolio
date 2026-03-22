@@ -31,7 +31,7 @@ const About = () => {
           </p>
           <div className="flex justify-center md:justify-start">
             <a 
-              href="#" 
+              href="/Breno_Barros_DataAnalyst_Jr.pdf" 
               download
               className="btn-portfolio"
             >

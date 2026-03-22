@@ -152,6 +152,14 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-montserrat;
+    backgorund: var(--gradient-dark);
+    ming-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 }
