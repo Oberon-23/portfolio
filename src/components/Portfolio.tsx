@@ -23,20 +23,20 @@ const Portfolio = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const projects: Project[] = [
-    {
+     {
       id: 1,
-      title: 'Titanic - Análise Exploratória de Dados',
-      description: 'Análise exploratórioa completa do dataset do Titanic, investigando padrões de sobrevivência por sexo, classe e idade.',
+      title: t('project.dashboard.title'),
+      description: t('project.dashboard.description'),
       image: titanicImage,
       link: 'https://www.kaggle.com/code/brenosilvabarros/titanic-eda-an-lise-explorat-ria-completa',
-      technologies: ['Python', 'Pandas', 'Matplotlib', 'Seaborn']
+      technologies: ['Python', 'Pandas', 'Matplotlib', 'Seaborn'],
     },
     {
       id: 2,
@@ -44,7 +44,7 @@ const Portfolio = () => {
       description: t('project.automation.description'),
       image: projectImage,
       link: '#',
-      technologies: ['Python', 'Pandas', 'NumPy']
+      technologies: ['Python', 'Pandas', 'NumPy'],
     },
     {
       id: 3,
@@ -52,7 +52,7 @@ const Portfolio = () => {
       description: t('project.kpis.description'),
       image: projectImage,
       link: '#',
-      technologies: ['Power BI', 'DAX', 'SQL']
+      technologies: ['Power BI', 'DAX', 'SQL'],
     },
     {
       id: 4,
@@ -60,7 +60,7 @@ const Portfolio = () => {
       description: t('project.forecast.description'),
       image: projectImage,
       link: '#',
-      technologies: ['Python', 'Scikit-learn', 'Matplotlib']
+      technologies: ['Python', 'Scikit-learn', 'Matplotlib'],
     },
     {
       id: 5,
@@ -68,7 +68,7 @@ const Portfolio = () => {
       description: t('project.etl.description'),
       image: projectImage,
       link: '#',
-      technologies: ['Python', 'SQL', 'Power Query']
+      technologies: ['Python', 'SQL', 'Power Query'],
     },
     {
       id: 6,
@@ -76,27 +76,22 @@ const Portfolio = () => {
       description: t('project.report.description'),
       image: projectImage,
       link: '#',
-      technologies: ['Power BI', 'Excel', 'PowerPoint']
-    }
+      technologies: ['Power BI', 'Excel', 'PowerPoint'],
+    },
   ];
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => 
-      prev === projects.length - 1 ? 0 : prev + 1
-    );
+    setCurrentSlide((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => 
-      prev === 0 ? projects.length - 1 : prev - 1
-    );
+    setCurrentSlide((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
   };
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
 
-  // Touch handlers for mobile
   let touchStartX = 0;
   let touchEndX = 0;
 
@@ -110,12 +105,8 @@ const Portfolio = () => {
   };
 
   const handleSwipe = () => {
-    if (touchStartX - touchEndX > 50) {
-      nextSlide();
-    }
-    if (touchEndX - touchStartX > 50) {
-      prevSlide();
-    }
+    if (touchStartX - touchEndX > 50) nextSlide();
+    if (touchEndX - touchStartX > 50) prevSlide();
   };
 
   const ProjectCard = ({ project }: { project: Project }) => (
@@ -125,10 +116,10 @@ const Portfolio = () => {
         alt={project.title}
         className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-        <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-        <p className="text-gray-200 text-sm mb-3 line-clamp-2">{project.description}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-4 md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-300">
+        <h3 className="text-lg font-bold text-white mb-2 leading-tight">{project.title}</h3>
+        <p className="text-gray-200 text-sm mb-3 line-clamp-2 hidden md:block">{project.description}</p>
+        <div className="flex flex-wrap gap-2 mb-3">
           {project.technologies.map((tech, index) => (
             <span key={index} className="px-2 py-1 bg-primary/80 text-white text-xs rounded">
               {tech}
@@ -139,7 +130,7 @@ const Portfolio = () => {
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="self-start flex items-center gap-2 px-4 py-2 bg-white text-black rounded-lg hover:bg-primary hover:text-white transition-colors duration-300"
+          className="self-start flex items-center gap-2 px-4 py-2 bg-white text-black rounded-lg hover:bg-primary hover:text-white transition-colors duration-300 text-sm"
         >
           <ExternalLink size={16} />
           {t('portfolio.viewProject')}
@@ -152,13 +143,10 @@ const Portfolio = () => {
     <section id="portfolio" className="section-container">
       <div className="text-center mb-12">
         <h2 className="section-header">{t('portfolio.title')}</h2>
-        <p className="section-description mt-4">
-          {t('portfolio.description')}
-        </p>
+        <p className="section-description mt-4">{t('portfolio.description')}</p>
       </div>
 
       {isMobile ? (
-        // Mobile Carousel
         <div className="relative">
           <div
             ref={carouselRef}
@@ -178,7 +166,6 @@ const Portfolio = () => {
             </div>
           </div>
 
-          {/* Carousel Controls */}
           <button
             onClick={prevSlide}
             className="absolute left-2 top-1/2 -translate-y-1/2 btn-portfolio p-2"
@@ -192,7 +179,6 @@ const Portfolio = () => {
             <ChevronRight size={20} />
           </button>
 
-          {/* Dots Indicator */}
           <div className="flex justify-center gap-2 mt-6">
             {projects.map((_, index) => (
               <button
@@ -206,7 +192,6 @@ const Portfolio = () => {
           </div>
         </div>
       ) : (
-        // Desktop Grid
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
