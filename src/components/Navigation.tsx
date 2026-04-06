@@ -28,8 +28,10 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'backdrop-blur-lg bg-background/80' : 'bg-transparent'
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+      isScrolled
+        ? 'backdrop-blur-xl bg-white/10 border-white/20 shadow-lg shadow-black/10'
+        : 'backdrop-blur-md bg-white/5 border-white/10'
     }`}>
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between py-4">
@@ -76,7 +78,7 @@ const Navigation = () => {
         <div className={`md:hidden transition-all duration-300 overflow-hidden ${
           isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}>
-          <ul className="py-4 space-y-4 bg-gradient-to-r from-primary to-secondary rounded-lg mb-4">
+          <ul className="py-4 space-y-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-lg mb-4">
             <li><a href="#home" onClick={() => setIsMenuOpen(false)} className="block px-6 py-2 text-white hover:bg-white/20 transition-colors duration-300">{t('nav.home')}</a></li>
             <li><a href="#about" onClick={() => setIsMenuOpen(false)} className="block px-6 py-2 text-white hover:bg-white/20 transition-colors duration-300">{t('nav.about')}</a></li>
             <li><a href="#technology" onClick={() => setIsMenuOpen(false)} className="block px-6 py-2 text-white hover:bg-white/20 transition-colors duration-300">{t('nav.technology')}</a></li>
