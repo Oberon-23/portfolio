@@ -17,7 +17,7 @@ const Index = () => {
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen" style={{ overflowX: 'hidden' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', overflowX: 'hidden' }}>
         <Navigation />
         <Hero />
         <RevealOnScroll direction="up">

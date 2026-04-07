@@ -6,6 +6,7 @@ const Footer = () => {
 
   return (
     <footer style={{
+      marginTop: 'auto',
       padding: '2rem 1rem',
       textAlign: 'center',
       borderTop: '1px solid rgba(255,255,255,0.08)',
