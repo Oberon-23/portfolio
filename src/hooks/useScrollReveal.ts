@@ -7,18 +7,25 @@ interface UseScrollRevealOptions {
 
 const useScrollReveal = (options: UseScrollRevealOptions = {}) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [initialized, setInitialized] = useState(false);
 
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
 
-    // Se o elemento já está na viewport no carregamento, mostra imediatamente
     const rect = element.getBoundingClientRect();
+
+    // Se está na viewport, mantém visível
     if (rect.top < window.innerHeight) {
       setIsVisible(true);
+      setInitialized(true);
       return;
     }
+
+    // Só esconde e anima elementos que estão abaixo da viewport
+    setIsVisible(false);
+    setInitialized(true);
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -37,7 +44,7 @@ const useScrollReveal = (options: UseScrollRevealOptions = {}) => {
     return () => observer.disconnect();
   }, []);
 
-  return { ref, isVisible };
+  return { ref, isVisible, initialized };
 };
 
 export default useScrollReveal;
