@@ -9,7 +9,6 @@ interface RevealOnScrollProps {
 const RevealOnScroll = ({
   children,
   delay = 0,
-  direction = 'up',
 }: RevealOnScrollProps) => {
   const { ref, isVisible } = useScrollReveal();
 
@@ -18,9 +17,8 @@ const RevealOnScroll = ({
       ref={ref}
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
-        transition: `opacity 0.7s ease ${delay}ms, transform 0.7s ease ${delay}ms`,
-        overflow: 'hidden',
+        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+        transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms`,
       }}
     >
       {children}
