@@ -14,8 +14,7 @@
     --portfolio-dark: 240 6% 10%;
     
     /* Gradients */
-    --gradient-dark: linear-gradient(135deg, hsl(353 50% 32%), hsl(229 41% 19%));
-    --gradient-brand: linear-gradient(135deg, hsl(var(--portfolio-primary)), hsl(var(--portfolio-secondary)));
+--gradient-dark: linear-gradient(135deg, hsl(353 50% 22%), hsl(229 41% 12%));    --gradient-brand: linear-gradient(135deg, hsl(var(--portfolio-primary)), hsl(var(--portfolio-secondary)));
     --gradient-subtle: linear-gradient(180deg, hsl(var(--portfolio-dark) / 0.8), hsl(var(--portfolio-dark)));
     
     /* Shadows */

@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-import heroImage from '@/assets/breno-profile.jpg.jpg';
+import heroImage from '@/assets/breno-about.jpg.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero = () => {

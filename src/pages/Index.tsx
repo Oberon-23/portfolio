@@ -11,12 +11,13 @@ import RevealOnScroll from '@/components/RevealOnScroll';
 
 const Index = () => {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.history.scrollRestoration = 'manual';
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, []);
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen">
+      <div className="min-h-screen" style={{ overflowX: 'hidden' }}>
         <Navigation />
         <Hero />
         <RevealOnScroll direction="up">
@@ -31,7 +32,7 @@ const Index = () => {
         <RevealOnScroll direction="up" delay={100}>
           <Contact />
         </RevealOnScroll>
-        <RevealOnScroll direction="up" delay={100} distance={15}>
+        <RevealOnScroll direction="up" delay={100}>
           <Footer />
         </RevealOnScroll>
       </div>
