@@ -5,25 +5,24 @@ const About = () => {
   const { t } = useLanguage();
 
   const orbs = [
-    { size: 56, top: '-28px', left: '-28px', color: 'rgba(233,97,94,0.5)', delay: '0s', anim: 'animate-pulse-slow' },
-    { size: 28, top: '-16px', right: '60px', color: 'rgba(236,153,86,0.4)', delay: '0.5s', anim: 'animate-pulse-slow' },
-    { size: 18, top: '20%', left: '-22px', color: 'rgba(236,153,86,0.35)', delay: '0.3s', anim: 'animate-float' },
-    { size: 14, top: '10%', right: '-18px', color: 'rgba(233,97,94,0.3)', delay: '1.2s', anim: 'animate-float' },
-    { size: 22, top: '50%', left: '-30px', color: 'rgba(233,97,94,0.25)', delay: '0.7s', anim: 'animate-pulse-slow' },
-    { size: 18, top: '40%', right: '-32px', color: 'rgba(233,97,94,0.3)', delay: '0.8s', anim: 'animate-float' },
-    { size: 34, bottom: '30px', left: '-20px', color: 'rgba(236,153,86,0.35)', delay: '1.5s', anim: 'animate-pulse-slow' },
-    { size: 48, bottom: '-24px', right: '-24px', color: 'rgba(236,153,86,0.5)', delay: '1s', anim: 'animate-pulse-slow' },
-    { size: 20, bottom: '-18px', left: '30%', color: 'rgba(233,97,94,0.3)', delay: '0.4s', anim: 'animate-float' },
-    { size: 12, bottom: '15%', right: '-14px', color: 'rgba(236,153,86,0.25)', delay: '2s', anim: 'animate-pulse-slow' },
-    { size: 16, top: '70%', left: '-18px', color: 'rgba(233,97,94,0.2)', delay: '1.8s', anim: 'animate-float' },
-    { size: 10, top: '-10px', left: '45%', color: 'rgba(236,153,86,0.3)', delay: '0.6s', anim: 'animate-pulse-slow' },
+    { size: 50, top: '0px', left: '0px', color: 'rgba(233,97,94,0.5)', delay: '0s', anim: 'animate-pulse-slow' },
+    { size: 28, top: '0px', right: '60px', color: 'rgba(236,153,86,0.4)', delay: '0.5s', anim: 'animate-pulse-slow' },
+    { size: 18, top: '20%', left: '4px', color: 'rgba(236,153,86,0.35)', delay: '0.3s', anim: 'animate-float' },
+    { size: 14, top: '10%', right: '4px', color: 'rgba(233,97,94,0.3)', delay: '1.2s', anim: 'animate-float' },
+    { size: 22, top: '50%', left: '4px', color: 'rgba(233,97,94,0.25)', delay: '0.7s', anim: 'animate-pulse-slow' },
+    { size: 18, top: '40%', right: '4px', color: 'rgba(233,97,94,0.3)', delay: '0.8s', anim: 'animate-float' },
+    { size: 34, bottom: '30px', left: '4px', color: 'rgba(236,153,86,0.35)', delay: '1.5s', anim: 'animate-pulse-slow' },
+    { size: 44, bottom: '0px', right: '0px', color: 'rgba(236,153,86,0.5)', delay: '1s', anim: 'animate-pulse-slow' },
+    { size: 20, bottom: '0px', left: '30%', color: 'rgba(233,97,94,0.3)', delay: '0.4s', anim: 'animate-float' },
+    { size: 12, bottom: '15%', right: '4px', color: 'rgba(236,153,86,0.25)', delay: '2s', anim: 'animate-pulse-slow' },
+    { size: 16, top: '70%', left: '4px', color: 'rgba(233,97,94,0.2)', delay: '1.8s', anim: 'animate-float' },
+    { size: 10, top: '0px', left: '45%', color: 'rgba(236,153,86,0.3)', delay: '0.6s', anim: 'animate-pulse-slow' },
   ];
 
   return (
-    <section id="about" className="section-container" style={{ overflow: 'hidden' }}>
+    <section id="about" className="section-container">
       <div style={{ position: 'relative', maxWidth: '780px', margin: '0 auto', padding: '2rem 0' }}>
 
-        {/* Bolinhas flutuantes — clamp pra não vazar no mobile */}
         {orbs.map((orb, i) => (
           <div
             key={i}
@@ -46,7 +45,6 @@ const About = () => {
           />
         ))}
 
-        {/* Card glassmorphism */}
         <div style={{
           position: 'relative',
           zIndex: 2,
@@ -60,7 +58,6 @@ const About = () => {
           textAlign: 'center',
           overflow: 'hidden',
         }}>
-
           <div style={{
             position: 'absolute', top: 0, left: '20%', right: '20%', height: '1px',
             background: 'linear-gradient(90deg, transparent, rgba(236,153,86,0.6), transparent)',

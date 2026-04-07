@@ -32,9 +32,7 @@ const Index = () => {
         <RevealOnScroll direction="up" delay={100}>
           <Contact />
         </RevealOnScroll>
-        <RevealOnScroll direction="up" delay={100}>
-          <Footer />
-        </RevealOnScroll>
+        <Footer />
       </div>
     </LanguageProvider>
   );

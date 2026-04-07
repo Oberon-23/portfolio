@@ -1,11 +1,11 @@
-import { ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/breno-about.jpg.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero = () => {
   const { t } = useLanguage();
+
   return (
-    <section id="home" className="section-container pt-32">
+    <section id="home" className="section-container pt-32" style={{ overflow: 'hidden' }}>
       <div className="grid md:grid-cols-2 gap-12 items-center">
         {/* Content */}
         <div className="order-2 md:order-1 text-center md:text-left">
@@ -20,12 +20,12 @@ const Hero = () => {
             <a href="#portfolio" className="btn-portfolio">
               {t('hero.cta')}
             </a>
-            <a 
-  href="#about" 
-  className="px-6 py-3 border-2 border-white/30 text-white rounded-full hover:bg-white/10 transition-all duration-300"
->
-  {t('hero.about')}
-</a>
+            <a
+              href="#about"
+              className="px-6 py-3 border-2 border-white/30 text-white rounded-full hover:bg-white/10 transition-all duration-300"
+            >
+              {t('hero.about')}
+            </a>
           </div>
         </div>
 
@@ -37,11 +37,43 @@ const Hero = () => {
               alt="Foto de Breno"
               className="w-full rounded-3xl shadow-2xl animate-float"
             />
-            {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-primary to-secondary rounded-full opacity-20 animate-pulse-slow"></div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-secondary to-primary rounded-full opacity-30 animate-pulse-slow delay-1000"></div>
+
+            {/* Bolinha topo direita */}
+            <div
+              className="animate-pulse-slow"
+              style={{
+                position: 'absolute',
+                top: '-40px',
+                right: '-40px',
+                width: '80px',
+                height: '80px',
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, hsl(1 60% 64%), hsl(25 65% 64%))',
+                opacity: 0.2,
+                willChange: 'transform',
+                transform: 'translateZ(0)',
+              }}
+            />
+
+            {/* Bolinha baixo esquerda */}
+            <div
+              className="animate-pulse-slow"
+              style={{
+                position: 'absolute',
+                bottom: '-20px',
+                left: '-40px',
+                width: '56px',
+                height: '56px',
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, hsl(25 65% 64%), hsl(1 60% 64%))',
+                opacity: 0.3,
+                willChange: 'transform',
+                transform: 'translateZ(0)',
+                animationDelay: '1s',
+              }}
+            />
           </div>
-          
+
           {/* Background text */}
           <div className="hidden md:block absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 rotate-90 text-6xl font-bold opacity-10 pointer-events-none">
             BRENO
