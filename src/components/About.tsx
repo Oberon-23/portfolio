@@ -45,19 +45,22 @@ const About = () => {
           />
         ))}
 
-        <div style={{
-          position: 'relative',
-          zIndex: 2,
-          background: 'rgba(255, 255, 255, 0.04)',
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
-          borderRadius: '24px',
-          border: '1px solid rgba(233, 97, 94, 0.35)',
-          boxShadow: '0 0 40px rgba(233, 97, 94, 0.08), inset 0 0 60px rgba(255,255,255,0.02)',
-          padding: 'clamp(1.5rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 3rem)',
-          textAlign: 'center',
-          overflow: 'hidden',
-        }}>
+        <div
+          className="animate-float"
+          style={{
+            position: 'relative',
+            zIndex: 2,
+            background: 'rgba(255, 255, 255, 0.04)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            borderRadius: '24px',
+            border: '1px solid rgba(233, 97, 94, 0.35)',
+            boxShadow: '0 0 40px rgba(233, 97, 94, 0.08), inset 0 0 60px rgba(255,255,255,0.02)',
+            padding: 'clamp(1.5rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 3rem)',
+            textAlign: 'center',
+            overflow: 'hidden',
+          }}
+        >
           <div style={{
             position: 'absolute', top: 0, left: '20%', right: '20%', height: '1px',
             background: 'linear-gradient(90deg, transparent, rgba(236,153,86,0.6), transparent)',

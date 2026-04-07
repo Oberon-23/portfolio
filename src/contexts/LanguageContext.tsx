@@ -28,7 +28,7 @@ const translations = {
     
     // About
     'about.title': 'Um pouco sobre mim',
-    'about.description': 'Em transição para a área de dados, venho aplicando Python, SQL, Power BI e Excel em projetos práticos de coleta, tratamento, análise e visualização de dados. Meu diferencial está na combinação entre visão técnica de desenvolvimento e mentalidade analítica orientada a negócios.',
+    'about.description': 'Sou movido pela curiosidade de entender o que os dados escondem. Combino visão técnica de desenvolvimento com mentalidade analítica para transformar números em narrativas que fazem sentido para o negócio. Trabalho com Python, SQL, Power BI e Excel — não só como ferramentas, mas como linguagens para contar histórias com dados.',
     'about.download': 'Baixar CV',
     
     // Technology
@@ -80,7 +80,7 @@ const translations = {
     
     // About
     'about.title': 'A little about me',
-    'about.description': 'I worked as a Software Engineer (Front-End), focusing on API integration, performance and digital product delivery. Currently, I have been applying Python, SQL, Power BI and Excel in data collection, treatment, analysis and visualization projects. My goal is to create concrete, reusable and useful business solutions with clear communication and adequate documentation.',
+    'about.description': 'Im driven by the curiosity of uncovering what data hides. I combine a technical development background with an analytical mindset to turn numbers into narratives that make sense for the business. I work with Python, SQL, Power BI, and Excel — not just as tools, but as languages for telling stories with data.',
     'about.download': 'Download CV',
     
     // Technology
