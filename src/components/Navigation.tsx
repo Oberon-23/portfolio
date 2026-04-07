@@ -22,11 +22,11 @@ const Navigation = () => {
       requestAnimationFrame(() => setIsVisible(true));
     } else {
       setIsVisible(false);
-      const t = setTimeout(() => {
+      const timer = setTimeout(() => {
         document.body.style.overflow = '';
         document.documentElement.style.overflow = '';
       }, 300);
-      return () => clearTimeout(t);
+      return () => clearTimeout(timer);
     }
   }, [isMenuOpen]);
 
@@ -51,147 +51,139 @@ const Navigation = () => {
     { href: '#portfolio', label: t('nav.portfolio'), num: '04' },
   ];
 
-  const FullscreenMenu = () => createPortal(
-    <div
-      style={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 9998,
-        display: isMenuOpen ? 'flex' : 'none',
-        flexDirection: 'column',
-        overflow: 'hidden',
-      }}
-    >
-      {/* Backdrop */}
-      <div style={{
-        position: 'absolute',
-        inset: 0,
-        backgroundColor: 'rgba(10, 5, 20, 0.97)',
-        backdropFilter: 'blur(24px)',
-        transition: 'opacity 0.3s ease',
-        opacity: isVisible ? 1 : 0,
-      }} />
+  const FullscreenMenu = () => {
+    if (!isMenuOpen) return null;
 
-      {/* Orbs */}
-      <div style={{
-        position: 'absolute', top: '-10%', right: '-5%',
-        width: '400px', height: '400px', borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(233,97,94,0.15) 0%, transparent 70%)',
-        transition: 'opacity 0.4s ease',
-        opacity: isVisible ? 1 : 0,
-        pointerEvents: 'none',
-      }} />
-      <div style={{
-        position: 'absolute', bottom: '-5%', left: '-5%',
-        width: '300px', height: '300px', borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(236,153,86,0.1) 0%, transparent 70%)',
-        transition: 'opacity 0.4s ease',
-        opacity: isVisible ? 1 : 0,
-        pointerEvents: 'none',
-      }} />
-
-      {/* Content */}
-      <div style={{
-        position: 'relative', zIndex: 1,
-        display: 'flex', flexDirection: 'column',
-        height: '100%', padding: '6rem 2rem 3rem',
-      }}>
-
-        {/* Top divider */}
+    return createPortal(
+      <div
+        style={{
+          position: 'fixed',
+          inset: 0,
+          zIndex: 9998,
+          display: 'flex',
+          flexDirection: 'column',
+          overflow: 'hidden',
+          backgroundColor: isVisible ? 'rgba(10, 5, 20, 0.97)' : 'rgba(10, 5, 20, 0)',
+          transition: 'background-color 0.3s ease',
+        }}
+      >
+        {/* Orbs */}
         <div style={{
-          height: '1px',
-          background: 'linear-gradient(90deg, transparent, rgba(233,97,94,0.6), transparent)',
-          marginBottom: '2.5rem',
-          transition: 'transform 0.4s ease, opacity 0.4s ease',
-          transform: isVisible ? 'scaleX(1)' : 'scaleX(0)',
+          position: 'absolute', top: '-10%', right: '-5%',
+          width: '400px', height: '400px', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(233,97,94,0.15) 0%, transparent 70%)',
+          transition: 'opacity 0.4s ease',
           opacity: isVisible ? 1 : 0,
-          transformOrigin: 'center',
+          pointerEvents: 'none',
+        }} />
+        <div style={{
+          position: 'absolute', bottom: '-5%', left: '-5%',
+          width: '300px', height: '300px', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(236,153,86,0.1) 0%, transparent 70%)',
+          transition: 'opacity 0.4s ease',
+          opacity: isVisible ? 1 : 0,
+          pointerEvents: 'none',
         }} />
 
-        {/* Nav items */}
-        <nav style={{ flex: 1 }}>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-            {navItems.map((item, i) => (
-              <li
-                key={item.href}
-                style={{
-                  borderBottom: '1px solid rgba(255,255,255,0.06)',
-                  transition: `opacity 0.3s ease ${isVisible ? i * 55 : 0}ms, transform 0.3s cubic-bezier(0.4,0,0.2,1) ${isVisible ? i * 55 : 0}ms`,
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateX(0)' : 'translateX(-20px)',
-                }}
-              >
-                <a
-                  href={item.href}
-                  onClick={closeMenu}
+        {/* Content */}
+        <div style={{
+          position: 'relative', zIndex: 1,
+          display: 'flex', flexDirection: 'column',
+          height: '100%', padding: '6rem 2rem 3rem',
+        }}>
+          {/* Top divider */}
+          <div style={{
+            height: '1px',
+            background: 'linear-gradient(90deg, transparent, rgba(233,97,94,0.6), transparent)',
+            marginBottom: '2.5rem',
+            transition: 'transform 0.4s ease, opacity 0.4s ease',
+            transform: isVisible ? 'scaleX(1)' : 'scaleX(0)',
+            opacity: isVisible ? 1 : 0,
+            transformOrigin: 'center',
+          }} />
+
+          {/* Nav items */}
+          <nav style={{ flex: 1 }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+              {navItems.map((item, i) => (
+                <li
+                  key={item.href}
                   style={{
-                    display: 'flex', alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: '1rem 0',
-                    textDecoration: 'none', color: 'white', gap: '1rem',
-                  }}
-                  onMouseEnter={(e) => {
-                    const label = e.currentTarget.querySelector('.nav-label') as HTMLElement;
-                    const num = e.currentTarget.querySelector('.nav-num') as HTMLElement;
-                    if (label) { label.style.background = 'linear-gradient(90deg, #e9615e, #ec9956)'; label.style.webkitBackgroundClip = 'text'; label.style.webkitTextFillColor = 'transparent'; }
-                    if (num) num.style.color = '#ec9956';
-                  }}
-                  onMouseLeave={(e) => {
-                    const label = e.currentTarget.querySelector('.nav-label') as HTMLElement;
-                    const num = e.currentTarget.querySelector('.nav-num') as HTMLElement;
-                    if (label) { label.style.background = ''; label.style.webkitTextFillColor = 'white'; }
-                    if (num) num.style.color = 'rgba(255,255,255,0.25)';
+                    borderBottom: '1px solid rgba(255,255,255,0.06)',
+                    transition: `opacity 0.3s ease ${isVisible ? i * 55 : 0}ms, transform 0.3s cubic-bezier(0.4,0,0.2,1) ${isVisible ? i * 55 : 0}ms`,
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateX(0)' : 'translateX(-20px)',
                   }}
                 >
-                  <span className="nav-num" style={{
-                    fontSize: '0.65rem', fontWeight: 500,
-                    color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em',
-                    transition: 'color 0.2s ease', minWidth: '2rem',
-                  }}>
-                    {item.num}
-                  </span>
-                  <span className="nav-label" style={{
-                    flex: 1, fontSize: '1.6rem', fontWeight: 700,
-                    letterSpacing: '-0.02em', transition: 'all 0.2s ease',
-                  }}>
-                    {item.label}
-                  </span>
-                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" style={{ opacity: 0.2 }}>
-                    <path d="M4 10h12M10 4l6 6-6 6" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+                  <a
+                    href={item.href}
+                    onClick={closeMenu}
+                    style={{
+                      display: 'flex', alignItems: 'center',
+                      justifyContent: 'space-between',
+                      padding: '1rem 0',
+                      textDecoration: 'none', color: 'white', gap: '1rem',
+                    }}
+                    onMouseEnter={(e) => {
+                      const label = e.currentTarget.querySelector('.nav-label') as HTMLElement;
+                      const num = e.currentTarget.querySelector('.nav-num') as HTMLElement;
+                      if (label) { label.style.background = 'linear-gradient(90deg, #e9615e, #ec9956)'; label.style.webkitBackgroundClip = 'text'; label.style.webkitTextFillColor = 'transparent'; }
+                      if (num) num.style.color = '#ec9956';
+                    }}
+                    onMouseLeave={(e) => {
+                      const label = e.currentTarget.querySelector('.nav-label') as HTMLElement;
+                      const num = e.currentTarget.querySelector('.nav-num') as HTMLElement;
+                      if (label) { label.style.background = ''; label.style.webkitTextFillColor = 'white'; }
+                      if (num) num.style.color = 'rgba(255,255,255,0.25)';
+                    }}
+                  >
+                    <span className="nav-num" style={{
+                      fontSize: '0.65rem', fontWeight: 500,
+                      color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em',
+                      transition: 'color 0.2s ease', minWidth: '2rem',
+                    }}>
+                      {item.num}
+                    </span>
+                    <span className="nav-label" style={{
+                      flex: 1, fontSize: '1.6rem', fontWeight: 700,
+                      letterSpacing: '-0.02em', transition: 'all 0.2s ease',
+                    }}>
+                      {item.label}
+                    </span>
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" style={{ opacity: 0.2 }}>
+                      <path d="M4 10h12M10 4l6 6-6 6" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-        {/* Bottom: só o botão Contato centralizado */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          paddingTop: '2rem',
-          transition: `opacity 0.3s ease ${isVisible ? '220ms' : '0ms'}, transform 0.3s ease ${isVisible ? '220ms' : '0ms'}`,
-          opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translateY(0)' : 'translateY(10px)',
-        }}>
-          <a
-            href="#contact"
-            onClick={closeMenu}
-            style={{
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-              padding: '0.7rem 2.5rem', fontSize: '0.875rem', fontWeight: 600,
-              color: 'white', borderRadius: '9999px', textDecoration: 'none',
-              letterSpacing: '0.05em',
-              background: 'linear-gradient(135deg, hsl(1 60% 64%), hsl(25 65% 64%))',
-            }}
-          >
-            {t('nav.contact')}
-          </a>
+          {/* Botão Contato */}
+          <div style={{
+            display: 'flex', justifyContent: 'center', paddingTop: '2rem',
+            transition: `opacity 0.3s ease ${isVisible ? '220ms' : '0ms'}`,
+            opacity: isVisible ? 1 : 0,
+          }}>
+            <a
+              href="#contact"
+              onClick={closeMenu}
+              style={{
+                display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                padding: '0.7rem 2.5rem', fontSize: '0.875rem', fontWeight: 600,
+                color: 'white', borderRadius: '9999px', textDecoration: 'none',
+                letterSpacing: '0.05em',
+                background: 'linear-gradient(135deg, hsl(1 60% 64%), hsl(25 65% 64%))',
+              }}
+            >
+              {t('nav.contact')}
+            </a>
+          </div>
         </div>
-      </div>
-    </div>,
-    document.body
-  );
+      </div>,
+      document.body
+    );
+  };
 
   return (
     <>
