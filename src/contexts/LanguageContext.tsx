@@ -88,19 +88,11 @@ const translations = {
     'portfolio.viewProject': 'View Project',
     
     // Projects
-    'project.dashboard.title': 'Titanic - Exploratory Data Analysis',
-    'project.dashboard.description': 'Complete exploratory analysis of the Titanic dataset with 891 records, investigating survival patterns by sex, class and age.',
-    'project.automation.title': 'Python Automation',
-    'project.automation.description': 'Automation script for data cleaning and processing, reducing analysis time by 70%.',
-    'project.kpis.title': 'KPI Analysis',
-    'project.kpis.description': 'Interactive dashboard for monitoring business KPIs with automatic alerts.',
-    'project.forecast.title': 'Demand Forecasting',
-    'project.forecast.description': 'Machine learning model for demand forecasting using historical sales data.',
-    'project.etl.title': 'ETL Pipeline',
-    'project.etl.description': 'Automated ETL pipeline for integrating multiple data sources.',
-    'project.report.title': 'Executive Report',
-    'project.report.description': 'Automated report for executives with business insights and strategic recommendations.',
-    
+    'project.analysis.title': 'Titanic - Exploratory Data Analysis',
+    'project.analysis.description': 'Complete exploratory analysis of the Titanic dataset with 891 records, investigating survival patterns by sex, class and age.',
+    'project.dashboard.title': 'AI4I 2020 Predictive Maintenance Dataset',
+    'project.dashboard.description': 'Exploratory analysis of the AI4I 2020 dataset with 10,000 industrial sensor records, investigating failure patterns by equipment type, temperature, and tool wear.',    'project.kpis.title': 'KPI Analysis',
+    'project.kpis.description': 'Interactive dashboard with real production data for Oil and Natural Gas in Brazil from 2020 to 2024, monitoring operational KPIs such as production volume, annual variation, and basin performance.',    
     // Contact
     'contact.title': 'Let\'s talk!',
     'contact.description': 'Open to opportunities in Production Engineering, Operational Analytics, Quality Management, and Continuous Improvement. Let’s connect and discuss data-driven operations, process optimization, and industrial performance improvement.',

@@ -189,9 +189,9 @@ const Navigation = () => {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 transition-all duration-300 border-b ${
-          isScrolled
-            ? 'backdrop-blur-xl bg-white/10 border-white/20 shadow-lg shadow-black/10'
-            : 'backdrop-blur-md bg-white/5 border-white/10'
+         isScrolled
+  ? 'backdrop-blur-xl bg-black/80 border-white/10 shadow-lg shadow-black/50'
+  : 'backdrop-blur-md bg-black/60 border-white/5'
         }`}
         style={{ zIndex: 9999 }}
       >
