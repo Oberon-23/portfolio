@@ -54,7 +54,7 @@ interface Content {
   value: { title: string; lead: string; items: { title: string; text: string }[] };
   skills: { title: string; lead: string; groups: { title: string; items: string[] }[] };
   projects: { title: string; lead: string; question: string; details: string; close: string; items: Project[] };
-  education: { title: string; degrees: { course: string; school: string; status: string }[]; certTitle: string; certs: string[] };
+  education: { title: string; degrees: { course: string; school: string; status: string }[]; certTitle: string; certs: { name: string; issuer: string; date?: string }[] };
   contact: { title: string; text: string; email: string; cv: string };
   footer: string;
 }
@@ -204,7 +204,18 @@ export const CONTENT: Record<Language, Content> = {
         { course: 'Análise e Desenvolvimento de Sistemas', school: 'Graduação tecnológica', status: 'Concluído' },
       ],
       certTitle: 'Certificações',
-      certs: ['Lean Six Sigma Yellow Belt (FM2S)', 'Excel Avançado & Power BI', 'SQL para Análise de Dados', 'Scrum'],
+      certs: [
+        { name: 'Lean Six Sigma Yellow Belt', issuer: 'FM2S', date: 'mar. 2026' },
+        { name: 'Metodologia Lean', issuer: 'FM2S', date: 'mai. 2026' },
+        { name: 'Gestão da Qualidade', issuer: 'FM2S', date: 'abr. 2026' },
+        { name: 'Análise e Melhoria de Processos', issuer: 'Enap', date: 'out. 2026' },
+        { name: 'Mapeamento e Automação de Processos', issuer: 'Enap', date: 'out. 2026' },
+        { name: 'Gestão de Riscos', issuer: 'Enap', date: 'out. 2026' },
+        { name: 'Microsoft Excel para Análise de Dados', issuer: 'Preditiva Analytics', date: 'ago. 2026' },
+        { name: 'Excel Avançado & Power BI', issuer: 'Udemy', date: 'set. 2026' },
+        { name: 'SQL para Análise de Dados', issuer: 'Udemy' },
+        { name: 'Inteligência Artificial', issuer: 'EBAC', date: 'ago. 2026' },
+      ],
     },
     contact: {
       title: 'Vamos conversar',
@@ -352,7 +363,18 @@ export const CONTENT: Record<Language, Content> = {
         { course: 'Systems Analysis and Development', school: 'Technology degree', status: 'Completed' },
       ],
       certTitle: 'Certifications',
-      certs: ['Lean Six Sigma Yellow Belt (FM2S)', 'Advanced Excel & Power BI', 'SQL for Data Analysis', 'Scrum'],
+      certs: [
+        { name: 'Lean Six Sigma Yellow Belt', issuer: 'FM2S', date: 'Mar 2026' },
+        { name: 'Lean Methodology', issuer: 'FM2S', date: 'May 2026' },
+        { name: 'Quality Management', issuer: 'FM2S', date: 'Apr 2026' },
+        { name: 'Process Analysis and Improvement', issuer: 'Enap', date: 'Oct 2026' },
+        { name: 'Process Mapping and Automation', issuer: 'Enap', date: 'Oct 2026' },
+        { name: 'Risk Management', issuer: 'Enap', date: 'Oct 2026' },
+        { name: 'Microsoft Excel for Data Analysis', issuer: 'Preditiva Analytics', date: 'Aug 2026' },
+        { name: 'Advanced Excel & Power BI', issuer: 'Udemy', date: 'Sep 2026' },
+        { name: 'SQL for Data Analysis', issuer: 'Udemy' },
+        { name: 'Artificial Intelligence', issuer: 'EBAC', date: 'Aug 2026' },
+      ],
     },
     contact: {
       title: "Let's talk",

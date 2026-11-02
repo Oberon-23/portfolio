@@ -174,7 +174,7 @@ img { max-width: 100%; display: block; }
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
 
 /* ---------- formação ---------- */
-.edu-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.edu-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
 .degrees { padding: 6px 22px; }
 .degree { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding: 16px 0; border-bottom: 1px solid var(--line-2); align-items: center; }
 .degree:last-child { border-bottom: 0; }
@@ -183,13 +183,17 @@ img { max-width: 100%; display: block; }
 .status { grid-row: 1 / span 2; grid-column: 2; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); border: 1px solid var(--line); white-space: nowrap; }
 .status.done { background: var(--ok-bg); color: var(--ok); border-color: transparent; }
 .certs { padding: 22px; }
-.certs h3 { font-size: 15px; margin: 0 0 12px; }
+.certs h3 { font-size: 15px; margin: 0 0 6px; }
+.cert-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); column-gap: 28px; }
+.cert-list li { padding: 12px 0; border-bottom: 1px solid var(--line-2); display: grid; gap: 1px; }
+.cert-list b { font-size: 15px; font-weight: 600; }
+.cert-list span { font-size: 13.5px; color: var(--ink-2); }
 
 /* ---------- contato ---------- */
 .contact { padding: 48px clamp(22px, 5vw, 56px); text-align: center; }
 .contact .h2 { margin-bottom: 12px; }
 .contact p { color: var(--ink-2); font-size: 17px; max-width: 58ch; margin: 0 auto 28px; }
-.contact .eyebrow { color: var(--accent); font-size: 12.5px; margin: 0 0 10px; }
+.contact .eyebrow { color: var(--accent); font-size: 12.5px; margin: 0 auto 10px; }
 .contact-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
 .contact-mail { display: block; margin-top: 18px; font: 500 14px var(--mono); color: var(--muted); }
 

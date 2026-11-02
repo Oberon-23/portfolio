@@ -89,7 +89,11 @@ export const Education = () => {
             </div>
             <div className="card certs">
               <h3>{e.certTitle}</h3>
-              <ul className="chips">{e.certs.map((x) => <li key={x} className="chip">{x}</li>)}</ul>
+              <ul className="cert-list">
+                {e.certs.map((x) => (
+                  <li key={x.name}><b>{x.name}</b><span>{x.issuer}{x.date ? ` · ${x.date}` : ''}</span></li>
+                ))}
+              </ul>
             </div>
           </div>
         </RevealOnScroll>
