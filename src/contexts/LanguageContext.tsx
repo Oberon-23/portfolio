@@ -1,126 +1,40 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
-
-export type Language = 'pt' | 'en';
+import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { CONTENT, type Language } from '@/content';
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  c: (typeof CONTENT)['pt'];
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const KEY = 'portfolio-lang';
 
-const translations = {
-  pt: {
-    // Navigation
-    'nav.home': 'Home',
-    'nav.about': 'Sobre',
-    'nav.technology': 'Tecnologias',
-    'nav.portfolio': 'Portfólio',
-    'nav.contact': 'Contato',
-    
-    // Hero
-    'hero.title': 'Breno',
-    'hero.role': 'Análises Operacionais',
-    'hero.description': 'Estudante de Engenharia de Produção com foco em Análise Operacional, Melhoria Contínua e Gestão da Qualidade. Experiência em monitoramento de KPIs, suporte operacional e análise de dados aplicada a operações industriais e de serviços utilizando Power BI, SQL, Python e Excel.',
-    'hero.cta': 'Ver Projetos',
-    'hero.about': 'Sobre Mim',
-    
-    // About
-    'about.title': 'Um pouco sobre mim',
-    'about.description': 'Sou movido pelo desafio de melhorar operações por meio de dados, otimização de processos e iniciativas de melhoria contínua. Minha trajetória combina experiência operacional, pensamento analítico e tecnologia para apoiar a tomada de decisão e a excelência operacional. Utilizo Power BI, SQL, Python e Excel para transformar dados operacionais em insights aplicáveis a ambientes industriais e corporativos.',
-    'about.download': 'Baixar CV',
-    
-    // Technology
-    'tech.title': 'Tecnologias & Stacks',
-    'tech.frontend': 'Front-End',
-    'tech.dataAnalysis': 'Análise de Dados',
-    
-    // Portfolio
-    'portfolio.title': 'Meus Projetos',
-    'portfolio.description': 'Aqui estão alguns projetos que representam minha trajetória em Análise Operacional, Engenharia e melhoria contínua orientada por dados. Cada projeto reflete minha experiência com indicadores operacionais, análise de dados, otimização de processos e visualização de informações utilizando Power BI, Python, SQL e Excel aplicados a contextos industriais e corporativos.',
-    'portfolio.viewProject': 'Ver Projeto',
-    
-    // Projects
-    'project.analysis.title': 'Titanic - Análise Exploratória de Dados',
-    'project.analysis.description': 'Análise exploratória completa do dataset do Titanic com 891 registros, investigando padrões de sobrevivência por sexo, classe e idade.',
-    'project.dashboard.title': 'Manutenção Preditiva - AI4I Dataset',
-    'project.dashboard.description': 'Análise exploratória do dataset AI4I 2020 com 10.000 registros de sensores industriais, investigando padrões de falha por tipo de equipamento, temperatura e desgaste de ferramenta.',
-    'project.kpis.title': 'Dashboard KPIs Operacionais',
-    'project.kpis.description': 'Dashboard interativo com dados reais de produção de Petróleo e Gás Natural no Brasil entre 2020 e 2024, monitorando KPIs operacionais como volume produzido, variação anual e desempenho por bacia.',
-  
-    // Contact
-    'contact.title': 'Venha conversar comigo!',
-    'contact.description': 'Aberto a oportunidades em Engenharia de Produção, Análise Operacional, Gestão da Qualidade e Melhoria Contínua. Vamos conversar sobre operações orientadas por dados e otimização industrial.',
-    'contact.cta': 'Entrar em Contato',
-    
-    // Footer
-    'footer.rights': 'Todos os direitos reservados.'
-  },
-  en: {
-    // Navigation
-    'nav.home': 'Home',
-    'nav.about': 'About',
-    'nav.technology': 'Technologies',
-    'nav.portfolio': 'Portfolio',
-    'nav.contact': 'Contact',
-    
-    // Hero
-    'hero.title': 'Breno',
-    'hero.role': 'Operational Data Analytics',
-    'hero.description': 'Production Engineering student focused on Operational Data Analytics, Continuous Improvement, and Quality Management. Experience in KPI monitoring, operational support, and data analysis applied to industrial and service operations using Power BI, SQL, Python, and Excel.',
-    'hero.cta': 'View Projects',
-    'hero.about': 'About Me',
-    
-    // About
-    'about.title': 'A little about me',
-    'about.description': 'I am driven by the challenge of improving operations through data, process optimization, and continuous improvement initiatives. My background combines operational experience, analytical thinking, and technology to support decision-making and operational excellence. I work with Power BI, SQL, Python, and Excel to transform operational data into actionable insights for industrial and business environments.',
-    'about.download': 'Download CV',
-    
-    // Technology
-    'tech.title': 'Technologies & Stacks',
-    'tech.frontend': 'Front-End',
-    'tech.dataAnalysis': 'Data Analysis',
-    
-    // Portfolio
-    'portfolio.title': 'My Projects',
-    'portfolio.description': 'Here are some projects that represent my journey in Operational Analytics, Engineering, and data-driven continuous improvement. Each project reflects my experience with operational KPIs, data analysis, process optimization, and data visualization using Power BI, Python, SQL, and Excel applied to industrial and business environments.',
-    'portfolio.viewProject': 'View Project',
-    
-    // Projects
-    'project.analysis.title': 'Titanic - Exploratory Data Analysis',
-    'project.analysis.description': 'Complete exploratory analysis of the Titanic dataset with 891 records, investigating survival patterns by sex, class and age.',
-    'project.dashboard.title': 'AI4I 2020 Predictive Maintenance Dataset',
-    'project.dashboard.description': 'Exploratory analysis of the AI4I 2020 dataset with 10,000 industrial sensor records, investigating failure patterns by equipment type, temperature, and tool wear.',    'project.kpis.title': 'KPI Analysis',
-    'project.kpis.description': 'Interactive dashboard with real production data for Oil and Natural Gas in Brazil from 2020 to 2024, monitoring operational KPIs such as production volume, annual variation, and basin performance.',    
-    // Contact
-    'contact.title': 'Let\'s talk!',
-    'contact.description': 'Open to opportunities in Production Engineering, Operational Analytics, Quality Management, and Continuous Improvement. Let’s connect and discuss data-driven operations, process optimization, and industrial performance improvement.',
-    'contact.cta': 'Get in Touch',
-    
-    // Footer
-    'footer.rights': 'All rights reserved.'
-  }
-};
+function initialLanguage(): Language {
+  try {
+    const saved = localStorage.getItem(KEY);
+    if (saved === 'pt' || saved === 'en') return saved;
+  } catch { /* sem armazenamento */ }
+  return 'pt';
+}
 
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('pt');
+export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+  const [language, setLanguage] = useState<Language>(initialLanguage);
 
-  const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations['pt']] || key;
-  };
+  useEffect(() => {
+    document.documentElement.lang = language === 'pt' ? 'pt-BR' : 'en';
+    try { localStorage.setItem(KEY, language); } catch { /* ignora */ }
+  }, [language]);
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, c: CONTENT[language] }}>
       {children}
     </LanguageContext.Provider>
   );
 };
 
 export const useLanguage = () => {
-  const context = useContext(LanguageContext);
-  if (context === undefined) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
-  return context;
+  const ctx = useContext(LanguageContext);
+  if (!ctx) throw new Error('useLanguage must be used within a LanguageProvider');
+  return ctx;
 };
