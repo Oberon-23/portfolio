@@ -228,7 +228,7 @@ export const CONTENT: Record<Language, Content> = {
         { course: 'Técnico em Logística', school: 'Padrão Treinamentos', status: 'Concluído' },
       ],
       certTitle: 'Certificações',
-      certs: ['Lean Six Sigma Yellow Belt (FM2S)', 'ISO 9001:2015', 'Gestão Logística (FM2S)', 'Excel Avançado & Power BI', 'SQL para Análise de Dados', 'ITIL 4 Foundation', 'Scrum'],
+      certs: ['Lean Six Sigma Yellow Belt (FM2S)', 'Gestão Logística (FM2S)', 'Excel Avançado & Power BI', 'SQL para Análise de Dados', 'Scrum'],
     },
     contact: {
       title: 'Vamos conversar',
@@ -395,7 +395,7 @@ export const CONTENT: Record<Language, Content> = {
         { course: 'Logistics Technician', school: 'Padrão Treinamentos', status: 'Completed' },
       ],
       certTitle: 'Certifications',
-      certs: ['Lean Six Sigma Yellow Belt (FM2S)', 'ISO 9001:2015', 'Logistics Management (FM2S)', 'Advanced Excel & Power BI', 'SQL for Data Analysis', 'ITIL 4 Foundation', 'Scrum'],
+      certs: ['Lean Six Sigma Yellow Belt (FM2S)', 'Logistics Management (FM2S)', 'Advanced Excel & Power BI', 'SQL for Data Analysis', 'Scrum'],
     },
     contact: {
       title: "Let's talk",
