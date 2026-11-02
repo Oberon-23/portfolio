@@ -1,7 +1,7 @@
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
-import { About, Contact, Education, Footer, Skills, Value } from '@/components/Sections';
+import { About, Certifications, Contact, Education, Footer, Skills, Value } from '@/components/Sections';
 import { LanguageProvider, useLanguage } from '@/contexts/LanguageContext';
 
 const Skip = () => {
@@ -20,6 +20,7 @@ const Index = () => (
       <Skills />
       <Projects />
       <Education />
+      <Certifications />
       <Contact />
     </main>
     <Footer />

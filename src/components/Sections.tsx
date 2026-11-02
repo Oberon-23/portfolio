@@ -77,24 +77,37 @@ export const Education = () => {
         <RevealOnScroll>
           <p className="eyebrow">05</p>
           <h2 className="h2">{e.title}</h2>
-          <div className="edu-grid" style={{ marginTop: 28 }}>
-            <div className="card degrees">
-              {e.degrees.map((d) => (
-                <div key={d.course} className="degree">
-                  <b>{d.course}</b>
-                  <span>{d.school}</span>
-                  <em className={`status${done(d.status) ? ' done' : ''}`} style={{ fontStyle: 'normal' }}>{d.status}</em>
-                </div>
+          <div className="card degrees" style={{ marginTop: 28 }}>
+            {e.degrees.map((d) => (
+              <div key={d.course} className="degree">
+                <b>{d.course}</b>
+                <span>{d.school}</span>
+                <small>{d.period}</small>
+                <em className={`status${done(d.status) ? ' done' : ''}`}>{d.status}</em>
+              </div>
+            ))}
+          </div>
+        </RevealOnScroll>
+      </div>
+    </section>
+  );
+};
+
+export const Certifications = () => {
+  const { c } = useLanguage();
+  const e = c.education;
+  return (
+    <section id="certificacoes" className="section">
+      <div className="wrap">
+        <RevealOnScroll>
+          <p className="eyebrow">06</p>
+          <h2 className="h2">{e.certTitle}</h2>
+          <div className="card certs" style={{ marginTop: 28 }}>
+            <ul className="cert-list">
+              {e.certs.map((x) => (
+                <li key={x.name}><b>{x.name}</b><span>{x.issuer}{x.date ? ` · ${x.date}` : ''}</span></li>
               ))}
-            </div>
-            <div className="card certs">
-              <h3>{e.certTitle}</h3>
-              <ul className="cert-list">
-                {e.certs.map((x) => (
-                  <li key={x.name}><b>{x.name}</b><span>{x.issuer}{x.date ? ` · ${x.date}` : ''}</span></li>
-                ))}
-              </ul>
-            </div>
+            </ul>
           </div>
         </RevealOnScroll>
       </div>
@@ -115,7 +128,7 @@ export const Contact = () => {
       <div className="wrap">
         <RevealOnScroll>
           <div className="card contact">
-            <p className="eyebrow">06</p>
+            <p className="eyebrow">07</p>
             <h2 className="h2">{c.contact.title}</h2>
             <p>{c.contact.text}</p>
             <div className="contact-actions">

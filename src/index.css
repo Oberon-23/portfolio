@@ -74,7 +74,7 @@ img { max-width: 100%; display: block; }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 16px; white-space: nowrap; }
 .brand-mark { width: 34px; height: 34px; border-radius: 10px; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; font-weight: 800; font-size: 17px; }
 .nav { display: flex; gap: 2px; margin-left: auto; }
-.nav a { padding: 7px 11px; border-radius: 8px; font-size: 14.5px; font-weight: 550; color: var(--ink-2); }
+.nav a { white-space: nowrap; padding: 7px 9px; border-radius: 8px; font-size: 14.5px; font-weight: 550; color: var(--ink-2); }
 .nav a:hover { color: var(--ink); background: var(--surface-2); }
 .controls { display: flex; gap: 8px; align-items: center; }
 .seg { display: inline-flex; background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px; padding: 3px; gap: 2px; }
@@ -176,11 +176,12 @@ img { max-width: 100%; display: block; }
 /* ---------- formação ---------- */
 .edu-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
 .degrees { padding: 6px 22px; }
-.degree { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding: 16px 0; border-bottom: 1px solid var(--line-2); align-items: center; }
+.degree { display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; padding: 18px 0; border-bottom: 1px solid var(--line-2); align-items: center; }
 .degree:last-child { border-bottom: 0; }
 .degree b { font-size: 16px; }
 .degree span { color: var(--ink-2); font-size: 14.5px; grid-column: 1; }
-.status { grid-row: 1 / span 2; grid-column: 2; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); border: 1px solid var(--line); white-space: nowrap; }
+.degree small { color: var(--muted); font: 500 12.5px var(--mono); grid-column: 1; margin-top: 2px; }
+.status { font-style: normal; grid-row: 1 / span 3; grid-column: 2; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); border: 1px solid var(--line); white-space: nowrap; }
 .status.done { background: var(--ok-bg); color: var(--ok); border-color: transparent; }
 .certs { padding: 22px; }
 .certs h3 { font-size: 15px; margin: 0 0 6px; }
@@ -201,7 +202,7 @@ img { max-width: 100%; display: block; }
 .footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
 /* ---------- responsivo ---------- */
-@media (max-width: 1020px) {
+@media (max-width: 1080px) {
   .nav, .header .controls { display: none; }
   .menu-btn { display: grid; }
   .mobile-panel { display: block; border-top: 1px solid var(--line); padding: 12px 0 18px; }

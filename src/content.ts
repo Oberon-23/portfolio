@@ -48,13 +48,13 @@ export interface Project {
 }
 
 interface Content {
-  nav: { about: string; value: string; skills: string; projects: string; education: string; contact: string; menu: string; theme: string; system: string; light: string; dark: string; language: string };
+  nav: { about: string; value: string; skills: string; projects: string; education: string; certs: string; contact: string; menu: string; theme: string; system: string; light: string; dark: string; language: string };
   hero: { kicker: string; title: string; intro: string; ctaProjects: string; ctaCv: string; ctaLinkedin: string; photoAlt: string; status: string; statusText: string; highlights: { title: string; text: string }[] };
   about: { title: string; paragraphs: string[]; facts: { value: string; label: string }[] };
   value: { title: string; lead: string; items: { title: string; text: string }[] };
   skills: { title: string; lead: string; groups: { title: string; items: string[] }[] };
   projects: { title: string; lead: string; question: string; details: string; close: string; items: Project[] };
-  education: { title: string; degrees: { course: string; school: string; status: string }[]; certTitle: string; certs: { name: string; issuer: string; date?: string }[] };
+  education: { title: string; degrees: { course: string; school: string; period: string; status: string }[]; certTitle: string; certs: { name: string; issuer: string; date?: string }[] };
   contact: { title: string; text: string; email: string; cv: string };
   footer: string;
 }
@@ -68,7 +68,7 @@ const IMG = {
 
 export const CONTENT: Record<Language, Content> = {
   pt: {
-    nav: { about: 'Sobre', value: 'Como ajudo', skills: 'Competências', projects: 'Projetos', education: 'Formação', contact: 'Contato', menu: 'Menu', theme: 'Tema', system: 'Sistema', light: 'Claro', dark: 'Escuro', language: 'Idioma' },
+    nav: { about: 'Sobre', value: 'Como ajudo', skills: 'Competências', projects: 'Projetos', education: 'Formação', certs: 'Certificações', contact: 'Contato', menu: 'Menu', theme: 'Tema', system: 'Sistema', light: 'Claro', dark: 'Escuro', language: 'Idioma' },
     hero: {
       kicker: 'Análise de dados · Qualidade · Operações',
       title: 'Dados de operação que viram decisão.',
@@ -199,9 +199,9 @@ export const CONTENT: Record<Language, Content> = {
     education: {
       title: 'Formação',
       degrees: [
-        { course: 'Pós-graduação em Data Analytics & IA', school: 'Preditiva Analytics', status: 'Concluído' },
-        { course: 'Engenharia de Produção', school: 'UNIGRAN', status: 'Em andamento' },
-        { course: 'Análise e Desenvolvimento de Sistemas', school: 'Graduação tecnológica', status: 'Concluído' },
+        { course: 'Pós-graduação em Data Analytics & IA', school: 'Preditiva Analytics', period: 'ago. 2025 – jul. 2026', status: 'Concluído' },
+        { course: 'Engenharia de Produção', school: 'UNIGRAN · Bacharelado', period: 'fev. 2026 – dez. 2029 (previsão)', status: 'Em andamento' },
+        { course: 'Análise e Desenvolvimento de Sistemas', school: 'UNIGRAN EAD · Tecnólogo', period: 'fev. 2023 – jul. 2025', status: 'Concluído' },
       ],
       certTitle: 'Certificações',
       certs: [
@@ -212,8 +212,8 @@ export const CONTENT: Record<Language, Content> = {
         { name: 'Mapeamento e Automação de Processos', issuer: 'Enap', date: 'out. 2026' },
         { name: 'Gestão de Riscos', issuer: 'Enap', date: 'out. 2026' },
         { name: 'Microsoft Excel para Análise de Dados', issuer: 'Preditiva Analytics', date: 'ago. 2026' },
-        { name: 'Excel Avançado & Power BI', issuer: 'Udemy', date: 'set. 2026' },
-        { name: 'SQL para Análise de Dados', issuer: 'Udemy' },
+        { name: 'Excel Avançado & Power BI', issuer: 'Preditiva Analytics', date: 'ago. 2026' },
+        { name: 'SQL para Análise de Dados', issuer: 'Preditiva Analytics', date: 'ago. 2026' },
         { name: 'Inteligência Artificial', issuer: 'EBAC', date: 'ago. 2026' },
       ],
     },
@@ -227,7 +227,7 @@ export const CONTENT: Record<Language, Content> = {
   },
 
   en: {
-    nav: { about: 'About', value: 'How I help', skills: 'Skills', projects: 'Projects', education: 'Education', contact: 'Contact', menu: 'Menu', theme: 'Theme', system: 'System', light: 'Light', dark: 'Dark', language: 'Language' },
+    nav: { about: 'About', value: 'How I help', skills: 'Skills', projects: 'Projects', education: 'Education', certs: 'Certifications', contact: 'Contact', menu: 'Menu', theme: 'Theme', system: 'System', light: 'Light', dark: 'Dark', language: 'Language' },
     hero: {
       kicker: 'Data analytics · Quality · Operations',
       title: 'Operational data that turns into decisions.',
@@ -358,9 +358,9 @@ export const CONTENT: Record<Language, Content> = {
     education: {
       title: 'Education',
       degrees: [
-        { course: 'Postgraduate degree in Data Analytics & AI', school: 'Preditiva Analytics', status: 'Completed' },
-        { course: 'Production Engineering', school: 'UNIGRAN', status: 'In progress' },
-        { course: 'Systems Analysis and Development', school: 'Technology degree', status: 'Completed' },
+        { course: 'Postgraduate degree in Data Analytics & AI', school: 'Preditiva Analytics', period: 'Aug 2025 – Jul 2026', status: 'Completed' },
+        { course: 'Production Engineering', school: "UNIGRAN · Bachelor's degree", period: 'Feb 2026 – Dec 2029 (expected)', status: 'In progress' },
+        { course: 'Systems Analysis and Development', school: 'UNIGRAN EAD · Technology degree', period: 'Feb 2023 – Jul 2025', status: 'Completed' },
       ],
       certTitle: 'Certifications',
       certs: [
@@ -371,8 +371,8 @@ export const CONTENT: Record<Language, Content> = {
         { name: 'Process Mapping and Automation', issuer: 'Enap', date: 'Oct 2026' },
         { name: 'Risk Management', issuer: 'Enap', date: 'Oct 2026' },
         { name: 'Microsoft Excel for Data Analysis', issuer: 'Preditiva Analytics', date: 'Aug 2026' },
-        { name: 'Advanced Excel & Power BI', issuer: 'Udemy', date: 'Sep 2026' },
-        { name: 'SQL for Data Analysis', issuer: 'Udemy' },
+        { name: 'Advanced Excel & Power BI', issuer: 'Preditiva Analytics', date: 'Aug 2026' },
+        { name: 'SQL for Data Analysis', issuer: 'Preditiva Analytics', date: 'Aug 2026' },
         { name: 'Artificial Intelligence', issuer: 'EBAC', date: 'Aug 2026' },
       ],
     },
