@@ -9,8 +9,6 @@ import sdLight from '@/assets/projects/servicedesk-light.webp';
 import sdDark from '@/assets/projects/servicedesk-dark.webp';
 import qLight from '@/assets/projects/qualidade-light.webp';
 import qDark from '@/assets/projects/qualidade-dark.webp';
-import lLight from '@/assets/projects/logistica-light.webp';
-import lDark from '@/assets/projects/logistica-dark.webp';
 
 export type Language = 'pt' | 'en';
 
@@ -25,12 +23,10 @@ export const LINKS = {
   // Painéis publicados na Vercel: confira se os endereços batem com os do seu painel da Vercel.
   painelServiceDesk: 'https://painel-servicedesk-rotalume.vercel.app',
   painelQualidade: 'https://painel-qualidade-rotalume.vercel.app',
-  painelLogistica: 'https://painel-logistica-rotalume.vercel.app',
   repoPipeline: 'https://github.com/Oberon-23/service-desk-analytics-mvp',
   kagglePipeline: 'https://www.kaggle.com/code/brenosilvabarros/an-lise-de-chamados-de-service-desk-itsm-real',
   repoServiceDesk: 'https://github.com/Oberon-23/painel-servicedesk-rotalume',
   repoQualidade: 'https://github.com/Oberon-23/painel-qualidade-rotalume',
-  repoLogistica: 'https://github.com/Oberon-23/painel-logistica-rotalume',
   repoTitanic: 'https://github.com/Oberon-23/titanic-eda-analise-exploratoria',
   kaggleTitanic: 'https://www.kaggle.com/code/brenosilvabarros/titanic-eda-an-lise-explorat-ria-completa',
 };
@@ -67,7 +63,6 @@ const IMG = {
   pipeline: { light: pipeline, dark: pipeline },
   sd: { light: sdLight, dark: sdDark },
   q: { light: qLight, dark: qDark },
-  l: { light: lLight, dark: lDark },
   titanic: { light: titanic, dark: titanic },
 };
 
@@ -77,13 +72,13 @@ export const CONTENT: Record<Language, Content> = {
     hero: {
       kicker: 'Análise de dados · Qualidade · Operações',
       title: 'Dados de operação que viram decisão.',
-      intro: 'Sou o Breno, pós-graduado em Data Analytics & IA e estudante de Engenharia de Produção. Transformo dados do dia a dia da operação (chamados, produção, entregas) em indicadores, painéis e análises que mostram onde agir.',
+      intro: 'Sou o Breno, pós-graduado em Data Analytics & IA e estudante de Engenharia de Produção. Transformo dados do dia a dia da operação (chamados, produção, qualidade) em indicadores, painéis e análises que mostram onde agir.',
       ctaProjects: 'Ver projetos',
       ctaCv: 'Currículo',
       ctaLinkedin: 'LinkedIn',
       photoAlt: 'Foto de Breno Silva',
       status: 'Aberto a oportunidades',
-      statusText: 'Dados, qualidade e logística',
+      statusText: 'Dados, qualidade e processos',
       highlights: [
         { title: 'Python e SQL', text: 'Limpeza, modelagem e pipelines reprodutíveis' },
         { title: 'Power BI e painéis', text: 'Indicadores com meta, contexto e leitura simples' },
@@ -99,7 +94,7 @@ export const CONTENT: Record<Language, Content> = {
       ],
       facts: [
         { value: '141 mil', label: 'eventos reais de ServiceNow analisados no projeto de pipeline' },
-        { value: '5', label: 'projetos publicados, com código aberto no GitHub' },
+        { value: '4', label: 'projetos publicados, com código aberto no GitHub' },
         { value: 'PDCA', label: 'como método para ir do indicador à ação' },
       ],
     },
@@ -119,7 +114,7 @@ export const CONTENT: Record<Language, Content> = {
         { title: 'Dados', items: ['Python', 'pandas', 'SQL', 'DuckDB', 'Jupyter', 'Modelagem dimensional'] },
         { title: 'BI e visualização', items: ['Power BI', 'DAX', 'Excel avançado', 'Macros (VBA)', 'Matplotlib e Seaborn', 'Chart.js'] },
         { title: 'Qualidade e processos', items: ['Lean Six Sigma', 'ISO 9001:2015', 'PDCA', 'CEP', 'Pareto e Ishikawa', 'OEE'] },
-        { title: 'Operações e gestão', items: ['ITIL 4', 'ServiceNow', 'Scrum', 'Logística (OTIF, armazenagem)'] },
+        { title: 'Operações e gestão', items: ['ITIL 4', 'ServiceNow', 'Scrum'] },
         { title: 'Desenvolvimento', items: ['HTML e CSS', 'JavaScript', 'React', 'TypeScript', 'Git'] },
       ],
     },
@@ -184,24 +179,6 @@ export const CONTENT: Record<Language, Content> = {
           ],
         },
         {
-          id: 'logistica',
-          category: 'Dashboard · Supply chain',
-          title: 'Logística',
-          question: 'As entregas chegam no prazo e completas? Qual transportadora entrega melhor? Quanto custa entregar?',
-          description: 'OTIF, prazo prometido versus real, motivos de falha, produtividade dos centros de distribuição e custo de frete por quilo.',
-          tags: ['OTIF', 'Frete', 'Armazém', 'JavaScript'],
-          links: [
-            { label: 'Abrir painel', href: LINKS.painelLogistica, kind: 'demo' },
-            { label: 'GitHub', href: LINKS.repoLogistica, kind: 'github' },
-          ],
-          image: { ...IMG.l, alt: 'Visão geral do painel de logística' },
-          badge: 'Dados fictícios',
-          details: [
-            { heading: 'O que foi feito', items: ['OTIF (no prazo e completo) como indicador principal, mais rigoroso que o atraso médio.', 'Custo de frete por quilo ao lado da produtividade do armazém, para não melhorar um escondendo o outro.', 'Comparação entre transportadoras, com o trade-off entre custo e confiabilidade.'] },
-            { heading: 'Cenários simulados', items: ['Black Friday, troca de WMS em um dos centros de distribuição e alta do diesel.'] },
-          ],
-        },
-        {
           id: 'titanic',
           category: 'Análise exploratória',
           title: 'Titanic: o que explica a sobrevivência',
@@ -225,14 +202,13 @@ export const CONTENT: Record<Language, Content> = {
         { course: 'Pós-graduação em Data Analytics & IA', school: 'Preditiva Analytics', status: 'Concluído' },
         { course: 'Engenharia de Produção', school: 'UNIGRAN', status: 'Em andamento' },
         { course: 'Análise e Desenvolvimento de Sistemas', school: 'Graduação tecnológica', status: 'Concluído' },
-        { course: 'Técnico em Logística', school: 'Padrão Treinamentos', status: 'Concluído' },
       ],
       certTitle: 'Certificações',
-      certs: ['Lean Six Sigma Yellow Belt (FM2S)', 'Gestão Logística (FM2S)', 'Excel Avançado & Power BI', 'SQL para Análise de Dados', 'Scrum'],
+      certs: ['Lean Six Sigma Yellow Belt (FM2S)', 'Excel Avançado & Power BI', 'SQL para Análise de Dados', 'Scrum'],
     },
     contact: {
       title: 'Vamos conversar',
-      text: 'Estou aberto a oportunidades em análise de dados, qualidade, logística e melhoria contínua. Se quiser trocar uma ideia sobre um projeto ou uma vaga, é só chamar.',
+      text: 'Estou aberto a oportunidades em análise de dados, qualidade e melhoria contínua. Se quiser trocar uma ideia sobre um projeto ou uma vaga, é só chamar.',
       email: 'Enviar e-mail',
       cv: 'Baixar currículo',
     },
@@ -244,13 +220,13 @@ export const CONTENT: Record<Language, Content> = {
     hero: {
       kicker: 'Data analytics · Quality · Operations',
       title: 'Operational data that turns into decisions.',
-      intro: "I'm Breno, a Data Analytics & AI postgraduate and Production Engineering student. I turn everyday operational data (tickets, production, deliveries) into KPIs, dashboards and analyses that show where to act.",
+      intro: "I'm Breno, a Data Analytics & AI postgraduate and Production Engineering student. I turn everyday operational data (tickets, production, quality) into KPIs, dashboards and analyses that show where to act.",
       ctaProjects: 'See projects',
       ctaCv: 'Résumé',
       ctaLinkedin: 'LinkedIn',
       photoAlt: 'Photo of Breno Silva',
       status: 'Open to opportunities',
-      statusText: 'Data, quality and logistics',
+      statusText: 'Data, quality and processes',
       highlights: [
         { title: 'Python and SQL', text: 'Cleaning, modeling and reproducible pipelines' },
         { title: 'Power BI and dashboards', text: 'KPIs with targets, context and plain-language reading' },
@@ -266,7 +242,7 @@ export const CONTENT: Record<Language, Content> = {
       ],
       facts: [
         { value: '141k', label: 'real ServiceNow events analyzed in the pipeline project' },
-        { value: '5', label: 'published projects, open source on GitHub' },
+        { value: '4', label: 'published projects, open source on GitHub' },
         { value: 'PDCA', label: 'as the method to go from KPI to action' },
       ],
     },
@@ -286,7 +262,7 @@ export const CONTENT: Record<Language, Content> = {
         { title: 'Data', items: ['Python', 'pandas', 'SQL', 'DuckDB', 'Jupyter', 'Dimensional modeling'] },
         { title: 'BI and visualization', items: ['Power BI', 'DAX', 'Advanced Excel', 'Macros (VBA)', 'Matplotlib and Seaborn', 'Chart.js'] },
         { title: 'Quality and processes', items: ['Lean Six Sigma', 'ISO 9001:2015', 'PDCA', 'SPC', 'Pareto and Ishikawa', 'OEE'] },
-        { title: 'Operations and management', items: ['ITIL 4', 'ServiceNow', 'Scrum', 'Logistics (OTIF, warehousing)'] },
+        { title: 'Operations and management', items: ['ITIL 4', 'ServiceNow', 'Scrum'] },
         { title: 'Development', items: ['HTML and CSS', 'JavaScript', 'React', 'TypeScript', 'Git'] },
       ],
     },
@@ -351,24 +327,6 @@ export const CONTENT: Record<Language, Content> = {
           ],
         },
         {
-          id: 'logistica',
-          category: 'Dashboard · Supply chain',
-          title: 'Logistics',
-          question: 'Do deliveries arrive on time and in full? Which carrier performs best? How much does delivery cost?',
-          description: 'OTIF, promised versus actual lead time, failure reasons, distribution center productivity and freight cost per kilogram.',
-          tags: ['OTIF', 'Freight', 'Warehouse', 'JavaScript'],
-          links: [
-            { label: 'Open dashboard', href: LINKS.painelLogistica, kind: 'demo' },
-            { label: 'GitHub', href: LINKS.repoLogistica, kind: 'github' },
-          ],
-          image: { ...IMG.l, alt: 'Overview of the logistics dashboard' },
-          badge: 'Fictional data',
-          details: [
-            { heading: 'What was done', items: ['OTIF (on time and in full) as the main KPI, stricter than average delay.', 'Freight cost per kilogram next to warehouse productivity, so one does not improve by hiding the other.', 'Carrier comparison showing the trade-off between cost and reliability.'] },
-            { heading: 'Simulated scenarios', items: ['Black Friday, a WMS change at one distribution center and a diesel price increase.'] },
-          ],
-        },
-        {
           id: 'titanic',
           category: 'Exploratory analysis',
           title: 'Titanic: what explains survival',
@@ -392,14 +350,13 @@ export const CONTENT: Record<Language, Content> = {
         { course: 'Postgraduate degree in Data Analytics & AI', school: 'Preditiva Analytics', status: 'Completed' },
         { course: 'Production Engineering', school: 'UNIGRAN', status: 'In progress' },
         { course: 'Systems Analysis and Development', school: 'Technology degree', status: 'Completed' },
-        { course: 'Logistics Technician', school: 'Padrão Treinamentos', status: 'Completed' },
       ],
       certTitle: 'Certifications',
-      certs: ['Lean Six Sigma Yellow Belt (FM2S)', 'Logistics Management (FM2S)', 'Advanced Excel & Power BI', 'SQL for Data Analysis', 'Scrum'],
+      certs: ['Lean Six Sigma Yellow Belt (FM2S)', 'Advanced Excel & Power BI', 'SQL for Data Analysis', 'Scrum'],
     },
     contact: {
       title: "Let's talk",
-      text: "I'm open to opportunities in data analytics, quality, logistics and continuous improvement. If you want to talk about a project or a role, just reach out.",
+      text: "I'm open to opportunities in data analytics, quality and continuous improvement. If you want to talk about a project or a role, just reach out.",
       email: 'Send an email',
       cv: 'Download résumé',
     },

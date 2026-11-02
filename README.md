@@ -11,7 +11,6 @@ Portfólio pessoal de projetos de análise de dados, qualidade e operações. P�
 | Service Desk Analytics | Pipeline Python/SQL (DuckDB) com base real da UCI | [GitHub](https://github.com/Oberon-23/service-desk-analytics-mvp) · [Kaggle](https://www.kaggle.com/code/brenosilvabarros/an-lise-de-chamados-de-service-desk-itsm-real) |
 | Service Desk com assistente de IA | Dashboard | [GitHub](https://github.com/Oberon-23/painel-servicedesk-rotalume) |
 | Qualidade e processos | Dashboard (OEE, CEP, Pareto, PDCA) | [GitHub](https://github.com/Oberon-23/painel-qualidade-rotalume) |
-| Logística | Dashboard (OTIF, frete, armazém) | [GitHub](https://github.com/Oberon-23/painel-logistica-rotalume) |
 | Titanic | Análise exploratória | [GitHub](https://github.com/Oberon-23/titanic-eda-analise-exploratoria) · [Kaggle](https://www.kaggle.com/code/brenosilvabarros/titanic-eda-an-lise-explorat-ria-completa) |
 
 ## Como editar

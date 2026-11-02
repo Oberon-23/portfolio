@@ -90,7 +90,7 @@ const Projects = () => {
         </RevealOnScroll>
         <div className="projects">
           {items.map((p, i) => (
-            <Card key={p.id} p={p} featured={i === 0} onOpen={() => setOpen(p)} />
+            <Card key={p.id} p={p} featured={i === 0 || (i === items.length - 1 && (items.length - 1) % 2 === 1)} onOpen={() => setOpen(p)} />
           ))}
         </div>
       </div>
