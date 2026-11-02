@@ -77,7 +77,7 @@ export const CONTENT: Record<Language, Content> = {
     hero: {
       kicker: 'Análise de dados · Qualidade · Operações',
       title: 'Dados de operação que viram decisão.',
-      intro: 'Sou o Breno, estudante de Engenharia de Produção e pós-graduando em Data Analytics & IA. Transformo dados do dia a dia da operação (chamados, produção, entregas) em indicadores, painéis e análises que mostram onde agir.',
+      intro: 'Sou o Breno, pós-graduado em Data Analytics & IA e estudante de Engenharia de Produção. Transformo dados do dia a dia da operação (chamados, produção, entregas) em indicadores, painéis e análises que mostram onde agir.',
       ctaProjects: 'Ver projetos',
       ctaCv: 'Currículo',
       ctaLinkedin: 'LinkedIn',
@@ -94,7 +94,7 @@ export const CONTENT: Record<Language, Content> = {
       title: 'Sobre',
       paragraphs: [
         'Trabalho como analista de suporte corporativo em um projeto do setor de óleo e gás, onde também sou o ponto focal de qualidade da equipe. Além do atendimento, crio macros, planilhas e painéis em Power BI que ajudam a supervisão a acompanhar os indicadores.',
-        'Sou formado em Análise e Desenvolvimento de Sistemas, curso Engenharia de Produção e faço pós em Data Analytics & IA. Essa combinação junta a visão de processo da engenharia com as ferramentas de dados: primeiro entender o problema da operação, depois escolher a ferramenta.',
+        'Sou formado em Análise e Desenvolvimento de Sistemas, pós-graduado em Data Analytics & IA e curso Engenharia de Produção. Essa combinação junta a visão de processo da engenharia com as ferramentas de dados: primeiro entender o problema da operação, depois escolher a ferramenta.',
         'Na minha equipe, criei um programa de reconhecimento da qualidade baseado em PDCA e em indicadores de satisfação, que conecta o que medimos ao que fazemos para melhorar.',
       ],
       facts: [
@@ -222,7 +222,7 @@ export const CONTENT: Record<Language, Content> = {
     education: {
       title: 'Formação',
       degrees: [
-        { course: 'Pós-graduação em Data Analytics & IA', school: 'Preditiva Analytics', status: 'Em andamento' },
+        { course: 'Pós-graduação em Data Analytics & IA', school: 'Preditiva Analytics', status: 'Concluído' },
         { course: 'Engenharia de Produção', school: 'UNIGRAN', status: 'Em andamento' },
         { course: 'Análise e Desenvolvimento de Sistemas', school: 'Graduação tecnológica', status: 'Concluído' },
         { course: 'Técnico em Logística', school: 'Padrão Treinamentos', status: 'Concluído' },
@@ -244,7 +244,7 @@ export const CONTENT: Record<Language, Content> = {
     hero: {
       kicker: 'Data analytics · Quality · Operations',
       title: 'Operational data that turns into decisions.',
-      intro: "I'm Breno, a Production Engineering student taking a postgraduate course in Data Analytics & AI. I turn everyday operational data (tickets, production, deliveries) into KPIs, dashboards and analyses that show where to act.",
+      intro: "I'm Breno, a Data Analytics & AI postgraduate and Production Engineering student. I turn everyday operational data (tickets, production, deliveries) into KPIs, dashboards and analyses that show where to act.",
       ctaProjects: 'See projects',
       ctaCv: 'Résumé',
       ctaLinkedin: 'LinkedIn',
@@ -261,7 +261,7 @@ export const CONTENT: Record<Language, Content> = {
       title: 'About',
       paragraphs: [
         "I work as a corporate support analyst on an oil and gas project, where I'm also my team's quality focal point. Besides user support, I build macros, spreadsheets and Power BI dashboards that help supervisors track KPIs.",
-        "I hold a degree in Systems Analysis and Development, I'm studying Production Engineering and taking a postgraduate course in Data Analytics & AI. This mix brings together engineering's process view and data tools: understand the operational problem first, then pick the tool.",
+        "I hold a degree in Systems Analysis and Development and a postgraduate degree in Data Analytics & AI, and I'm studying Production Engineering. This mix brings together engineering's process view and data tools: understand the operational problem first, then pick the tool.",
         'On my team, I created a quality recognition program based on PDCA and satisfaction metrics, linking what we measure to what we do to improve.',
       ],
       facts: [
@@ -389,7 +389,7 @@ export const CONTENT: Record<Language, Content> = {
     education: {
       title: 'Education',
       degrees: [
-        { course: 'Postgraduate course in Data Analytics & AI', school: 'Preditiva Analytics', status: 'In progress' },
+        { course: 'Postgraduate degree in Data Analytics & AI', school: 'Preditiva Analytics', status: 'Completed' },
         { course: 'Production Engineering', school: 'UNIGRAN', status: 'In progress' },
         { course: 'Systems Analysis and Development', school: 'Technology degree', status: 'Completed' },
         { course: 'Logistics Technician', school: 'Padrão Treinamentos', status: 'Completed' },
