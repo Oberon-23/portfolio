@@ -53,9 +53,9 @@ export const Skills = () => {
           <p className="eyebrow">03</p>
           <h2 className="h2">{c.skills.title}</h2>
           <p className="lead">{c.skills.lead}</p>
-          <div className="skills-grid">
+          <div className="card skills">
             {c.skills.groups.map((g) => (
-              <div key={g.title} className="card skill">
+              <div key={g.title} className="skill-row">
                 <h3>{g.title}</h3>
                 <ul className="chips">{g.items.map((it) => <li key={it} className="chip">{it}</li>)}</ul>
               </div>

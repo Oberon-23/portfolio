@@ -137,9 +137,11 @@ img { max-width: 100%; display: block; }
 .value p { color: var(--ink-2); margin: 0; font-size: 15.5px; }
 
 /* ---------- competências ---------- */
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 14px; }
-.skill { padding: 20px; }
-.skill h3 { font-size: 15px; margin: 0 0 12px; }
+.skills { padding: 4px 26px; }
+.skill-row { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 8px 24px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--line-2); }
+.skill-row:last-child { border-bottom: 0; }
+.skill-row h3 { font-size: 15px; margin: 0; }
+.skill-row .chips { gap: 8px; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
 .chip { font-size: 13px; padding: 3px 10px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); color: var(--ink-2); }
 
@@ -223,6 +225,8 @@ img { max-width: 100%; display: block; }
   .project.featured .project-media { aspect-ratio: 16 / 10; border-right: 0; border-bottom: 1px solid var(--line); }
 }
 @media (max-width: 520px) {
+  .skills { padding: 4px 18px; }
+  .skill-row { grid-template-columns: minmax(0, 1fr); padding: 16px 0; }
   .wrap { padding: 0 16px; }
   .hero-intro, .lead, .about-text p, .contact p { font-size: 16px; }
   .photo-tag { left: 8px; }
