@@ -9,6 +9,8 @@ import sdLight from '@/assets/projects/servicedesk-light.webp';
 import sdDark from '@/assets/projects/servicedesk-dark.webp';
 import qLight from '@/assets/projects/qualidade-light.webp';
 import qDark from '@/assets/projects/qualidade-dark.webp';
+import sgqLight from '@/assets/projects/sgq-light.webp';
+import sgqDark from '@/assets/projects/sgq-dark.webp';
 
 export type Language = 'pt' | 'en';
 
@@ -27,6 +29,8 @@ export const LINKS = {
   kagglePipeline: 'https://www.kaggle.com/code/brenosilvabarros/an-lise-de-chamados-de-service-desk-itsm-real',
   repoServiceDesk: 'https://github.com/Oberon-23/painel-servicedesk-rotalume',
   repoQualidade: 'https://github.com/Oberon-23/painel-qualidade-rotalume',
+  sgq: 'https://sqgrotalume.vercel.app',
+  repoSgq: 'https://github.com/Oberon-23/SGQ-Rotalume',
   repoTitanic: 'https://github.com/Oberon-23/titanic-eda-analise-exploratoria',
   kaggleTitanic: 'https://www.kaggle.com/code/brenosilvabarros/titanic-eda-an-lise-explorat-ria-completa',
 };
@@ -65,6 +69,7 @@ const IMG = {
   sd: { light: sdLight, dark: sdDark },
   q: { light: qLight, dark: qDark },
   titanic: { light: titanic, dark: titanic },
+  sgq: { light: sgqLight, dark: sgqDark },
 };
 
 export const CONTENT: Record<Language, Content> = {
@@ -95,7 +100,7 @@ export const CONTENT: Record<Language, Content> = {
       ],
       facts: [
         { value: '141 mil', label: 'eventos reais de ServiceNow analisados no projeto de pipeline' },
-        { value: '4', label: 'projetos publicados, com código aberto no GitHub' },
+        { value: '5', label: 'projetos publicados, com código aberto no GitHub' },
         { value: 'PDCA', label: 'como método para ir do indicador à ação' },
       ],
     },
@@ -121,11 +126,29 @@ export const CONTENT: Record<Language, Content> = {
     },
     projects: {
       title: 'Projetos em destaque',
-      lead: 'Cada projeto parte de uma pergunta de negócio. Os painéis usam dados fictícios com cenários colocados de propósito; o pipeline e o Titanic usam bases públicas reais.',
+      lead: 'Cada projeto parte de uma pergunta de negócio. O sistema e os painéis usam dados fictícios com cenários colocados de propósito; o pipeline e o Titanic usam bases públicas reais.',
       question: 'Pergunta',
       details: 'Detalhes',
       close: 'Fechar',
       items: [
+        {
+          id: 'sgq',
+          category: 'Sistema web · Gestão da qualidade',
+          title: 'SGQ Rotalume: sistema de gestão da qualidade',
+          question: 'Como tirar a qualidade das planilhas e garantir o PDCA do registro da não conformidade até a eficácia?',
+          description: 'Sistema web alinhado à ISO 9001:2015 com sete módulos: não conformidades, processos com SIPOC, riscos e oportunidades, auditorias internas, documentos, indicadores e análise crítica pela direção. Tem perfis de acesso, histórico de alterações e relatórios em PDF.',
+          tags: ['React', 'TypeScript', 'ISO 9001', 'PDCA', 'Ishikawa', '5W2H'],
+          links: [
+            { label: 'Abrir sistema', href: LINKS.sgq, kind: 'demo' },
+            { label: 'GitHub', href: LINKS.repoSgq, kind: 'github' },
+          ],
+          image: { ...IMG.sgq, alt: 'Painel do SGQ Rotalume com pendências, indicadores e não conformidades' },
+          badge: 'Dados fictícios',
+          details: [
+            { heading: 'O que foi feito', items: ['Não conformidades em 5 etapas do PDCA, com 5 Porquês, Ishikawa 6M e plano 5W2H. O sistema não deixa avançar sem causa raiz nem encerrar sem evidência de eficácia.', 'Matriz de riscos 5×5, checklist de auditoria por requisito da ISO e análise crítica montada automaticamente a partir dos outros módulos.', 'Relatório de não conformidade (RNC), relatório de auditoria e ata de análise crítica em PDF, prontos para assinar.'] },
+            { heading: 'Pensado como produto', items: ['Quatro perfis (gestão da qualidade, dono de processo, auditor e leitor), com histórico de quem alterou o quê, quando e o valor anterior.', 'Minhas pendências, notificações de prazo e busca geral em todos os módulos.', 'Camada de dados pronta para trocar o navegador por um banco de dados, com testes automáticos rodando no GitHub.'] },
+          ],
+        },
         {
           id: 'pipeline',
           category: 'Engenharia de dados · Base real',
@@ -255,7 +278,7 @@ export const CONTENT: Record<Language, Content> = {
       ],
       facts: [
         { value: '141k', label: 'real ServiceNow events analyzed in the pipeline project' },
-        { value: '4', label: 'published projects, open source on GitHub' },
+        { value: '5', label: 'published projects, open source on GitHub' },
         { value: 'PDCA', label: 'as the method to go from KPI to action' },
       ],
     },
@@ -281,11 +304,29 @@ export const CONTENT: Record<Language, Content> = {
     },
     projects: {
       title: 'Featured projects',
-      lead: 'Each project starts from a business question. The dashboards use fictional data with deliberately planted scenarios; the pipeline and Titanic use real public datasets.',
+      lead: 'Each project starts from a business question. The system and the dashboards use fictional data with deliberately planted scenarios; the pipeline and Titanic use real public datasets.',
       question: 'Question',
       details: 'Details',
       close: 'Close',
       items: [
+        {
+          id: 'sgq',
+          category: 'Web system · Quality management',
+          title: 'SGQ Rotalume: quality management system',
+          question: 'How do you get quality out of spreadsheets and enforce PDCA from nonconformity to proven effectiveness?',
+          description: 'Web system aligned with ISO 9001:2015 with seven modules: nonconformities, processes with SIPOC, risks and opportunities, internal audits, documents, KPIs and management review. It has access roles, a change history and PDF reports.',
+          tags: ['React', 'TypeScript', 'ISO 9001', 'PDCA', 'Ishikawa', '5W2H'],
+          links: [
+            { label: 'Open system', href: LINKS.sgq, kind: 'demo' },
+            { label: 'GitHub', href: LINKS.repoSgq, kind: 'github' },
+          ],
+          image: { ...IMG.sgq, alt: 'SGQ Rotalume dashboard with pending items, KPIs and nonconformities' },
+          badge: 'Fictional data',
+          details: [
+            { heading: 'What was built', items: ['Nonconformities in 5 PDCA stages, with 5 Whys, a 6M Ishikawa diagram and a 5W2H action plan. The system blocks moving on without a root cause and closing without evidence of effectiveness.', 'A 5×5 risk matrix, an internal audit checklist by ISO clause and a management review assembled automatically from the other modules.', 'Nonconformity report, audit report and management review minutes as PDFs, ready to sign.'] },
+            { heading: 'Built like a product', items: ['Four roles (quality manager, process owner, auditor and reader), with a history of who changed what, when, and the previous value.', 'My pending items, deadline notifications and a global search across every module.', 'A data layer ready to swap the browser for a database, with automated tests running on GitHub.'] },
+          ],
+        },
         {
           id: 'pipeline',
           category: 'Data engineering · Real data',
