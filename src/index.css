@@ -106,6 +106,7 @@ img { max-width: 100%; display: block; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 56px; align-items: center; }
 .hero h1 { font-size: clamp(2.4rem, 5.4vw, 4.1rem); line-height: 1.04; letter-spacing: -0.035em; font-weight: 780; margin: 0 0 22px; }
 .hero h1 em { font-style: normal; color: var(--accent); }
+.kicker > span > span { white-space: nowrap; }
 .hero-intro { font-size: 18.5px; color: var(--ink-2); max-width: 56ch; margin: 0 0 30px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .photo { position: relative; max-width: 380px; justify-self: end; width: 100%; }

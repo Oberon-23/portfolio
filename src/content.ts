@@ -70,7 +70,7 @@ export const CONTENT: Record<Language, Content> = {
   pt: {
     nav: { about: 'Sobre', value: 'Como ajudo', skills: 'Competências', projects: 'Projetos', education: 'Formação', certs: 'Certificações', contact: 'Contato', menu: 'Menu', theme: 'Tema', system: 'Sistema', light: 'Claro', dark: 'Escuro', language: 'Idioma' },
     hero: {
-      kicker: 'Análise de dados · Qualidade · Operações',
+      kicker: 'Análise de dados · Qualidade · Processos · Planejamento',
       title: 'Dados de operação que viram decisão.',
       intro: 'Sou o Breno, pós-graduado em Data Analytics & IA e estudante de Engenharia de Produção. Transformo dados do dia a dia da operação (chamados, produção, qualidade) em indicadores, painéis e análises que mostram onde agir.',
       ctaProjects: 'Ver projetos',
@@ -229,7 +229,7 @@ export const CONTENT: Record<Language, Content> = {
   en: {
     nav: { about: 'About', value: 'How I help', skills: 'Skills', projects: 'Projects', education: 'Education', certs: 'Certifications', contact: 'Contact', menu: 'Menu', theme: 'Theme', system: 'System', light: 'Light', dark: 'Dark', language: 'Language' },
     hero: {
-      kicker: 'Data analytics · Quality · Operations',
+      kicker: 'Data analytics · Quality · Processes · Planning',
       title: 'Operational data that turns into decisions.',
       intro: "I'm Breno, a Data Analytics & AI postgraduate and Production Engineering student. I turn everyday operational data (tickets, production, quality) into KPIs, dashboards and analyses that show where to act.",
       ctaProjects: 'See projects',

@@ -17,7 +17,7 @@ const Hero = () => {
       <div className="wrap">
         <div className="hero-grid">
           <div>
-            <p className="eyebrow">{h.kicker}</p>
+            <p className="eyebrow kicker">{h.kicker.split(' · ').map((t, i) => <span key={t}>{i > 0 ? ' ' : ''}<span>{i > 0 ? '· ' : ''}{t}</span></span>)}</p>
             <h1><Title text={h.title} /></h1>
             <p className="hero-intro">{h.intro}</p>
             <div className="hero-actions">
