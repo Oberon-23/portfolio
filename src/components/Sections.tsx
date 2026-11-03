@@ -1,8 +1,32 @@
-import { Download, Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { ChevronDown, Download, Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { LINKS } from '@/content';
 import { KaggleIcon } from '@/components/Icons';
 import RevealOnScroll from '@/components/RevealOnScroll';
+
+/** Botão "Ver mais" que só aparece no celular; no computador tudo fica visível. */
+const MoreButton = ({ open, hidden, onToggle }: { open: boolean; hidden: number; onToggle: () => void }) => {
+  const { c } = useLanguage();
+  return (
+    <button type="button" className={`btn more-btn${open ? ' open' : ''}`} aria-expanded={open} onClick={onToggle}>
+      {open ? c.ui.less : `${c.ui.more} (${hidden})`}<ChevronDown aria-hidden="true" />
+    </button>
+  );
+};
+
+function useCollapse() {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLElement>(null);
+  const toggle = () => {
+    if (open) ref.current?.scrollIntoView({ block: 'start' });
+    setOpen((o) => !o);
+  };
+  return { open, toggle, ref };
+}
+
+const SKILLS_VISIBLE = 2;
+const CERTS_VISIBLE = 4;
 
 export const About = () => {
   const { c } = useLanguage();
@@ -46,21 +70,24 @@ export const Value = () => {
 
 export const Skills = () => {
   const { c } = useLanguage();
+  const { open, toggle, ref } = useCollapse();
+  const hidden = Math.max(0, c.skills.groups.length - SKILLS_VISIBLE);
   return (
-    <section id="competencias" className="section">
+    <section id="competencias" className="section" ref={ref}>
       <div className="wrap">
         <RevealOnScroll>
           <p className="eyebrow">03</p>
           <h2 className="h2">{c.skills.title}</h2>
           <p className="lead">{c.skills.lead}</p>
-          <div className="card skills">
-            {c.skills.groups.map((g) => (
-              <div key={g.title} className="skill-row">
+          <div className={`card skills collapsible${open ? ' open' : ''}`}>
+            {c.skills.groups.map((g, i) => (
+              <div key={g.title} className={`skill-row${i >= SKILLS_VISIBLE ? ' extra' : ''}`}>
                 <h3>{g.title}</h3>
                 <ul className="chips">{g.items.map((it) => <li key={it} className="chip">{it}</li>)}</ul>
               </div>
             ))}
           </div>
+          {hidden > 0 && <MoreButton open={open} hidden={hidden} onToggle={toggle} />}
         </RevealOnScroll>
       </div>
     </section>
@@ -96,19 +123,22 @@ export const Education = () => {
 export const Certifications = () => {
   const { c } = useLanguage();
   const e = c.education;
+  const { open, toggle, ref } = useCollapse();
+  const hidden = Math.max(0, e.certs.length - CERTS_VISIBLE);
   return (
-    <section id="certificacoes" className="section">
+    <section id="certificacoes" className="section" ref={ref}>
       <div className="wrap">
         <RevealOnScroll>
           <p className="eyebrow">06</p>
           <h2 className="h2">{e.certTitle}</h2>
           <div className="card certs" style={{ marginTop: 28 }}>
-            <ul className="cert-list">
-              {e.certs.map((x) => (
-                <li key={x.name}><b>{x.name}</b><span>{x.issuer}{x.date ? ` · ${x.date}` : ''}</span></li>
+            <ul className={`cert-list collapsible${open ? ' open' : ''}`}>
+              {e.certs.map((x, i) => (
+                <li key={x.name} className={i >= CERTS_VISIBLE ? 'extra' : undefined}><b>{x.name}</b><span>{x.issuer}{x.date ? ` · ${x.date}` : ''}</span></li>
               ))}
             </ul>
           </div>
+          {hidden > 0 && <MoreButton open={open} hidden={hidden} onToggle={toggle} />}
         </RevealOnScroll>
       </div>
     </section>
@@ -132,11 +162,15 @@ export const Contact = () => {
             <h2 className="h2">{c.contact.title}</h2>
             <p>{c.contact.text}</p>
             <div className="contact-actions">
-              <a className="btn primary" href={`mailto:${LINKS.email}`}><Mail />{c.contact.email}</a>
-              <a className="btn" href={LINKS.cv} download><Download />{c.contact.cv}</a>
-              {socials.map((s) => (
-                <a key={s.label} className="btn icon-btn" href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} title={s.label}>{s.icon}</a>
-              ))}
+              <div className="contact-main">
+                <a className="btn primary" href={`mailto:${LINKS.email}`}><Mail />{c.contact.email}</a>
+                <a className="btn" href={LINKS.cv} download><Download />{c.contact.cv}</a>
+              </div>
+              <div className="contact-social">
+                {socials.map((s) => (
+                  <a key={s.label} className="btn icon-btn" href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} title={s.label}>{s.icon}</a>
+                ))}
+              </div>
             </div>
             <span className="contact-mail">{LINKS.email}</span>
           </div>

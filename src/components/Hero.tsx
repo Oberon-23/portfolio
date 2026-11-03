@@ -9,6 +9,19 @@ function Title({ text }: { text: string }) {
   return <>{m[1]}<em>{m[2]}</em>{m[3]}</>;
 }
 
+/** Divide a linha do topo em duas metades; no celular cada metade ocupa uma linha. */
+function Kicker({ text }: { text: string }) {
+  const parts = text.split(' · ');
+  const mid = Math.ceil(parts.length / 2);
+  return (
+    <p className="eyebrow kicker">
+      <span className="kg">{parts.slice(0, mid).join(' · ')}</span>
+      <span className="ksep" aria-hidden="true"> · </span>
+      <span className="kg">{parts.slice(mid).join(' · ')}</span>
+    </p>
+  );
+}
+
 const Hero = () => {
   const { c } = useLanguage();
   const h = c.hero;
@@ -17,7 +30,7 @@ const Hero = () => {
       <div className="wrap">
         <div className="hero-grid">
           <div>
-            <p className="eyebrow kicker">{h.kicker.split(' · ').map((t, i) => <span key={t}>{i > 0 ? ' ' : ''}<span>{i > 0 ? '· ' : ''}{t}</span></span>)}</p>
+            <Kicker text={h.kicker} />
             <h1><Title text={h.title} /></h1>
             <p className="hero-intro">{h.intro}</p>
             <div className="hero-actions">

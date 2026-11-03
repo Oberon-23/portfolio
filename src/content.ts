@@ -56,6 +56,7 @@ interface Content {
   projects: { title: string; lead: string; question: string; details: string; close: string; items: Project[] };
   education: { title: string; degrees: { course: string; school: string; period: string; status: string }[]; certTitle: string; certs: { name: string; issuer: string; date?: string }[] };
   contact: { title: string; text: string; email: string; cv: string };
+  ui: { more: string; less: string };
   footer: string;
 }
 
@@ -217,6 +218,7 @@ export const CONTENT: Record<Language, Content> = {
         { name: 'Inteligência Artificial', issuer: 'EBAC', date: 'ago. 2026' },
       ],
     },
+    ui: { more: 'Ver mais', less: 'Ver menos' },
     contact: {
       title: 'Vamos conversar',
       text: 'Estou aberto a oportunidades em análise de dados, qualidade e melhoria contínua. Se quiser trocar uma ideia sobre um projeto ou uma vaga, é só chamar.',
@@ -376,6 +378,7 @@ export const CONTENT: Record<Language, Content> = {
         { name: 'Artificial Intelligence', issuer: 'EBAC', date: 'Aug 2026' },
       ],
     },
+    ui: { more: 'Show more', less: 'Show less' },
     contact: {
       title: "Let's talk",
       text: "I'm open to opportunities in data analytics, quality and continuous improvement. If you want to talk about a project or a role, just reach out.",
