@@ -72,18 +72,18 @@ export const CONTENT: Record<Language, Content> = {
   pt: {
     nav: { about: 'Sobre', value: 'Como ajudo', skills: 'Competências', projects: 'Projetos', education: 'Formação', certs: 'Certificações', contact: 'Contato', menu: 'Menu', theme: 'Tema', system: 'Sistema', light: 'Claro', dark: 'Escuro', language: 'Idioma' },
     hero: {
-      kicker: 'Qualidade · Processos · Planejamento · Análise de dados',
+      kicker: 'Qualidade · Processos · Melhoria contínua · Análise de dados',
       title: 'Dados de operação que viram melhoria.',
-      intro: 'Sou o Breno, estudante de Engenharia de Produção, pós-graduado em Data Analytics & IA e ponto focal de qualidade na minha equipe. Uso dados de produção, qualidade e logística para achar a causa dos problemas, padronizar processos e acompanhar se a melhoria funcionou.',
+      intro: 'Sou o Breno, estudante de Engenharia de Produção, pós-graduado em Data Analytics & IA e ponto focal de qualidade na minha equipe. Uso dados da operação para achar a causa dos problemas, padronizar processos e acompanhar se a melhoria funcionou.',
       ctaProjects: 'Ver projetos',
       ctaCv: 'Currículo',
       ctaLinkedin: 'LinkedIn',
       photoAlt: 'Foto de Breno Silva',
       status: 'Aberto a oportunidades',
-      statusText: 'Qualidade, processos e PCP',
+      statusText: 'Qualidade e processos',
       highlights: [
         { title: 'Qualidade e melhoria', text: 'PDCA, CEP, Pareto, ISO 9001 e Lean Six Sigma' },
-        { title: 'Processos e planejamento', text: 'OEE, OTIF, mapeamento e indicadores de operação' },
+        { title: 'Processos', text: 'Mapeamento, SIPOC, padronização e indicadores de processo' },
         { title: 'Dados e painéis', text: 'Power BI, Excel, SQL e Python para medir e decidir' },
       ],
     },
@@ -114,7 +114,7 @@ export const CONTENT: Record<Language, Content> = {
       lead: 'Ferramentas e métodos que uso nos projetos e no trabalho.',
       groups: [
         { title: 'Qualidade', items: ['Lean Six Sigma', 'ISO 9001:2015', 'PDCA', 'CEP', 'Pareto e Ishikawa', '5 Porquês e 5W2H', 'Gestão de riscos'] },
-        { title: 'Processos e planejamento', items: ['Mapeamento de processos', 'SIPOC', 'OEE', 'OTIF e custo logístico', 'Indicadores de operação', 'Scrum'] },
+        { title: 'Processos', items: ['Mapeamento de processos', 'SIPOC', 'Padronização', 'Indicadores de processo', 'OEE', 'Scrum'] },
         { title: 'BI e planilhas', items: ['Power BI', 'DAX', 'Excel avançado', 'Macros (VBA)'] },
         { title: 'Dados', items: ['SQL', 'Python', 'pandas', 'DuckDB', 'Modelagem dimensional'] },
         { title: 'Desenvolvimento', items: ['React', 'TypeScript', 'JavaScript', 'Git'] },
@@ -164,24 +164,6 @@ export const CONTENT: Record<Language, Content> = {
           ],
         },
         {
-          id: 'logistica',
-          category: 'Dashboard · Logística e suprimentos',
-          title: 'Logística: entregas, armazém e frete',
-          question: 'As entregas chegam no prazo e completas? Qual transportadora vale o que custa?',
-          description: 'Painel de nível de serviço (OTIF), prazo, custo de frete e produtividade de 3 centros de distribuição e 5 transportadoras, com uma frase no topo que diz onde está o problema.',
-          tags: ['OTIF', 'Supply chain', 'Custo de frete', 'Armazém', 'Chart.js'],
-          links: [
-            { label: 'Abrir painel', href: LINKS.painelLogistica, kind: 'demo' },
-            { label: 'GitHub', href: LINKS.repoLogistica, kind: 'github' },
-          ],
-          image: { ...IMG.log, alt: 'Visão geral do painel de logística com OTIF, prazo, frete e avarias' },
-          badge: 'Dados fictícios',
-          details: [
-            { heading: 'O que foi feito', items: ['OTIF (no prazo e completo) como indicador principal, em vez de só atraso médio: pune tanto o atraso quanto a entrega incompleta.', 'Frete sobre o valor transportado e custo por kg, por região e por transportadora, ao lado da produtividade de cada CD (linhas separadas por hora), para não reduzir custo escondendo perda de produtividade.', 'Motivos de falha, avarias e estoque, com filtros de período, CD e região.'] },
-            { heading: 'Cenários simulados', items: ['Uma transportadora barata, mas que mais atrasa: a decisão real entre custo e confiabilidade.', 'Troca de sistema de armazém (WMS) em um CD, com queda temporária de produtividade, pico de Black Friday e alta do diesel.'] },
-          ],
-        },
-        {
           id: 'pipeline',
           category: 'Análise de processo · Base real',
           title: 'Gargalos e retrabalho em um processo real',
@@ -196,6 +178,24 @@ export const CONTENT: Record<Language, Content> = {
           details: [
             { heading: 'O que foi feito', items: ['Ingestão fiel do log bruto (Bronze), limpeza e modelo estrela (Silver) e cinco tabelas analíticas (Gold) exportadas para o Power BI.', 'Dez testes automáticos de qualidade de dados: chave única, datas coerentes, integridade entre tabelas e outros.', 'Versão exploratória em notebook, publicada no Kaggle.'] },
             { heading: 'Por que é relevante', items: ['Roda contra a base real de 24.918 casos sem nenhum ajuste no SQL.', 'Na base real, um teste falha: o prazo calculado concorda só 81,4% com o campo original, porque a regra de prazo da empresa não é conhecida. Isso está documentado, não escondido.'] },
+          ],
+        },
+        {
+          id: 'logistica',
+          category: 'Dashboard · Qualidade do processo logístico',
+          title: 'Logística: nível de serviço e falhas de entrega',
+          question: 'As entregas chegam no prazo e completas? Onde e por que o processo falha?',
+          description: 'Painel de nível de serviço (OTIF), prazo, custo de frete e produtividade de 3 centros de distribuição e 5 transportadoras, com uma frase no topo que diz onde está o problema.',
+          tags: ['OTIF', 'Indicadores de processo', 'Análise de falhas', 'Chart.js'],
+          links: [
+            { label: 'Abrir painel', href: LINKS.painelLogistica, kind: 'demo' },
+            { label: 'GitHub', href: LINKS.repoLogistica, kind: 'github' },
+          ],
+          image: { ...IMG.log, alt: 'Visão geral do painel de logística com OTIF, prazo, frete e avarias' },
+          badge: 'Dados fictícios',
+          details: [
+            { heading: 'O que foi feito', items: ['OTIF (no prazo e completo) como indicador principal, em vez de só atraso médio: pune tanto o atraso quanto a entrega incompleta.', 'Frete sobre o valor transportado e custo por kg, por região e por transportadora, ao lado da produtividade de cada CD (linhas separadas por hora), para não reduzir custo escondendo perda de produtividade.', 'Motivos de falha, avarias e estoque, com filtros de período, CD e região.'] },
+            { heading: 'Cenários simulados', items: ['Uma transportadora barata, mas que mais atrasa: a decisão real entre custo e confiabilidade.', 'Troca de sistema de armazém (WMS) em um CD, com queda temporária de produtividade, pico de Black Friday e alta do diesel.'] },
           ],
         },
       ],
@@ -224,7 +224,7 @@ export const CONTENT: Record<Language, Content> = {
     ui: { more: 'Ver mais', less: 'Ver menos' },
     contact: {
       title: 'Vamos conversar',
-      text: 'Estou aberto a oportunidades em qualidade, processos, PCP e melhoria contínua na indústria. Se quiser trocar uma ideia sobre um projeto ou uma vaga, é só chamar.',
+      text: 'Estou aberto a oportunidades em qualidade, processos e melhoria contínua na indústria. Se quiser trocar uma ideia sobre um projeto ou uma vaga, é só chamar.',
       email: 'Enviar e-mail',
       cv: 'Baixar currículo',
     },
@@ -234,18 +234,18 @@ export const CONTENT: Record<Language, Content> = {
   en: {
     nav: { about: 'About', value: 'How I help', skills: 'Skills', projects: 'Projects', education: 'Education', certs: 'Certifications', contact: 'Contact', menu: 'Menu', theme: 'Theme', system: 'System', light: 'Light', dark: 'Dark', language: 'Language' },
     hero: {
-      kicker: 'Quality · Processes · Planning · Data analytics',
+      kicker: 'Quality · Processes · Continuous improvement · Data analytics',
       title: 'Operational data that turns into improvement.',
-      intro: "I'm Breno, a Production Engineering student, Data Analytics & AI postgraduate and my team's quality focal point. I use production, quality and logistics data to find the root cause of problems, standardize processes and check whether the improvement worked.",
+      intro: "I'm Breno, a Production Engineering student, Data Analytics & AI postgraduate and my team's quality focal point. I use operational data to find the root cause of problems, standardize processes and check whether the improvement worked.",
       ctaProjects: 'See projects',
       ctaCv: 'Résumé',
       ctaLinkedin: 'LinkedIn',
       photoAlt: 'Photo of Breno Silva',
       status: 'Open to opportunities',
-      statusText: 'Quality, processes and planning',
+      statusText: 'Quality and processes',
       highlights: [
         { title: 'Quality and improvement', text: 'PDCA, SPC, Pareto, ISO 9001 and Lean Six Sigma' },
-        { title: 'Processes and planning', text: 'OEE, OTIF, process mapping and operational KPIs' },
+        { title: 'Processes', text: 'Process mapping, SIPOC, standardization and process KPIs' },
         { title: 'Data and dashboards', text: 'Power BI, Excel, SQL and Python to measure and decide' },
       ],
     },
@@ -276,7 +276,7 @@ export const CONTENT: Record<Language, Content> = {
       lead: 'Tools and methods I use in projects and at work.',
       groups: [
         { title: 'Quality', items: ['Lean Six Sigma', 'ISO 9001:2015', 'PDCA', 'SPC', 'Pareto and Ishikawa', '5 Whys and 5W2H', 'Risk management'] },
-        { title: 'Processes and planning', items: ['Process mapping', 'SIPOC', 'OEE', 'OTIF and logistics cost', 'Operational KPIs', 'Scrum'] },
+        { title: 'Processes', items: ['Process mapping', 'SIPOC', 'Standardization', 'Process KPIs', 'OEE', 'Scrum'] },
         { title: 'BI and spreadsheets', items: ['Power BI', 'DAX', 'Advanced Excel', 'Macros (VBA)'] },
         { title: 'Data', items: ['SQL', 'Python', 'pandas', 'DuckDB', 'Dimensional modeling'] },
         { title: 'Development', items: ['React', 'TypeScript', 'JavaScript', 'Git'] },
@@ -326,24 +326,6 @@ export const CONTENT: Record<Language, Content> = {
           ],
         },
         {
-          id: 'logistica',
-          category: 'Dashboard · Logistics and supply chain',
-          title: 'Logistics: deliveries, warehouse and freight',
-          question: 'Do deliveries arrive on time and in full? Which carrier is worth what it costs?',
-          description: 'Service level (OTIF), lead time, freight cost and productivity dashboard for 3 distribution centers and 5 carriers, with a sentence on top that says where the problem is.',
-          tags: ['OTIF', 'Supply chain', 'Freight cost', 'Warehouse', 'Chart.js'],
-          links: [
-            { label: 'Open dashboard', href: LINKS.painelLogistica, kind: 'demo' },
-            { label: 'GitHub', href: LINKS.repoLogistica, kind: 'github' },
-          ],
-          image: { ...IMG.log, alt: 'Logistics dashboard overview with OTIF, lead time, freight and damage' },
-          badge: 'Fictional data',
-          details: [
-            { heading: 'What was built', items: ['OTIF (on time, in full) as the main KPI instead of average delay alone: it penalizes both late and incomplete deliveries.', 'Freight as a share of shipped value and cost per kg, by region and carrier, next to each DC\'s productivity (lines picked per hour), so costs are not cut by hiding a productivity drop.', 'Failure reasons, damage and inventory, with period, DC and region filters.'] },
-            { heading: 'Simulated scenarios', items: ['A cheap carrier that is late most often: the real trade-off between cost and reliability.', 'A warehouse management system (WMS) migration at one DC with a temporary productivity drop, a Black Friday peak and a diesel price increase.'] },
-          ],
-        },
-        {
           id: 'pipeline',
           category: 'Process analysis · Real data',
           title: 'Bottlenecks and rework in a real process',
@@ -358,6 +340,24 @@ export const CONTENT: Record<Language, Content> = {
           details: [
             { heading: 'What was done', items: ['Faithful raw-log ingestion (Bronze), cleaning and star schema (Silver) and five analytical tables (Gold) exported to Power BI.', 'Ten automated data quality tests: unique key, consistent dates, referential integrity and more.', 'Exploratory notebook version published on Kaggle.'] },
             { heading: 'Why it matters', items: ['Runs on the real 24,918-case dataset with no SQL changes.', "On the real data one test fails: the computed deadline only matches the original field 81.4% of the time, because the company's deadline policy is unknown. This is documented, not hidden."] },
+          ],
+        },
+        {
+          id: 'logistica',
+          category: 'Dashboard · Logistics process quality',
+          title: 'Logistics: service level and delivery failures',
+          question: 'Do deliveries arrive on time and in full? Where and why does the process fail?',
+          description: 'Service level (OTIF), lead time, freight cost and productivity dashboard for 3 distribution centers and 5 carriers, with a sentence on top that says where the problem is.',
+          tags: ['OTIF', 'Process KPIs', 'Failure analysis', 'Chart.js'],
+          links: [
+            { label: 'Open dashboard', href: LINKS.painelLogistica, kind: 'demo' },
+            { label: 'GitHub', href: LINKS.repoLogistica, kind: 'github' },
+          ],
+          image: { ...IMG.log, alt: 'Logistics dashboard overview with OTIF, lead time, freight and damage' },
+          badge: 'Fictional data',
+          details: [
+            { heading: 'What was built', items: ['OTIF (on time, in full) as the main KPI instead of average delay alone: it penalizes both late and incomplete deliveries.', 'Freight as a share of shipped value and cost per kg, by region and carrier, next to each DC\'s productivity (lines picked per hour), so costs are not cut by hiding a productivity drop.', 'Failure reasons, damage and inventory, with period, DC and region filters.'] },
+            { heading: 'Simulated scenarios', items: ['A cheap carrier that is late most often: the real trade-off between cost and reliability.', 'A warehouse management system (WMS) migration at one DC with a temporary productivity drop, a Black Friday peak and a diesel price increase.'] },
           ],
         },
       ],
@@ -386,7 +386,7 @@ export const CONTENT: Record<Language, Content> = {
     ui: { more: 'Show more', less: 'Show less' },
     contact: {
       title: "Let's talk",
-      text: "I'm open to opportunities in quality, processes, production planning and continuous improvement in industry. If you want to talk about a project or a role, just reach out.",
+      text: "I'm open to opportunities in quality, processes and continuous improvement in industry. If you want to talk about a project or a role, just reach out.",
       email: 'Send an email',
       cv: 'Download résumé',
     },

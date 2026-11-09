@@ -1,6 +1,6 @@
 # Portfólio · Breno Silva
 
-Portfólio pessoal de projetos de qualidade, processos e planejamento, apoiados em dados. Página única com Sobre, Como ajudo a operação, Competências, Projetos em destaque, Formação e Contato, em português e inglês, com tema claro (creme), escuro ou seguindo o sistema.
+Portfólio pessoal de projetos de qualidade e processos, apoiados em dados. Página única com Sobre, Como ajudo a operação, Competências, Projetos em destaque, Formação e Contato, em português e inglês, com tema claro (creme), escuro ou seguindo o sistema.
 
 ![Prévia](public/preview.jpg)
 
