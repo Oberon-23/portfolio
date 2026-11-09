@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { ChevronDown, Download, Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { LINKS } from '@/content';
 import { KaggleIcon } from '@/components/Icons';
@@ -164,7 +164,6 @@ export const Contact = () => {
             <div className="contact-actions">
               <div className="contact-main">
                 <a className="btn primary" href={`mailto:${LINKS.email}`}><Mail />{c.contact.email}</a>
-                <a className="btn" href={LINKS.cv} download><Download />{c.contact.cv}</a>
               </div>
               <div className="contact-social">
                 {socials.map((s) => (

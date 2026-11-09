@@ -18,7 +18,6 @@ Portfólio pessoal de projetos de qualidade e processos, apoiados em dados. Pág
 - **Textos, links e projetos:** tudo fica em [`src/content.ts`](src/content.ts), nas duas línguas. Os endereços dos painéis na Vercel estão no objeto `LINKS`.
 - **Cores e layout:** [`src/index.css`](src/index.css). As cores dos temas claro e escuro são variáveis no início do arquivo.
 - **Imagens dos projetos:** `src/assets/projects/` (versões clara e escura dos painéis).
-- **Currículo:** `public/Breno_Silva_Curriculo.pdf`.
 
 ## Rodar localmente
 

@@ -20,7 +20,6 @@ export const LINKS = {
   linkedin: 'https://www.linkedin.com/in/brenosilvarangel/',
   github: 'https://github.com/Oberon-23',
   kaggle: 'https://www.kaggle.com/brenosilvabarros',
-  cv: '/Breno_Silva_Curriculo.pdf',
   // Painéis publicados na Vercel: confira se os endereços batem com os do seu painel da Vercel.
   painelQualidade: 'https://painel-qualidade-rotalume.vercel.app',
   repoPipeline: 'https://github.com/Oberon-23/service-desk-analytics-mvp',
@@ -50,13 +49,13 @@ export interface Project {
 
 interface Content {
   nav: { about: string; value: string; skills: string; projects: string; education: string; certs: string; contact: string; menu: string; theme: string; system: string; light: string; dark: string; language: string };
-  hero: { kicker: string; title: string; intro: string; ctaProjects: string; ctaCv: string; ctaLinkedin: string; photoAlt: string; status: string; statusText: string; highlights: { title: string; text: string }[] };
+  hero: { kicker: string; title: string; intro: string; ctaProjects: string; ctaContact: string; ctaLinkedin: string; photoAlt: string; status: string; statusText: string; highlights: { title: string; text: string }[] };
   about: { title: string; paragraphs: string[]; facts: { value: string; label: string }[] };
   value: { title: string; lead: string; items: { title: string; text: string }[] };
   skills: { title: string; lead: string; groups: { title: string; items: string[] }[] };
   projects: { title: string; lead: string; question: string; details: string; close: string; items: Project[] };
   education: { title: string; degrees: { course: string; school: string; period: string; status: string }[]; certTitle: string; certs: { name: string; issuer: string; date?: string }[] };
-  contact: { title: string; text: string; email: string; cv: string };
+  contact: { title: string; text: string; email: string };
   ui: { more: string; less: string };
   footer: string;
 }
@@ -76,7 +75,7 @@ export const CONTENT: Record<Language, Content> = {
       title: 'Dados de operação que viram melhoria.',
       intro: 'Sou o Breno, estudante de Engenharia de Produção, pós-graduado em Data Analytics & IA e ponto focal de qualidade na minha equipe. Uso dados da operação para achar a causa dos problemas, padronizar processos e acompanhar se a melhoria funcionou.',
       ctaProjects: 'Ver projetos',
-      ctaCv: 'Currículo',
+      ctaContact: 'Fale comigo',
       ctaLinkedin: 'LinkedIn',
       photoAlt: 'Foto de Breno Silva',
       status: 'Aberto a oportunidades',
@@ -226,7 +225,6 @@ export const CONTENT: Record<Language, Content> = {
       title: 'Vamos conversar',
       text: 'Estou aberto a oportunidades em qualidade, processos e melhoria contínua na indústria. Se quiser trocar uma ideia sobre um projeto ou uma vaga, é só chamar.',
       email: 'Enviar e-mail',
-      cv: 'Baixar currículo',
     },
     footer: 'Todos os direitos reservados.',
   },
@@ -238,7 +236,7 @@ export const CONTENT: Record<Language, Content> = {
       title: 'Operational data that turns into improvement.',
       intro: "I'm Breno, a Production Engineering student, Data Analytics & AI postgraduate and my team's quality focal point. I use operational data to find the root cause of problems, standardize processes and check whether the improvement worked.",
       ctaProjects: 'See projects',
-      ctaCv: 'Résumé',
+      ctaContact: 'Get in touch',
       ctaLinkedin: 'LinkedIn',
       photoAlt: 'Photo of Breno Silva',
       status: 'Open to opportunities',
@@ -388,7 +386,6 @@ export const CONTENT: Record<Language, Content> = {
       title: "Let's talk",
       text: "I'm open to opportunities in quality, processes and continuous improvement in industry. If you want to talk about a project or a role, just reach out.",
       email: 'Send an email',
-      cv: 'Download résumé',
     },
     footer: 'All rights reserved.',
   },

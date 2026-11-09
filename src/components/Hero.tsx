@@ -1,4 +1,4 @@
-import { ArrowDown, FileText, Linkedin } from 'lucide-react';
+import { ArrowDown, Linkedin, MessageCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { LINKS, PHOTO } from '@/content';
 
@@ -35,7 +35,7 @@ const Hero = () => {
             <p className="hero-intro">{h.intro}</p>
             <div className="hero-actions">
               <a className="btn primary" href="#projetos"><ArrowDown />{h.ctaProjects}</a>
-              <a className="btn" href={LINKS.cv} download><FileText />{h.ctaCv}</a>
+              <a className="btn" href="#contato"><MessageCircle />{h.ctaContact}</a>
               <a className="btn" href={LINKS.linkedin} target="_blank" rel="noopener noreferrer"><Linkedin />{h.ctaLinkedin}</a>
             </div>
           </div>
