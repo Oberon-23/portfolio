@@ -126,7 +126,7 @@ export const CONTENT: Record<Language, Content> = {
     },
     projects: {
       title: 'Projetos em destaque',
-      lead: 'Cada projeto parte de uma pergunta da operação. O sistema e os painéis usam dados fictícios de uma fábrica, a Rotalume, com cenários colocados de propósito; o pipeline usa uma base pública real.',
+      lead: 'Cada projeto parte de uma pergunta da operação. O sistema e os painéis contam a história de uma mesma empresa fictícia, o Grupo Rotalume, olhando para áreas diferentes: a qualidade da fábrica, a logística de entrega e o atendimento de TI. Os cenários foram colocados de propósito para a análise encontrar; o pipeline usa uma base pública real.',
       question: 'Pergunta',
       details: 'Detalhes',
       close: 'Fechar',
@@ -305,7 +305,7 @@ export const CONTENT: Record<Language, Content> = {
     },
     projects: {
       title: 'Featured projects',
-      lead: 'Each project starts from an operational question. The system and the dashboards use fictional data from a factory, Rotalume, with deliberately planted scenarios; the pipeline uses a real public dataset.',
+      lead: 'Each project starts from an operational question. The system and the dashboards tell the story of one fictional company, Grupo Rotalume, from different angles: factory quality, delivery logistics and IT support. The scenarios were planted on purpose for the analysis to find; the pipeline uses a real public dataset.',
       question: 'Question',
       details: 'Details',
       close: 'Close',
