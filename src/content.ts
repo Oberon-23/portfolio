@@ -10,6 +10,8 @@ import qLight from '@/assets/projects/qualidade-light.webp';
 import qDark from '@/assets/projects/qualidade-dark.webp';
 import sgqLight from '@/assets/projects/sgq-light.webp';
 import sgqDark from '@/assets/projects/sgq-dark.webp';
+import sdLight from '@/assets/projects/servicedesk-light.webp';
+import sdDark from '@/assets/projects/servicedesk-dark.webp';
 
 export type Language = 'pt' | 'en';
 
@@ -29,6 +31,8 @@ export const LINKS = {
   repoLogistica: 'https://github.com/Oberon-23/painel-logistica-rotalume',
   sgq: 'https://sqgrotalume.vercel.app',
   repoSgq: 'https://github.com/Oberon-23/SGQ-Rotalume',
+  painelServiceDesk: 'https://painel-servicedesk-rotalume.vercel.app',
+  repoServiceDesk: 'https://github.com/Oberon-23/painel-servicedesk-rotalume',
 };
 
 export const PHOTO = breno;
@@ -65,6 +69,7 @@ const IMG = {
   log: { light: logLight, dark: logDark },
   q: { light: qLight, dark: qDark },
   sgq: { light: sgqLight, dark: sgqDark },
+  sd: { light: sdLight, dark: sdDark },
 };
 
 export const CONTENT: Record<Language, Content> = {
@@ -150,7 +155,7 @@ export const CONTENT: Record<Language, Content> = {
           title: 'Qualidade e processos',
           question: 'A fábrica está eficiente? O processo está estável? Quais defeitos atacar primeiro?',
           description: 'OEE em cascata, cartas de controle X̄-R com regras de Western Electric, Pareto de defeitos e quadro PDCA de ações corretivas.',
-          tags: ['CEP', 'OEE', 'Pareto', 'PDCA', 'ISO 9001'],
+          tags: ['CEP', 'OEE', 'Pareto', 'PDCA', 'ISO 9001', 'React'],
           links: [
             { label: 'Abrir painel', href: LINKS.painelQualidade, kind: 'demo' },
             { label: 'GitHub', href: LINKS.repoQualidade, kind: 'github' },
@@ -185,7 +190,7 @@ export const CONTENT: Record<Language, Content> = {
           title: 'Logística: nível de serviço e falhas de entrega',
           question: 'As entregas chegam no prazo e completas? Onde e por que o processo falha?',
           description: 'Painel de nível de serviço (OTIF), prazo, custo de frete e produtividade de 3 centros de distribuição e 5 transportadoras, com uma frase no topo que diz onde está o problema.',
-          tags: ['OTIF', 'Indicadores de processo', 'Análise de falhas', 'Chart.js'],
+          tags: ['OTIF', 'Indicadores de processo', 'Análise de falhas', 'React', 'TypeScript'],
           links: [
             { label: 'Abrir painel', href: LINKS.painelLogistica, kind: 'demo' },
             { label: 'GitHub', href: LINKS.repoLogistica, kind: 'github' },
@@ -195,6 +200,24 @@ export const CONTENT: Record<Language, Content> = {
           details: [
             { heading: 'O que foi feito', items: ['OTIF (no prazo e completo) como indicador principal, em vez de só atraso médio: pune tanto o atraso quanto a entrega incompleta.', 'Frete sobre o valor transportado e custo por kg, por região e por transportadora, ao lado da produtividade de cada CD (linhas separadas por hora), para não reduzir custo escondendo perda de produtividade.', 'Motivos de falha, avarias e estoque, com filtros de período, CD e região.'] },
             { heading: 'Cenários simulados', items: ['Uma transportadora barata, mas que mais atrasa: a decisão real entre custo e confiabilidade.', 'Troca de sistema de armazém (WMS) em um CD, com queda temporária de produtividade, pico de Black Friday e alta do diesel.'] },
+          ],
+        },
+        {
+          id: 'servicedesk',
+          category: 'Dashboard · Qualidade do atendimento',
+          title: 'Service Desk: prazos, fila e satisfação',
+          question: 'Os chamados são resolvidos no prazo? O que está para vencer e do que os usuários reclamam?',
+          description: 'Painel de central de serviço com SLA de resposta e resolução, fila com prazo consumido, desempenho por analista e comentários da pesquisa de satisfação agrupados em temas com ação sugerida.',
+          tags: ['ITIL 4', 'SLA', 'CSAT', 'PDCA', 'React', 'TypeScript'],
+          links: [
+            { label: 'Abrir painel', href: LINKS.painelServiceDesk, kind: 'demo' },
+            { label: 'GitHub', href: LINKS.repoServiceDesk, kind: 'github' },
+          ],
+          image: { ...IMG.sd, alt: 'Visão geral do painel de Service Desk com prazos, satisfação e canais' },
+          badge: 'Dados fictícios',
+          details: [
+            { heading: 'O que foi feito', items: ['SLA de resposta e de resolução por prioridade, mediana do tempo de resolução, resolução no primeiro contato (FCR), reabertura e CSAT, como na prática de ITIL 4.', 'Fila com o quanto do prazo cada chamado já consumiu e mapa de calor da chegada por dia e hora, para agir antes de vencer e montar a escala.', 'Comentários da pesquisa agrupados em temas, cada um com uma ação de melhoria sugerida, e um assistente que responde perguntas comuns com os próprios números do painel.'] },
+            { heading: 'Cenários simulados', items: ['Migração de e-mail que dobra os chamados e derruba a satisfação.', 'Portal de autoatendimento que reduz os chamados de senha, e uma queda de VPN com 64 chamados em uma manhã.'] },
           ],
         },
       ],
@@ -311,7 +334,7 @@ export const CONTENT: Record<Language, Content> = {
           title: 'Quality and processes',
           question: 'Is the plant efficient? Is the process stable? Which defects should we tackle first?',
           description: 'Cascading OEE, X̄-R control charts with Western Electric rules, defect Pareto and a PDCA board of corrective actions.',
-          tags: ['SPC', 'OEE', 'Pareto', 'PDCA', 'ISO 9001'],
+          tags: ['SPC', 'OEE', 'Pareto', 'PDCA', 'ISO 9001', 'React'],
           links: [
             { label: 'Open dashboard', href: LINKS.painelQualidade, kind: 'demo' },
             { label: 'GitHub', href: LINKS.repoQualidade, kind: 'github' },
@@ -346,7 +369,7 @@ export const CONTENT: Record<Language, Content> = {
           title: 'Logistics: service level and delivery failures',
           question: 'Do deliveries arrive on time and in full? Where and why does the process fail?',
           description: 'Service level (OTIF), lead time, freight cost and productivity dashboard for 3 distribution centers and 5 carriers, with a sentence on top that says where the problem is.',
-          tags: ['OTIF', 'Process KPIs', 'Failure analysis', 'Chart.js'],
+          tags: ['OTIF', 'Process KPIs', 'Failure analysis', 'React', 'TypeScript'],
           links: [
             { label: 'Open dashboard', href: LINKS.painelLogistica, kind: 'demo' },
             { label: 'GitHub', href: LINKS.repoLogistica, kind: 'github' },
@@ -356,6 +379,24 @@ export const CONTENT: Record<Language, Content> = {
           details: [
             { heading: 'What was built', items: ['OTIF (on time, in full) as the main KPI instead of average delay alone: it penalizes both late and incomplete deliveries.', 'Freight as a share of shipped value and cost per kg, by region and carrier, next to each DC\'s productivity (lines picked per hour), so costs are not cut by hiding a productivity drop.', 'Failure reasons, damage and inventory, with period, DC and region filters.'] },
             { heading: 'Simulated scenarios', items: ['A cheap carrier that is late most often: the real trade-off between cost and reliability.', 'A warehouse management system (WMS) migration at one DC with a temporary productivity drop, a Black Friday peak and a diesel price increase.'] },
+          ],
+        },
+        {
+          id: 'servicedesk',
+          category: 'Dashboard · Service quality',
+          title: 'Service Desk: deadlines, queue and satisfaction',
+          question: 'Are tickets resolved on time? What is about to breach, and what do users complain about?',
+          description: 'Service desk dashboard with response and resolution SLA, a queue showing how much of each deadline is used up, per-analyst performance and satisfaction-survey comments grouped into themes with a suggested action.',
+          tags: ['ITIL 4', 'SLA', 'CSAT', 'PDCA', 'React', 'TypeScript'],
+          links: [
+            { label: 'Open dashboard', href: LINKS.painelServiceDesk, kind: 'demo' },
+            { label: 'GitHub', href: LINKS.repoServiceDesk, kind: 'github' },
+          ],
+          image: { ...IMG.sd, alt: 'Service Desk dashboard overview with SLA, satisfaction and channels' },
+          badge: 'Fictional data',
+          details: [
+            { heading: 'What was built', items: ['Response and resolution SLA by priority, median resolution time, first contact resolution (FCR), reopen rate and CSAT, following ITIL 4 practice.', 'A queue showing how much of each deadline is used up and a heat map of arrivals by weekday and hour, to act before breaches and plan staffing.', 'Survey comments grouped into themes, each with a suggested improvement, and an assistant that answers common questions with the dashboard\'s own numbers.'] },
+            { heading: 'Simulated scenarios', items: ['An e-mail migration that doubles tickets and drops satisfaction.', 'A self-service portal that cuts password tickets, and a VPN outage with 64 tickets in one morning.'] },
           ],
         },
       ],
