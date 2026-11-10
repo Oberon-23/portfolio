@@ -12,6 +12,8 @@ import sgqLight from '@/assets/projects/sgq-light.webp';
 import sgqDark from '@/assets/projects/sgq-dark.webp';
 import sdLight from '@/assets/projects/servicedesk-light.webp';
 import sdDark from '@/assets/projects/servicedesk-dark.webp';
+import paLight from '@/assets/projects/people-light.webp';
+import paDark from '@/assets/projects/people-dark.webp';
 
 export type Language = 'pt' | 'en';
 
@@ -31,6 +33,8 @@ export const LINKS = {
   repoLogistica: 'https://github.com/Oberon-23/painel-logistica-rotalume',
   sgq: 'https://sqgrotalume.vercel.app',
   repoSgq: 'https://github.com/Oberon-23/SGQ-Rotalume',
+  painelPeople: 'https://painel-people-analytics.vercel.app',
+  repoPeople: 'https://github.com/Oberon-23/painel-people-analytics',
   painelServiceDesk: 'https://painel-servicedesk-rotalume.vercel.app',
   repoServiceDesk: 'https://github.com/Oberon-23/painel-servicedesk-rotalume',
 };
@@ -70,6 +74,7 @@ const IMG = {
   q: { light: qLight, dark: qDark },
   sgq: { light: sgqLight, dark: sgqDark },
   sd: { light: sdLight, dark: sdDark },
+  pa: { light: paLight, dark: paDark },
 };
 
 export const CONTENT: Record<Language, Content> = {
@@ -126,7 +131,7 @@ export const CONTENT: Record<Language, Content> = {
     },
     projects: {
       title: 'Projetos em destaque',
-      lead: 'Cada projeto parte de uma pergunta da operação. O sistema e os painéis contam a história de uma mesma empresa fictícia, o Grupo Rotalume, olhando para áreas diferentes: a qualidade da fábrica, a logística de entrega e o atendimento de TI. Os cenários foram colocados de propósito para a análise encontrar; o pipeline usa uma base pública real.',
+      lead: 'Cada projeto parte de uma pergunta da operação. O sistema e os painéis contam a história de uma mesma empresa fictícia, o Grupo Rotalume, olhando para áreas diferentes: a qualidade da fábrica, as pessoas, a logística de entrega e o atendimento de TI. Os cenários foram colocados de propósito para a análise encontrar; o pipeline usa uma base pública real.',
       question: 'Pergunta',
       details: 'Detalhes',
       close: 'Fechar',
@@ -167,6 +172,24 @@ export const CONTENT: Record<Language, Content> = {
           details: [
             { heading: 'O que foi feito', items: ['OEE por linha, decomposto em disponibilidade, performance e qualidade.', 'Carta X̄-R com limites calculados e regras de Western Electric para separar variação normal de causa especial.', 'Cpk sinalizado como não confiável quando o processo sai de controle, apontando para o Ppk.', 'Causa raiz pelos 6M do Ishikawa e ações corretivas no ciclo PDCA (ISO 9001:2015, cláusula 10.2).'] },
             { heading: 'Cenários simulados', items: ['Desgaste de ferramenta, equipe nova sem padronização e umidade afetando a pintura.'] },
+          ],
+        },
+        {
+          id: 'people',
+          category: 'Dados e segurança da informação',
+          title: 'People Analytics com segurança no banco',
+          question: 'Como mostrar indicadores de RH sem que cada pessoa veja mais dados do que deveria?',
+          description: 'Painel de RH (turnover, absenteísmo, clima e igualdade salarial) em que o banco de dados decide o que cada perfil recebe. A mesma consulta devolve 523, 345, 158 ou 0 registros, conforme quem pergunta.',
+          tags: ['LGPD', 'PostgreSQL', 'RLS', 'Auditoria', 'Next.js', 'TypeScript'],
+          links: [
+            { label: 'Abrir painel', href: LINKS.painelPeople, kind: 'demo' },
+            { label: 'GitHub', href: LINKS.repoPeople, kind: 'github' },
+          ],
+          image: { ...IMG.pa, alt: 'Visão geral do painel de People Analytics' },
+          badge: 'Dados fictícios',
+          details: [
+            { heading: 'O que foi feito', items: ['Permissão por linha (Row Level Security) no PostgreSQL: a diretora vê a empresa, o HRBP a diretoria dele, a gerente a equipe e o analista só grupos.', 'Salário e CPF liberados por perfil, com CPF mascarado; médias de grupos com menos de 5 pessoas ficam ocultas para não revelar ninguém.', 'Sessão assinada que o próprio banco confere e registro de todo acesso a dado pessoal, que o aplicativo não consegue apagar.'] },
+            { heading: 'Como provar', items: ['Uma página roda ao vivo 11 tentativas de burlar as regras, como ler a tabela direto, trocar o usuário da sessão e apagar a auditoria. Todas são barradas ou filtradas pelo banco.', '21 testes automáticos contra um PostgreSQL real, rodando no GitHub a cada mudança.'] },
           ],
         },
         {
@@ -309,7 +332,7 @@ export const CONTENT: Record<Language, Content> = {
     },
     projects: {
       title: 'Featured projects',
-      lead: 'Each project starts from an operational question. The system and the dashboards tell the story of one fictional company, Grupo Rotalume, from different angles: factory quality, delivery logistics and IT support. The scenarios were planted on purpose for the analysis to find; the pipeline uses a real public dataset.',
+      lead: 'Each project starts from an operational question. The system and the dashboards tell the story of one fictional company, Grupo Rotalume, from different angles: factory quality, people, delivery logistics and IT support. The scenarios were planted on purpose for the analysis to find; the pipeline uses a real public dataset.',
       question: 'Question',
       details: 'Details',
       close: 'Close',
@@ -350,6 +373,24 @@ export const CONTENT: Record<Language, Content> = {
           details: [
             { heading: 'What was done', items: ['OEE per line, broken down into availability, performance and quality.', 'X̄-R chart with computed limits and Western Electric rules to separate common from special-cause variation.', 'Cpk flagged as unreliable when the process is out of control, pointing to Ppk instead.', 'Root cause by the 6Ms of Ishikawa and corrective actions in the PDCA cycle (ISO 9001:2015, clause 10.2).'] },
             { heading: 'Simulated scenarios', items: ['Tool wear, a new untrained shift and humidity affecting painting.'] },
+          ],
+        },
+        {
+          id: 'people',
+          category: 'Data and information security',
+          title: 'People Analytics with security in the database',
+          question: 'How do you show HR metrics without anyone seeing more data than they should?',
+          description: 'HR dashboard (turnover, absenteeism, engagement and pay equity) where the database decides what each profile receives. The same query returns 523, 345, 158 or 0 records depending on who asks.',
+          tags: ['LGPD', 'PostgreSQL', 'RLS', 'Audit trail', 'Next.js', 'TypeScript'],
+          links: [
+            { label: 'Open dashboard', href: LINKS.painelPeople, kind: 'demo' },
+            { label: 'GitHub', href: LINKS.repoPeople, kind: 'github' },
+          ],
+          image: { ...IMG.pa, alt: 'People Analytics dashboard overview' },
+          badge: 'Fictional data',
+          details: [
+            { heading: 'What was built', items: ['Row Level Security in PostgreSQL: the HR director sees the company, the HRBP their directorate, the manager their team and the analyst only groups.', 'Salary and national ID released by profile, with the ID masked; averages of groups under 5 people are hidden so no one can be identified.', 'A signed session that the database itself checks, and a log of every access to personal data that the app cannot delete.'] },
+            { heading: 'How it is proven', items: ['A page runs 11 live attempts to bypass the rules, such as reading the table directly, swapping the session user and deleting the audit log. All are blocked or filtered by the database.', '21 automated tests against a real PostgreSQL, running on GitHub on every change.'] },
           ],
         },
         {
