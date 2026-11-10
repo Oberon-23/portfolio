@@ -207,8 +207,8 @@ export const CONTENT: Record<Language, Content> = {
           category: 'Dashboard · Qualidade do atendimento',
           title: 'Service Desk: prazos, fila e satisfação',
           question: 'Os chamados são resolvidos no prazo? O que está para vencer e do que os usuários reclamam?',
-          description: 'Painel de central de serviço com SLA de resposta e resolução, fila com prazo consumido, desempenho por analista e comentários da pesquisa de satisfação agrupados em temas com ação sugerida.',
-          tags: ['ITIL 4', 'SLA', 'CSAT', 'PDCA', 'React', 'TypeScript'],
+          description: 'Painel de central de serviço com uma operação ao vivo (fila, analistas em pausa e nível de serviço minuto a minuto), SLA de resposta e resolução, fila com prazo consumido, desempenho por analista e comentários da pesquisa de satisfação agrupados em temas com ação sugerida.',
+          tags: ['ITIL 4', 'SLA', 'Erlang C', 'CSAT', 'React', 'TypeScript'],
           links: [
             { label: 'Abrir painel', href: LINKS.painelServiceDesk, kind: 'demo' },
             { label: 'GitHub', href: LINKS.repoServiceDesk, kind: 'github' },
@@ -216,7 +216,7 @@ export const CONTENT: Record<Language, Content> = {
           image: { ...IMG.sd, alt: 'Visão geral do painel de Service Desk com prazos, satisfação e canais' },
           badge: 'Dados fictícios',
           details: [
-            { heading: 'O que foi feito', items: ['SLA de resposta e de resolução por prioridade, mediana do tempo de resolução, resolução no primeiro contato (FCR), reabertura e CSAT, como na prática de ITIL 4.', 'Fila com o quanto do prazo cada chamado já consumiu e mapa de calor da chegada por dia e hora, para agir antes de vencer e montar a escala.', 'Comentários da pesquisa agrupados em temas, cada um com uma ação de melhoria sugerida, e um assistente que responde perguntas comuns com os próprios números do painel.'] },
+            { heading: 'O que foi feito', items: ['Operação ao vivo: simulação de um dia útil com fila por canal e unidade, estado de cada analista (atendimento, pausa, almoço) com alerta de pausa estourada, e dimensionamento por Erlang C comparado à escala.', 'SLA de resposta e de resolução por prioridade, mediana do tempo de resolução, resolução no primeiro contato (FCR), reabertura e CSAT, como na prática de ITIL 4.', 'Fila com o quanto do prazo cada chamado já consumiu e mapa de calor da chegada por dia e hora, para agir antes de vencer e montar a escala.', 'Comentários da pesquisa agrupados em temas, cada um com uma ação de melhoria sugerida, e um assistente que responde perguntas comuns com os próprios números do painel.'] },
             { heading: 'Cenários simulados', items: ['Migração de e-mail que dobra os chamados e derruba a satisfação.', 'Portal de autoatendimento que reduz os chamados de senha, e uma queda de VPN com 64 chamados em uma manhã.'] },
           ],
         },
@@ -386,8 +386,8 @@ export const CONTENT: Record<Language, Content> = {
           category: 'Dashboard · Service quality',
           title: 'Service Desk: deadlines, queue and satisfaction',
           question: 'Are tickets resolved on time? What is about to breach, and what do users complain about?',
-          description: 'Service desk dashboard with response and resolution SLA, a queue showing how much of each deadline is used up, per-analyst performance and satisfaction-survey comments grouped into themes with a suggested action.',
-          tags: ['ITIL 4', 'SLA', 'CSAT', 'PDCA', 'React', 'TypeScript'],
+          description: 'Service desk dashboard with a live operations view (queue, agents on break and service level minute by minute), response and resolution SLA, a queue showing how much of each deadline is used up, per-analyst performance and satisfaction-survey comments grouped into themes with a suggested action.',
+          tags: ['ITIL 4', 'SLA', 'Erlang C', 'CSAT', 'React', 'TypeScript'],
           links: [
             { label: 'Open dashboard', href: LINKS.painelServiceDesk, kind: 'demo' },
             { label: 'GitHub', href: LINKS.repoServiceDesk, kind: 'github' },
@@ -395,7 +395,7 @@ export const CONTENT: Record<Language, Content> = {
           image: { ...IMG.sd, alt: 'Service Desk dashboard overview with SLA, satisfaction and channels' },
           badge: 'Fictional data',
           details: [
-            { heading: 'What was built', items: ['Response and resolution SLA by priority, median resolution time, first contact resolution (FCR), reopen rate and CSAT, following ITIL 4 practice.', 'A queue showing how much of each deadline is used up and a heat map of arrivals by weekday and hour, to act before breaches and plan staffing.', 'Survey comments grouped into themes, each with a suggested improvement, and an assistant that answers common questions with the dashboard\'s own numbers.'] },
+            { heading: 'What was built', items: ['Live operations: a simulated workday with the queue by channel and site, each agent\'s state (handling, break, lunch) with overrun alerts, and Erlang C staffing compared with the schedule.', 'Response and resolution SLA by priority, median resolution time, first contact resolution (FCR), reopen rate and CSAT, following ITIL 4 practice.', 'A queue showing how much of each deadline is used up and a heat map of arrivals by weekday and hour, to act before breaches and plan staffing.', 'Survey comments grouped into themes, each with a suggested improvement, and an assistant that answers common questions with the dashboard\'s own numbers.'] },
             { heading: 'Simulated scenarios', items: ['An e-mail migration that doubles tickets and drops satisfaction.', 'A self-service portal that cuts password tickets, and a VPN outage with 64 tickets in one morning.'] },
           ],
         },
