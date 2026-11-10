@@ -57,7 +57,7 @@ interface Content {
   about: { title: string; paragraphs: string[]; facts: { value: string; label: string }[] };
   value: { title: string; lead: string; items: { title: string; text: string }[] };
   skills: { title: string; lead: string; groups: { title: string; items: string[] }[] };
-  projects: { title: string; lead: string; question: string; details: string; close: string; items: Project[] };
+  projects: { title: string; lead: string; question: string; details: string; close: string; more: string; less: string; items: Project[] };
   education: { title: string; degrees: { course: string; school: string; period: string; status: string }[]; certTitle: string; certs: { name: string; issuer: string; date?: string }[] };
   contact: { title: string; text: string; email: string };
   ui: { more: string; less: string };
@@ -130,6 +130,8 @@ export const CONTENT: Record<Language, Content> = {
       question: 'Pergunta',
       details: 'Detalhes',
       close: 'Fechar',
+      more: 'Ver mais projetos',
+      less: 'Ver menos projetos',
       items: [
         {
           id: 'sgq',
@@ -311,6 +313,8 @@ export const CONTENT: Record<Language, Content> = {
       question: 'Question',
       details: 'Details',
       close: 'Close',
+      more: 'See more projects',
+      less: 'See fewer projects',
       items: [
         {
           id: 'sgq',

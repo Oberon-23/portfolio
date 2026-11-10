@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ExternalLink, Github, LayoutDashboard, X } from 'lucide-react';
+import { ChevronDown, ExternalLink, Github, LayoutDashboard, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import type { Project, ProjectLink } from '@/content';
 import { KaggleIcon } from '@/components/Icons';
@@ -80,8 +80,17 @@ const Projects = () => {
   const items = c.projects.items;
   const current = open ? items.find((x) => x.id === open.id) ?? null : null;
   const close = useCallback(() => setOpen(null), []);
+  const [todos, setTodos] = useState(false);
+  const secao = useRef<HTMLElement>(null);
+  const VISIVEIS = 3;
+  const visiveis = todos ? items : items.slice(0, VISIVEIS);
+  const ocultos = items.length - VISIVEIS;
+  const alternar = () => {
+    if (todos) secao.current?.scrollIntoView({ block: 'start' });
+    setTodos((t) => !t);
+  };
   return (
-    <section id="projetos" className="section">
+    <section id="projetos" className="section" ref={secao}>
       <div className="wrap">
         <RevealOnScroll>
           <p className="eyebrow">04</p>
@@ -89,10 +98,17 @@ const Projects = () => {
           <p className="lead">{c.projects.lead}</p>
         </RevealOnScroll>
         <div className="projects">
-          {items.map((p, i) => (
-            <Card key={p.id} p={p} featured={i === 0 || (i === items.length - 1 && (items.length - 1) % 2 === 1)} onOpen={() => setOpen(p)} />
+          {visiveis.map((p, i) => (
+            <Card key={p.id} p={p} featured={i === 0 || (i === visiveis.length - 1 && (visiveis.length - 1) % 2 === 1)} onOpen={() => setOpen(p)} />
           ))}
         </div>
+        {ocultos > 0 && (
+          <div className="more-projects">
+            <button type="button" className={`btn more-projects-btn${todos ? ' open' : ''}`} aria-expanded={todos} onClick={alternar}>
+              {todos ? c.projects.less : `${c.projects.more} (${ocultos})`}<ChevronDown aria-hidden="true" />
+            </button>
+          </div>
+        )}
       </div>
       {current && <Modal p={current} onClose={close} />}
     </section>

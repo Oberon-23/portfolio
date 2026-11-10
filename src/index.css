@@ -203,6 +203,9 @@ img { max-width: 100%; display: block; }
 
 /* "Ver mais": só no celular */
 .more-btn { display: none; width: 100%; justify-content: center; margin-top: 12px; }
+.more-projects { display: flex; justify-content: center; margin-top: 28px; }
+.more-projects-btn svg { transition: transform .2s; }
+.more-projects-btn.open svg { transform: rotate(180deg); }
 .more-btn svg { transition: transform .2s; }
 .more-btn.open svg { transform: rotate(180deg); }
 @media (max-width: 700px) {
