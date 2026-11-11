@@ -57,7 +57,7 @@ export interface Project {
 
 interface Content {
   nav: { about: string; value: string; skills: string; projects: string; education: string; certs: string; contact: string; menu: string; theme: string; system: string; light: string; dark: string; language: string };
-  hero: { kicker: string; title: string; intro: string; ctaProjects: string; ctaContact: string; ctaLinkedin: string; photoAlt: string; status: string; statusText: string; highlights: { title: string; text: string }[] };
+  hero: { kicker: string; title: string; intro: string; ctaProjects: string; ctaContact: string; ctaLinkedin: string; photoAlt: string; status: string; highlights: { title: string; text: string }[] };
   about: { title: string; paragraphs: string[]; facts: { value: string; label: string }[] };
   value: { title: string; lead: string; items: { title: string; text: string }[] };
   skills: { title: string; lead: string; groups: { title: string; items: string[] }[] };
@@ -81,32 +81,31 @@ export const CONTENT: Record<Language, Content> = {
   pt: {
     nav: { about: 'Sobre', value: 'Como ajudo', skills: 'Competências', projects: 'Projetos', education: 'Formação', certs: 'Certificações', contact: 'Contato', menu: 'Menu', theme: 'Tema', system: 'Sistema', light: 'Claro', dark: 'Escuro', language: 'Idioma' },
     hero: {
-      kicker: 'Qualidade · Processos · Melhoria contínua · Análise de dados',
+      kicker: 'Dados · Processos · Melhoria contínua · Tecnologia',
       title: 'Dados de operação que viram melhoria.',
-      intro: 'Sou o Breno, estudante de Engenharia de Produção, pós-graduado em Data Analytics & IA e ponto focal de qualidade na minha equipe. Uso dados da operação para achar a causa dos problemas, padronizar processos e acompanhar se a melhoria funcionou.',
+      intro: 'Sou o Breno, estudante de Engenharia de Produção e pós-graduado em Data Analytics & IA. Uso dados para entender problemas, organizar processos e acompanhar se a melhoria funcionou.',
       ctaProjects: 'Ver projetos',
       ctaContact: 'Fale comigo',
       ctaLinkedin: 'LinkedIn',
       photoAlt: 'Foto de Breno Silva',
       status: 'Aberto a oportunidades',
-      statusText: 'Qualidade e processos',
       highlights: [
-        { title: 'Qualidade e melhoria', text: 'PDCA, CEP, Pareto, ISO 9001 e Lean Six Sigma' },
-        { title: 'Processos', text: 'Mapeamento, SIPOC, padronização e indicadores de processo' },
         { title: 'Dados e painéis', text: 'Power BI, Excel, SQL e Python para medir e decidir' },
+        { title: 'Processos', text: 'Mapeamento, SIPOC, padronização e indicadores de processo' },
+        { title: 'Melhoria contínua', text: 'PDCA, Pareto, Lean Six Sigma e gestão da qualidade' },
       ],
     },
     about: {
       title: 'Sobre',
       paragraphs: [
-        'Sou o ponto focal de qualidade de uma equipe de 18 pessoas em um projeto de óleo e gás na Bacia de Campos. Acompanho os indicadores de qualidade e satisfação com a supervisão e crio planilhas, macros e painéis em Power BI para o controle dos resultados.',
-        'Curso Engenharia de Produção, sou pós-graduado em Data Analytics & IA e formado em Análise e Desenvolvimento de Sistemas. Essa combinação junta a visão de processo da engenharia com as ferramentas de dados: primeiro entender o problema da operação, depois escolher a ferramenta.',
-        'Na minha equipe, criei um programa de reconhecimento da qualidade baseado em PDCA e em indicadores de satisfação, que conecta o que medimos ao que fazemos para melhorar.',
+        'Sou estudante de Engenharia de Produção, pós-graduado em Data Analytics & IA e formado em Análise e Desenvolvimento de Sistemas. Essa combinação junta a visão de processo da engenharia com as ferramentas de dados.',
+        'Gosto de começar entendendo o problema antes de escolher a ferramenta: olhar para os dados, achar a causa e medir se a mudança funcionou. Uso Power BI, SQL, Python e React para transformar isso em painéis e sistemas que as pessoas conseguem usar.',
+        'Os projetos deste portfólio partem de uma empresa fictícia e de uma base pública real, e mostram como eu penso, do dado até a decisão.',
       ],
       facts: [
-        { value: '18', label: 'pessoas na equipe em que sou ponto focal de qualidade' },
-        { value: 'ISO 9001', label: 'como base do sistema de gestão da qualidade que desenvolvi' },
-        { value: 'PDCA', label: 'como método para ir do indicador à ação' },
+        { value: '6', label: 'projetos no portfólio, do dado à decisão' },
+        { value: '3', label: 'formações: Análise e Desenvolvimento de Sistemas, Data Analytics & IA e Engenharia de Produção (em curso)' },
+        { value: 'Dados', label: 'como ponto de partida para entender e melhorar processos' },
       ],
     },
     value: {
@@ -274,7 +273,7 @@ export const CONTENT: Record<Language, Content> = {
     ui: { more: 'Ver mais', less: 'Ver menos' },
     contact: {
       title: 'Vamos conversar',
-      text: 'Estou aberto a oportunidades em qualidade, processos e melhoria contínua na indústria. Se quiser trocar uma ideia sobre um projeto ou uma vaga, é só chamar.',
+      text: 'Estou aberto a oportunidades em dados, processos e melhoria contínua. Se quiser trocar uma ideia sobre um projeto ou uma vaga, é só chamar.',
       email: 'Enviar e-mail',
     },
     footer: 'Todos os direitos reservados.',
@@ -283,32 +282,31 @@ export const CONTENT: Record<Language, Content> = {
   en: {
     nav: { about: 'About', value: 'How I help', skills: 'Skills', projects: 'Projects', education: 'Education', certs: 'Certifications', contact: 'Contact', menu: 'Menu', theme: 'Theme', system: 'System', light: 'Light', dark: 'Dark', language: 'Language' },
     hero: {
-      kicker: 'Quality · Processes · Continuous improvement · Data analytics',
+      kicker: 'Data · Processes · Continuous improvement · Technology',
       title: 'Operational data that turns into improvement.',
-      intro: "I'm Breno, a Production Engineering student, Data Analytics & AI postgraduate and my team's quality focal point. I use operational data to find the root cause of problems, standardize processes and check whether the improvement worked.",
+      intro: "I'm Breno, a Production Engineering student with a postgraduate degree in Data Analytics & AI. I use data to understand problems, organize processes and check whether the improvement worked.",
       ctaProjects: 'See projects',
       ctaContact: 'Get in touch',
       ctaLinkedin: 'LinkedIn',
       photoAlt: 'Photo of Breno Silva',
       status: 'Open to opportunities',
-      statusText: 'Quality and processes',
       highlights: [
-        { title: 'Quality and improvement', text: 'PDCA, SPC, Pareto, ISO 9001 and Lean Six Sigma' },
-        { title: 'Processes', text: 'Process mapping, SIPOC, standardization and process KPIs' },
         { title: 'Data and dashboards', text: 'Power BI, Excel, SQL and Python to measure and decide' },
+        { title: 'Processes', text: 'Process mapping, SIPOC, standardization and process KPIs' },
+        { title: 'Continuous improvement', text: 'PDCA, Pareto, Lean Six Sigma and quality management' },
       ],
     },
     about: {
       title: 'About',
       paragraphs: [
-        "I'm the quality focal point of an 18-person team on an oil and gas project in the Campos Basin, Brazil. I track quality and satisfaction KPIs with the supervisors and build spreadsheets, macros and Power BI dashboards to monitor results.",
-        "I'm studying Production Engineering, hold a postgraduate degree in Data Analytics & AI and a degree in Systems Analysis and Development. This mix brings together engineering's process view and data tools: understand the operational problem first, then pick the tool.",
-        'On my team, I created a quality recognition program based on PDCA and satisfaction metrics, linking what we measure to what we do to improve.',
+        "I'm a Production Engineering student with a postgraduate degree in Data Analytics & AI and a degree in Systems Analysis and Development. This mix brings together engineering's process view and data tools.",
+        'I like to understand the problem before choosing the tool: look at the data, find the cause and measure whether the change worked. I use Power BI, SQL, Python and React to turn that into dashboards and systems people can actually use.',
+        'The projects in this portfolio start from a fictional company and a real public dataset, and show how I think, from data to decision.',
       ],
       facts: [
-        { value: '18', label: 'people on the team where I am the quality focal point' },
-        { value: 'ISO 9001', label: 'as the basis of the quality management system I built' },
-        { value: 'PDCA', label: 'as the method to go from KPI to action' },
+        { value: '6', label: 'portfolio projects, from data to decision' },
+        { value: '3', label: 'degrees: Systems Analysis and Development, Data Analytics & AI and Production Engineering (in progress)' },
+        { value: 'Data', label: 'as the starting point to understand and improve processes' },
       ],
     },
     value: {
@@ -476,7 +474,7 @@ export const CONTENT: Record<Language, Content> = {
     ui: { more: 'Show more', less: 'Show less' },
     contact: {
       title: "Let's talk",
-      text: "I'm open to opportunities in quality, processes and continuous improvement in industry. If you want to talk about a project or a role, just reach out.",
+      text: "I'm open to opportunities in data, processes and continuous improvement. If you want to talk about a project or a role, just reach out.",
       email: 'Send an email',
     },
     footer: 'All rights reserved.',

@@ -41,7 +41,7 @@ const Hero = () => {
           </div>
           <div className="photo">
             <img src={PHOTO} alt={h.photoAlt} width={640} height={800} />
-            <div className="photo-tag"><b><span className="dot" aria-hidden="true" />{h.status}</b><span>{h.statusText}</span></div>
+            <div className="photo-tag"><b><span className="dot" aria-hidden="true" />{h.status}</b></div>
           </div>
         </div>
         <div className="highlights">
