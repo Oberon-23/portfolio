@@ -123,7 +123,7 @@ export const CONTENT: Record<Language, Content> = {
       lead: 'Ferramentas e métodos que uso nos projetos e no trabalho.',
       groups: [
         { title: 'Qualidade', items: ['Lean Six Sigma', 'ISO 9001:2015', 'PDCA', 'CEP', 'Pareto e Ishikawa', '5 Porquês e 5W2H', 'Gestão de riscos'] },
-        { title: 'Processos', items: ['Mapeamento de processos', 'SIPOC', 'Padronização', 'Indicadores de processo', 'OEE', 'Scrum'] },
+        { title: 'Processos', items: ['Mapeamento de processos', 'SIPOC', 'Padronização', 'Indicadores de processo', 'OEE', 'Scrum', 'Kanban', 'OKR'] },
         { title: 'BI e planilhas', items: ['Power BI', 'DAX', 'Excel avançado', 'Macros (VBA)'] },
         { title: 'Dados', items: ['SQL', 'Python', 'pandas', 'DuckDB', 'Modelagem dimensional'] },
         { title: 'Desenvolvimento', items: ['React', 'TypeScript', 'JavaScript', 'Git'] },
@@ -387,7 +387,7 @@ export const CONTENT: Record<Language, Content> = {
       lead: 'Tools and methods I use in projects and at work.',
       groups: [
         { title: 'Quality', items: ['Lean Six Sigma', 'ISO 9001:2015', 'PDCA', 'SPC', 'Pareto and Ishikawa', '5 Whys and 5W2H', 'Risk management'] },
-        { title: 'Processes', items: ['Process mapping', 'SIPOC', 'Standardization', 'Process KPIs', 'OEE', 'Scrum'] },
+        { title: 'Processes', items: ['Process mapping', 'SIPOC', 'Standardization', 'Process KPIs', 'OEE', 'Scrum', 'Kanban', 'OKR'] },
         { title: 'BI and spreadsheets', items: ['Power BI', 'DAX', 'Advanced Excel', 'Macros (VBA)'] },
         { title: 'Data', items: ['SQL', 'Python', 'pandas', 'DuckDB', 'Dimensional modeling'] },
         { title: 'Development', items: ['React', 'TypeScript', 'JavaScript', 'Git'] },
