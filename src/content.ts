@@ -56,12 +56,13 @@ export interface Project {
 }
 
 interface Content {
-  nav: { about: string; value: string; skills: string; projects: string; education: string; certs: string; contact: string; menu: string; theme: string; system: string; light: string; dark: string; language: string };
+  nav: { about: string; value: string; skills: string; projects: string; experience: string; education: string; certs: string; contact: string; menu: string; theme: string; system: string; light: string; dark: string; language: string };
   hero: { kicker: string; title: string; intro: string; ctaProjects: string; ctaContact: string; ctaLinkedin: string; photoAlt: string; status: string; highlights: { title: string; text: string }[] };
   about: { title: string; paragraphs: string[]; facts: { value: string; label: string }[] };
   value: { title: string; lead: string; items: { title: string; text: string }[] };
   skills: { title: string; lead: string; groups: { title: string; items: string[] }[] };
   projects: { title: string; lead: string; question: string; details: string; close: string; more: string; less: string; items: Project[] };
+  experience: { title: string; lead: string; items: { role: string; company: string; period: string; place: string; bullets: string[] }[] };
   education: { title: string; degrees: { course: string; school: string; period: string; status: string }[]; certTitle: string; certs: { name: string; issuer: string; date?: string }[] };
   contact: { title: string; text: string; email: string };
   ui: { more: string; less: string };
@@ -79,7 +80,7 @@ const IMG = {
 
 export const CONTENT: Record<Language, Content> = {
   pt: {
-    nav: { about: 'Sobre', value: 'Como ajudo', skills: 'Competências', projects: 'Projetos', education: 'Formação', certs: 'Certificações', contact: 'Contato', menu: 'Menu', theme: 'Tema', system: 'Sistema', light: 'Claro', dark: 'Escuro', language: 'Idioma' },
+    nav: { about: 'Sobre', value: 'Como ajudo', skills: 'Competências', projects: 'Projetos', experience: 'Experiência', education: 'Formação', certs: 'Certificações', contact: 'Contato', menu: 'Menu', theme: 'Tema', system: 'Sistema', light: 'Claro', dark: 'Escuro', language: 'Idioma' },
     hero: {
       kicker: 'Dados · Processos · Melhoria contínua · Tecnologia',
       title: 'Dados de operação que viram melhoria.',
@@ -246,6 +247,69 @@ export const CONTENT: Record<Language, Content> = {
         },
       ],
     },
+    experience: {
+      title: 'Experiência',
+      lead: 'Onde apliquei dados, processos e tecnologia no trabalho.',
+      items: [
+        {
+          role: 'Analista de Suporte Corporativo · Ponto Focal de Qualidade',
+          company: 'Minsait (Indra Group), projeto Petrobras',
+          period: 'mar. 2026 – atual',
+          place: 'Campos dos Goytacazes, RJ',
+          bullets: [
+            'Atendimento técnico a usuários pelo ServiceNow: incidentes, solicitações, instalações de software e orientação em campo.',
+            'Ponto focal de qualidade de uma equipe de 18 pessoas, apoiando a supervisão no acompanhamento de CSAT, TMI e backlog.',
+            'Aplicação de PDCA que elevou o CSAT de 80% para 97% em 3 meses.',
+            'Soluções em Excel, Power BI e ServiceNow para automatizar controles, e mapeamento dos fluxos de atendimento para achar gargalos e padronizar atividades.',
+          ],
+        },
+        {
+          role: 'Analista Ticket Manager · Backoffice',
+          company: 'Minsait (Indra Group), projeto Petrobras',
+          period: 'set. 2025 – mar. 2026',
+          place: 'Campos dos Goytacazes, RJ',
+          bullets: [
+            'Gestão de incidentes e solicitações no ServiceNow em uma operação de 30 pessoas.',
+            'Acompanhamento de CSAT, TMI e SLA, com planos de ação para melhorar o fluxo de atendimento.',
+            'Redução de 45% no tempo médio de resolução e de 12 dias no backlog.',
+            'Redução de 30% nos tickets recorrentes, com análise de causa raiz e ações corretivas.',
+          ],
+        },
+        {
+          role: 'Engenheiro de Software (PJ)',
+          company: 'Rachel AI',
+          period: 'mar. 2024 – ago. 2025',
+          place: 'Londres, Reino Unido (remoto)',
+          bullets: [
+            'Desenvolvimento de aplicações web com React, TypeScript, HTML e CSS, com interfaces responsivas e componentes reutilizáveis.',
+            'Otimização de SEO e Core Web Vitals para aumentar a visibilidade e o desempenho da plataforma.',
+            'Monitoramento de métricas de uso e desempenho para apoiar decisões de produto.',
+          ],
+        },
+        {
+          role: 'Estagiário em Engenharia de Software',
+          company: 'Instituto Politécnico de Ensino (IPE)',
+          period: 'mar. 2025 – mai. 2025',
+          place: 'Campos dos Goytacazes, RJ',
+          bullets: [
+            'Desenvolvimento e manutenção de sistemas de gestão acadêmica e administrativa.',
+            'Estruturação e padronização de bases de dados, com mais confiabilidade e rastreabilidade.',
+            'Relatórios técnicos para análise de desempenho e oportunidades de melhoria.',
+          ],
+        },
+        {
+          role: 'Analista de Dados',
+          company: 'EREME Distribuidora',
+          period: 'jul. 2023 – nov. 2023',
+          place: 'Campos dos Goytacazes, RJ',
+          bullets: [
+            'Validação e padronização de dados de APIs, bancos de dados e planilhas, reduzindo inconsistências.',
+            'Extração, transformação e consolidação de dados de várias fontes com Python e SQL.',
+            'Criação de KPIs e de dashboards em Power BI para acompanhar resultados e apoiar decisões.',
+          ],
+        },
+      ],
+    },
     education: {
       title: 'Formação',
       degrees: [
@@ -280,7 +344,7 @@ export const CONTENT: Record<Language, Content> = {
   },
 
   en: {
-    nav: { about: 'About', value: 'How I help', skills: 'Skills', projects: 'Projects', education: 'Education', certs: 'Certifications', contact: 'Contact', menu: 'Menu', theme: 'Theme', system: 'System', light: 'Light', dark: 'Dark', language: 'Language' },
+    nav: { about: 'About', value: 'How I help', skills: 'Skills', projects: 'Projects', experience: 'Experience', education: 'Education', certs: 'Certifications', contact: 'Contact', menu: 'Menu', theme: 'Theme', system: 'System', light: 'Light', dark: 'Dark', language: 'Language' },
     hero: {
       kicker: 'Data · Processes · Continuous improvement · Technology',
       title: 'Operational data that turns into improvement.',
@@ -443,6 +507,69 @@ export const CONTENT: Record<Language, Content> = {
           details: [
             { heading: 'What was built', items: ['Live operations: a simulated workday with the queue by channel and site, each agent\'s state (handling, break, lunch) with overrun alerts, and Erlang C staffing compared with the schedule.', 'Response and resolution SLA by priority, median resolution time, first contact resolution (FCR), reopen rate and CSAT, following ITIL 4 practice.', 'A queue showing how much of each deadline is used up and a heat map of arrivals by weekday and hour, to act before breaches and plan staffing.', 'Survey comments grouped into themes, each with a suggested improvement, and an assistant that answers common questions with the dashboard\'s own numbers.'] },
             { heading: 'Simulated scenarios', items: ['An e-mail migration that doubles tickets and drops satisfaction.', 'A self-service portal that cuts password tickets, and a VPN outage with 64 tickets in one morning.'] },
+          ],
+        },
+      ],
+    },
+    experience: {
+      title: 'Experience',
+      lead: 'Where I applied data, processes and technology at work.',
+      items: [
+        {
+          role: 'Corporate Support Analyst · Quality Focal Point',
+          company: 'Minsait (Indra Group), Petrobras project',
+          period: 'Mar 2026 – present',
+          place: 'Campos dos Goytacazes, Brazil',
+          bullets: [
+            'Technical support to users through ServiceNow: incidents, requests, software installations and on-site guidance.',
+            'Quality focal point of an 18-person team, supporting supervisors in tracking CSAT, backlog and TMI.',
+            'Applied PDCA to raise CSAT from 80% to 97% in 3 months.',
+            'Built Excel, Power BI and ServiceNow solutions to automate controls, and mapped support flows to find bottlenecks and standardize activities.',
+          ],
+        },
+        {
+          role: 'Ticket Manager Analyst · Backoffice',
+          company: 'Minsait (Indra Group), Petrobras project',
+          period: 'Sep 2025 – Mar 2026',
+          place: 'Campos dos Goytacazes, Brazil',
+          bullets: [
+            'Managed incidents and requests in ServiceNow in a 30-person operation.',
+            'Tracked CSAT, backlog (TMI) and SLA, with action plans to improve the support flow.',
+            'Cut average resolution time by 45% and the backlog by 12 days.',
+            'Cut recurring tickets by 30% through root cause analysis and corrective actions.',
+          ],
+        },
+        {
+          role: 'Software Engineer (contractor)',
+          company: 'Rachel AI',
+          period: 'Mar 2024 – Aug 2025',
+          place: 'London, UK (remote)',
+          bullets: [
+            'Built web applications with React, TypeScript, HTML and CSS, with responsive interfaces and reusable components.',
+            'Optimized SEO and Core Web Vitals to improve the platform’s visibility and performance.',
+            'Monitored usage and performance metrics to support product decisions.',
+          ],
+        },
+        {
+          role: 'Software Engineering Intern',
+          company: 'Instituto Politécnico de Ensino (IPE)',
+          period: 'Mar 2025 – May 2025',
+          place: 'Campos dos Goytacazes, Brazil',
+          bullets: [
+            'Developed and maintained academic and administrative management systems.',
+            'Structured and standardized databases, improving reliability and traceability.',
+            'Wrote technical reports to analyze performance and improvement opportunities.',
+          ],
+        },
+        {
+          role: 'Data Analyst',
+          company: 'EREME Distribuidora',
+          period: 'Jul 2023 – Nov 2023',
+          place: 'Campos dos Goytacazes, Brazil',
+          bullets: [
+            'Validated and standardized data from APIs, databases and spreadsheets, reducing inconsistencies.',
+            'Extracted, transformed and consolidated data from multiple sources with Python and SQL.',
+            'Built KPIs and Power BI dashboards to track results and support decisions.',
           ],
         },
       ],

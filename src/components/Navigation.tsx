@@ -37,7 +37,7 @@ const Navigation = () => {
 
   const links = [
     ['#sobre', c.nav.about], ['#competencias', c.nav.skills],
-    ['#projetos', c.nav.projects], ['#formacao', c.nav.education], ['#certificacoes', c.nav.certs], ['#contato', c.nav.contact],
+    ['#projetos', c.nav.projects], ['#experiencia', c.nav.experience], ['#formacao', c.nav.education], ['#certificacoes', c.nav.certs], ['#contato', c.nav.contact],
   ];
 
   return (

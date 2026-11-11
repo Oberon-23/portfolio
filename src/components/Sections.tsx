@@ -6,10 +6,10 @@ import { KaggleIcon } from '@/components/Icons';
 import RevealOnScroll from '@/components/RevealOnScroll';
 
 /** Botão "Ver mais" que só aparece no celular; no computador tudo fica visível. */
-const MoreButton = ({ open, hidden, onToggle }: { open: boolean; hidden: number; onToggle: () => void }) => {
+const MoreButton = ({ open, hidden, onToggle, always }: { open: boolean; hidden: number; onToggle: () => void; always?: boolean }) => {
   const { c } = useLanguage();
   return (
-    <button type="button" className={`btn more-btn${open ? ' open' : ''}`} aria-expanded={open} onClick={onToggle}>
+    <button type="button" className={`btn more-btn${always ? ' always' : ''}${open ? ' open' : ''}`} aria-expanded={open} onClick={onToggle}>
       {open ? c.ui.less : `${c.ui.more} (${hidden})`}<ChevronDown aria-hidden="true" />
     </button>
   );
@@ -27,6 +27,7 @@ function useCollapse() {
 
 const SKILLS_VISIBLE = 2;
 const CERTS_VISIBLE = 4;
+const EXP_VISIBLE = 3;
 
 export const About = () => {
   const { c } = useLanguage();
@@ -94,6 +95,37 @@ export const Skills = () => {
   );
 };
 
+export const Experience = () => {
+  const { c } = useLanguage();
+  const e = c.experience;
+  const { open, toggle, ref } = useCollapse();
+  const hidden = Math.max(0, e.items.length - EXP_VISIBLE);
+  return (
+    <section id="experiencia" className="section" ref={ref}>
+      <div className="wrap">
+        <RevealOnScroll>
+          <p className="eyebrow">05</p>
+          <h2 className="h2">{e.title}</h2>
+          <p className="lead">{e.lead}</p>
+          <ol className={`exp-list${open ? ' open' : ''}`}>
+            {e.items.map((x, i) => (
+              <li key={x.role + x.period} className={`card exp${i >= EXP_VISIBLE ? ' extra' : ''}`}>
+                <div className="exp-head">
+                  <h3>{x.role}</h3>
+                  <small>{x.period}</small>
+                </div>
+                <p className="exp-meta">{x.company} · {x.place}</p>
+                <ul>{x.bullets.map((b) => <li key={b}>{b}</li>)}</ul>
+              </li>
+            ))}
+          </ol>
+          {hidden > 0 && <MoreButton always open={open} hidden={hidden} onToggle={toggle} />}
+        </RevealOnScroll>
+      </div>
+    </section>
+  );
+};
+
 export const Education = () => {
   const { c } = useLanguage();
   const e = c.education;
@@ -102,7 +134,7 @@ export const Education = () => {
     <section id="formacao" className="section">
       <div className="wrap">
         <RevealOnScroll>
-          <p className="eyebrow">05</p>
+          <p className="eyebrow">06</p>
           <h2 className="h2">{e.title}</h2>
           <div className="card degrees" style={{ marginTop: 28 }}>
             {e.degrees.map((d) => (
@@ -129,7 +161,7 @@ export const Certifications = () => {
     <section id="certificacoes" className="section" ref={ref}>
       <div className="wrap">
         <RevealOnScroll>
-          <p className="eyebrow">06</p>
+          <p className="eyebrow">07</p>
           <h2 className="h2">{e.certTitle}</h2>
           <div className="card certs" style={{ marginTop: 28 }}>
             <ul className={`cert-list collapsible${open ? ' open' : ''}`}>
@@ -158,7 +190,7 @@ export const Contact = () => {
       <div className="wrap">
         <RevealOnScroll>
           <div className="card contact">
-            <p className="eyebrow">07</p>
+            <p className="eyebrow">08</p>
             <h2 className="h2">{c.contact.title}</h2>
             <p>{c.contact.text}</p>
             <div className="contact-actions">
