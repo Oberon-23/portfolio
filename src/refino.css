@@ -1,0 +1,49 @@
+/* Refino editorial: mesma tipografia dos painéis Rotalume (Newsreader + Instrument Sans),
+   mantendo a identidade do portfólio (creme e terracota). Fontes servidas pelo próprio site.
+   Só tipografia, respiro e acabamento: as cores continuam em index.css. */
+@import '@fontsource-variable/instrument-sans/wght.css';
+@import '@fontsource-variable/newsreader/opsz.css';
+@import '@fontsource-variable/newsreader/opsz-italic.css';
+
+:root {
+  --font: 'Instrument Sans Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --serif: 'Newsreader Variable', 'Iowan Old Style', Georgia, serif;
+  --r: 18px;
+}
+
+body { font-variant-numeric: tabular-nums; text-rendering: optimizeLegibility; touch-action: manipulation; }
+h1, h2, h3, h4 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* ---------- títulos em serifa ---------- */
+.hero h1, .h2, .project h3, .modal h3, .value h3, .exp-head h3 {
+  font-family: var(--serif); font-optical-sizing: auto; font-weight: 500;
+}
+.hero h1 { font-size: clamp(2.6rem, 5.8vw, 4.6rem); line-height: 1.02; letter-spacing: -0.025em; }
+.hero h1 em { font-style: italic; font-weight: 450; }
+.h2 { font-size: clamp(2rem, 3.8vw, 2.8rem); line-height: 1.1; letter-spacing: -0.02em; }
+.project h3 { font-size: 24px; line-height: 1.2; letter-spacing: -0.012em; }
+.modal h3 { font-size: 28px; line-height: 1.18; }
+.value h3 { font-size: 22px; line-height: 1.25; }
+.exp-head h3 { font-size: 21px; letter-spacing: -0.01em; }
+
+/* marca: inicial em serifa */
+.brand-mark { font-family: var(--serif); font-weight: 600; font-size: 19px; }
+
+/* números grandes em serifa */
+.fact b { font-family: var(--serif); font-weight: 500; font-size: 34px; letter-spacing: -0.02em; font-variant-numeric: lining-nums; }
+
+/* ---------- respiro e acabamento ---------- */
+.section { padding: 104px 0; }
+.lead { font-size: 17.5px; line-height: 1.6; }
+.card { box-shadow: 0 1px 2px rgba(60, 45, 20, .04), 0 10px 30px -12px rgba(60, 45, 20, .12); }
+:root[data-theme="dark"] .card { box-shadow: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .card { box-shadow: none; } }
+.btn { font-weight: 600; transition: transform .15s, background-color .15s, border-color .15s; }
+.question { font-family: var(--serif); font-size: 17px; font-weight: 450; font-style: italic; line-height: 1.4; }
+.question small { font-style: normal; }
+
+@media (max-width: 720px) {
+  .section { padding: 72px 0; }
+  .project h3 { font-size: 22px; }
+}
