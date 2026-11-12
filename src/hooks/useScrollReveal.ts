@@ -7,6 +7,8 @@ interface UseScrollRevealOptions {
 
 const useScrollReveal = (options: UseScrollRevealOptions = {}) => {
   const ref = useRef<HTMLDivElement>(null);
+  const threshold = options.threshold ?? 0.1;
+  const rootMargin = options.rootMargin ?? '0px';
   const [isVisible, setIsVisible] = useState(true);
   const [initialized, setInitialized] = useState(false);
 
@@ -35,14 +37,14 @@ const useScrollReveal = (options: UseScrollRevealOptions = {}) => {
         }
       },
       {
-        threshold: options.threshold ?? 0.1,
-        rootMargin: options.rootMargin ?? '0px',
+        threshold,
+        rootMargin,
       }
     );
 
     observer.observe(element);
     return () => observer.disconnect();
-  }, []);
+  }, [threshold, rootMargin]);
 
   return { ref, isVisible, initialized };
 };
