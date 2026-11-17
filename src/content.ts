@@ -320,6 +320,7 @@ export const CONTENT: Record<Language, Content> = {
       certTitle: 'Certificações',
       certs: [
         { name: 'Lean Six Sigma Yellow Belt', issuer: 'FM2S', date: 'mar. 2026' },
+        { name: 'Lean Six Sigma Green Belt', issuer: 'FM2S', date: 'mar. 2026' },
         { name: 'Metodologia Lean', issuer: 'FM2S', date: 'mai. 2026' },
         { name: 'Gestão da Qualidade', issuer: 'FM2S', date: 'abr. 2026' },
         { name: 'Análise e Melhoria de Processos', issuer: 'Enap', date: 'out. 2026' },
@@ -584,6 +585,7 @@ export const CONTENT: Record<Language, Content> = {
       certTitle: 'Certifications',
       certs: [
         { name: 'Lean Six Sigma Yellow Belt', issuer: 'FM2S', date: 'Mar 2026' },
+        { name: 'Lean Six Sigma Green Belt', issuer: 'FM2S', date: 'Mar 2026' },
         { name: 'Lean Methodology', issuer: 'FM2S', date: 'May 2026' },
         { name: 'Quality Management', issuer: 'FM2S', date: 'Apr 2026' },
         { name: 'Process Analysis and Improvement', issuer: 'Enap', date: 'Oct 2026' },
