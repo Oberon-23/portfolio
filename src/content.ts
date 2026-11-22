@@ -124,7 +124,7 @@ export const CONTENT: Record<Language, Content> = {
       groups: [
         { title: 'Processos', items: ['Mapeamento de processos', 'BPMN', 'SIPOC', 'Fluxograma', 'Análise de gargalos', 'Redesenho de processos', 'Padronização', 'Indicadores de processo', 'Automação de processos', 'Kanban', 'Scrum', 'Lean'] },
         { title: 'Melhoria contínua', items: ['Lean Six Sigma', 'PDCA', 'Pareto e Ishikawa', '5 Porquês e 5W2H', 'ISO 9001'] },
-        { title: 'BI e planilhas', items: ['Power BI', 'DAX', 'Excel avançado', 'Macros (VBA)'] },
+        { title: 'BI e planilhas', items: ['Power BI', 'DAX', 'Excel avançado', 'Macros (VBA)', 'Power Automate'] },
         { title: 'Dados', items: ['SQL', 'Python', 'pandas', 'DuckDB', 'Modelagem dimensional'] },
         { title: 'Desenvolvimento', items: ['React', 'TypeScript', 'JavaScript', 'Git'] },
       ],
@@ -390,7 +390,7 @@ export const CONTENT: Record<Language, Content> = {
       groups: [
         { title: 'Processes', items: ['Process mapping', 'BPMN', 'SIPOC', 'Flowcharts', 'Bottleneck analysis', 'Process redesign', 'Standardization', 'Process KPIs', 'Process automation', 'Kanban', 'Scrum', 'Lean'] },
         { title: 'Continuous improvement', items: ['Lean Six Sigma', 'PDCA', 'Pareto and Ishikawa', '5 Whys and 5W2H', 'ISO 9001'] },
-        { title: 'BI and spreadsheets', items: ['Power BI', 'DAX', 'Advanced Excel', 'Macros (VBA)'] },
+        { title: 'BI and spreadsheets', items: ['Power BI', 'DAX', 'Advanced Excel', 'Macros (VBA)', 'Power Automate'] },
         { title: 'Data', items: ['SQL', 'Python', 'pandas', 'DuckDB', 'Dimensional modeling'] },
         { title: 'Development', items: ['React', 'TypeScript', 'JavaScript', 'Git'] },
       ],
