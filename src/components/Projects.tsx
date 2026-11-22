@@ -95,7 +95,7 @@ const Projects = () => {
         <RevealOnScroll>
           <p className="eyebrow">04</p>
           <h2 className="h2">{c.projects.title}</h2>
-          <p className="lead">{c.projects.lead}</p>
+          {c.projects.lead && <p className="lead">{c.projects.lead}</p>}
         </RevealOnScroll>
         <div className="projects">
           {visiveis.map((p, i) => (
