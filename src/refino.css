@@ -26,6 +26,12 @@ p { text-wrap: pretty; }
 .modal h3 { font-size: 28px; line-height: 1.18; }
 .value h3 { font-size: 22px; line-height: 1.25; }
 .exp-head h3 { font-size: 21px; letter-spacing: -0.01em; }
+.exp-head h3 { line-height: 1.2; }
+.exp-head h3 .role-sub { display: block; margin-top: 5px; font-family: var(--font, system-ui, sans-serif); font-weight: 600; font-size: 13px; line-height: 1.3; letter-spacing: 0.02em; color: var(--accent); }
+@media (max-width: 640px) {
+  .exp-head h3 { font-size: 19px; }
+  .exp-head small { order: -1; }
+}
 
 /* marca: inicial em serifa */
 .brand-mark { font-family: var(--serif); font-weight: 600; font-size: 19px; }

@@ -111,7 +111,10 @@ export const Experience = () => {
             {e.items.map((x, i) => (
               <li key={x.role + x.period} className={`card exp${i >= EXP_VISIBLE ? ' extra' : ''}`}>
                 <div className="exp-head">
-                  <h3>{x.role}</h3>
+                  <h3>
+                    {x.role.split(' · ')[0]}
+                    {x.role.includes(' · ') && <span className="role-sub">{x.role.split(' · ').slice(1).join(' · ')}</span>}
+                  </h3>
                   <small>{x.period}</small>
                 </div>
                 <p className="exp-meta">{x.company} · {x.place}</p>
