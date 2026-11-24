@@ -31,7 +31,7 @@ p { text-wrap: pretty; }
 @media (max-width: 640px) {
   .exp-head h3 { font-size: 19px; }
   .exp-head h3 .role-sub { font-size: 12px; margin-top: 4px; }
-  .exp-head small { order: -1; }
+  .exp-head { flex-direction: column; align-items: flex-start; gap: 6px; }
 }
 
 /* marca: inicial em serifa */
