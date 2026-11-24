@@ -159,19 +159,30 @@ export const Certifications = () => {
   const { c } = useLanguage();
   const e = c.education;
   const { open, toggle, ref } = useCollapse();
-  const hidden = Math.max(0, e.certs.length - CERTS_VISIBLE);
+  const total = e.certGroups.reduce((n, g) => n + g.items.length, 0);
+  const hidden = Math.max(0, total - CERTS_VISIBLE);
+  let start = 0;
   return (
     <section id="certificacoes" className="section" ref={ref}>
       <div className="wrap">
         <RevealOnScroll>
           <p className="eyebrow">07</p>
           <h2 className="h2">{e.certTitle}</h2>
-          <div className="card certs" style={{ marginTop: 28 }}>
-            <ul className={`cert-list collapsible${open ? ' open' : ''}`}>
-              {e.certs.map((x, i) => (
-                <li key={x.name} className={i >= CERTS_VISIBLE ? 'extra' : undefined}><b>{x.name}</b><span>{x.issuer}{x.date ? ` · ${x.date}` : ''}</span></li>
-              ))}
-            </ul>
+          <div className={`card certs collapsible${open ? ' open' : ''}`} style={{ marginTop: 28 }}>
+            {e.certGroups.map((g) => {
+              const first = start;
+              start += g.items.length;
+              return (
+                <div key={g.title} className={`cert-group${first >= CERTS_VISIBLE ? ' extra' : ''}`}>
+                  <h3>{g.title}</h3>
+                  <ul className="cert-list">
+                    {g.items.map((x, i) => (
+                      <li key={x.name} className={first + i >= CERTS_VISIBLE ? 'extra' : undefined}><b>{x.name}</b><span>{x.issuer}{x.date ? ` · ${x.date}` : ''}</span></li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
           {hidden > 0 && <MoreButton open={open} hidden={hidden} onToggle={toggle} />}
         </RevealOnScroll>

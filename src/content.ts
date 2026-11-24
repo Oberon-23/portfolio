@@ -63,7 +63,7 @@ interface Content {
   skills: { title: string; lead: string; groups: { title: string; items: string[] }[] };
   projects: { title: string; lead: string; question: string; details: string; close: string; more: string; less: string; items: Project[] };
   experience: { title: string; lead: string; items: { role: string; company: string; period: string; place: string; bullets: string[] }[] };
-  education: { title: string; degrees: { course: string; school: string; period: string; status: string }[]; certTitle: string; certs: { name: string; issuer: string; date?: string }[] };
+  education: { title: string; degrees: { course: string; school: string; period: string; status: string }[]; certTitle: string; certGroups: { title: string; items: { name: string; issuer: string; date?: string }[] }[] };
   contact: { title: string; text: string; email: string };
   ui: { more: string; less: string };
   footer: string;
@@ -318,22 +318,37 @@ export const CONTENT: Record<Language, Content> = {
         { course: 'Análise e Desenvolvimento de Sistemas', school: 'UNIGRAN EAD · Tecnólogo', period: 'fev. 2023 – jul. 2025', status: 'Concluído' },
       ],
       certTitle: 'Certificações',
-      certs: [
-        { name: 'Lean Six Sigma Yellow Belt', issuer: 'FM2S', date: 'mar. 2026' },
-        { name: 'Lean Six Sigma Green Belt', issuer: 'FM2S', date: 'dez. 2026' },
-        { name: 'Metodologia Lean', issuer: 'FM2S', date: 'mai. 2026' },
-        { name: 'Gestão da Qualidade', issuer: 'FM2S', date: 'abr. 2026' },
-        { name: 'Método Kanban & Scrum', issuer: 'FM2S', date: 'nov. 2026' },
-        { name: 'Especialista Lean', issuer: 'FM2S', date: 'nov. 2026' },
-        { name: 'Análise e Melhoria de Processos', issuer: 'Enap', date: 'out. 2026' },
-        { name: 'Mapeamento e Automação de Processos', issuer: 'Enap', date: 'out. 2026' },
-        { name: 'Gestão de Riscos', issuer: 'Enap', date: 'out. 2026' },
-        { name: 'Scrum Fundamentals Certified (SFC)', issuer: 'SCRUMstudy', date: 'nov. 2026' },
-        { name: 'Kanban Essentials Certified (KEC)', issuer: 'SCRUMstudy', date: 'nov. 2026' },
-        { name: 'Microsoft Excel para Análise de Dados', issuer: 'Preditiva Analytics', date: 'ago. 2026' },
-        { name: 'Excel Avançado & Power BI', issuer: 'Preditiva Analytics', date: 'ago. 2026' },
-        { name: 'SQL para Análise de Dados', issuer: 'Preditiva Analytics', date: 'ago. 2026' },
-        { name: 'Inteligência Artificial', issuer: 'Preditiva Analytics', date: 'ago. 2026' },
+      certGroups: [
+        {
+          title: 'Qualidade e melhoria contínua',
+          items: [
+            { name: 'Lean Six Sigma Yellow Belt', issuer: 'FM2S', date: 'mar. 2026' },
+            { name: 'Lean Six Sigma Green Belt', issuer: 'FM2S', date: 'dez. 2026' },
+            { name: 'Metodologia Lean', issuer: 'FM2S', date: 'mai. 2026' },
+            { name: 'Especialista Lean', issuer: 'FM2S', date: 'nov. 2026' },
+            { name: 'Gestão da Qualidade', issuer: 'FM2S', date: 'abr. 2026' },
+            { name: 'Análise e Melhoria de Processos', issuer: 'Enap', date: 'out. 2026' },
+          ],
+        },
+        {
+          title: 'Processos e gestão do trabalho',
+          items: [
+            { name: 'Mapeamento e Automação de Processos', issuer: 'Enap', date: 'out. 2026' },
+            { name: 'Gestão de Riscos', issuer: 'Enap', date: 'out. 2026' },
+            { name: 'Método Kanban & Scrum', issuer: 'FM2S', date: 'nov. 2026' },
+            { name: 'Scrum Fundamentals Certified (SFC)', issuer: 'SCRUMstudy', date: 'nov. 2026' },
+            { name: 'Kanban Essentials Certified (KEC)', issuer: 'SCRUMstudy', date: 'nov. 2026' },
+          ],
+        },
+        {
+          title: 'Dados e tecnologia',
+          items: [
+            { name: 'Microsoft Excel para Análise de Dados', issuer: 'Preditiva Analytics', date: 'ago. 2026' },
+            { name: 'Excel Avançado & Power BI', issuer: 'Preditiva Analytics', date: 'ago. 2026' },
+            { name: 'SQL para Análise de Dados', issuer: 'Preditiva Analytics', date: 'ago. 2026' },
+            { name: 'Inteligência Artificial', issuer: 'Preditiva Analytics', date: 'ago. 2026' },
+          ],
+        },
       ],
     },
     ui: { more: 'Ver mais', less: 'Ver menos' },
@@ -584,22 +599,37 @@ export const CONTENT: Record<Language, Content> = {
         { course: 'Systems Analysis and Development', school: 'UNIGRAN EAD · Technology degree', period: 'Feb 2023 – Jul 2025', status: 'Completed' },
       ],
       certTitle: 'Certifications',
-      certs: [
-        { name: 'Lean Six Sigma Yellow Belt', issuer: 'FM2S', date: 'Mar 2026' },
-        { name: 'Lean Six Sigma Green Belt', issuer: 'FM2S', date: 'Dec 2026' },
-        { name: 'Lean Methodology', issuer: 'FM2S', date: 'May 2026' },
-        { name: 'Quality Management', issuer: 'FM2S', date: 'Apr 2026' },
-        { name: 'Kanban & Scrum Method', issuer: 'FM2S', date: 'Nov 2026' },
-        { name: 'Lean Specialist', issuer: 'FM2S', date: 'Nov 2026' },
-        { name: 'Process Analysis and Improvement', issuer: 'Enap', date: 'Oct 2026' },
-        { name: 'Process Mapping and Automation', issuer: 'Enap', date: 'Oct 2026' },
-        { name: 'Risk Management', issuer: 'Enap', date: 'Oct 2026' },
-        { name: 'Scrum Fundamentals Certified (SFC)', issuer: 'SCRUMstudy', date: 'Nov 2026' },
-        { name: 'Kanban Essentials Certified (KEC)', issuer: 'SCRUMstudy', date: 'Nov 2026' },
-        { name: 'Microsoft Excel for Data Analysis', issuer: 'Preditiva Analytics', date: 'Aug 2026' },
-        { name: 'Advanced Excel & Power BI', issuer: 'Preditiva Analytics', date: 'Aug 2026' },
-        { name: 'SQL for Data Analysis', issuer: 'Preditiva Analytics', date: 'Aug 2026' },
-        { name: 'Artificial Intelligence', issuer: 'Preditiva Analytics', date: 'Aug 2026' },
+      certGroups: [
+        {
+          title: 'Quality and continuous improvement',
+          items: [
+            { name: 'Lean Six Sigma Yellow Belt', issuer: 'FM2S', date: 'Mar 2026' },
+            { name: 'Lean Six Sigma Green Belt', issuer: 'FM2S', date: 'Dec 2026' },
+            { name: 'Lean Methodology', issuer: 'FM2S', date: 'May 2026' },
+            { name: 'Lean Specialist', issuer: 'FM2S', date: 'Nov 2026' },
+            { name: 'Quality Management', issuer: 'FM2S', date: 'Apr 2026' },
+            { name: 'Process Analysis and Improvement', issuer: 'Enap', date: 'Oct 2026' },
+          ],
+        },
+        {
+          title: 'Processes and work management',
+          items: [
+            { name: 'Process Mapping and Automation', issuer: 'Enap', date: 'Oct 2026' },
+            { name: 'Risk Management', issuer: 'Enap', date: 'Oct 2026' },
+            { name: 'Kanban & Scrum Method', issuer: 'FM2S', date: 'Nov 2026' },
+            { name: 'Scrum Fundamentals Certified (SFC)', issuer: 'SCRUMstudy', date: 'Nov 2026' },
+            { name: 'Kanban Essentials Certified (KEC)', issuer: 'SCRUMstudy', date: 'Nov 2026' },
+          ],
+        },
+        {
+          title: 'Data and technology',
+          items: [
+            { name: 'Microsoft Excel for Data Analysis', issuer: 'Preditiva Analytics', date: 'Aug 2026' },
+            { name: 'Advanced Excel & Power BI', issuer: 'Preditiva Analytics', date: 'Aug 2026' },
+            { name: 'SQL for Data Analysis', issuer: 'Preditiva Analytics', date: 'Aug 2026' },
+            { name: 'Artificial Intelligence', issuer: 'Preditiva Analytics', date: 'Aug 2026' },
+          ],
+        },
       ],
     },
     ui: { more: 'Show more', less: 'Show less' },
