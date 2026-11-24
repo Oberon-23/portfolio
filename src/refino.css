@@ -30,6 +30,7 @@ p { text-wrap: pretty; }
 .exp-head h3 .role-sub { display: block; margin-top: 5px; font-family: var(--font, system-ui, sans-serif); font-weight: 600; font-size: 13px; line-height: 1.3; letter-spacing: 0.02em; color: var(--accent); }
 @media (max-width: 640px) {
   .exp-head h3 { font-size: 19px; }
+  .exp-head h3 .role-sub { font-size: 12px; margin-top: 4px; }
   .exp-head small { order: -1; }
 }
 
