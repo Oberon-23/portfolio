@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
+import Cases from '@/components/Cases';
 import { About, Certifications, Contact, Education, Experience, Footer, Skills, Value } from '@/components/Sections';
 import { LanguageProvider, useLanguage } from '@/contexts/LanguageContext';
 
@@ -19,6 +20,7 @@ const Index = () => (
       <Value />
       <Skills />
       <Projects />
+      <Cases />
       <Experience />
       <Education />
       <Certifications />

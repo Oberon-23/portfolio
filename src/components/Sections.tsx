@@ -104,7 +104,7 @@ export const Experience = () => {
     <section id="experiencia" className="section" ref={ref}>
       <div className="wrap">
         <RevealOnScroll>
-          <p className="eyebrow">05</p>
+          <p className="eyebrow">06</p>
           <h2 className="h2">{e.title}</h2>
           <p className="lead">{e.lead}</p>
           <ol className={`exp-list${open ? ' open' : ''}`}>
@@ -137,7 +137,7 @@ export const Education = () => {
     <section id="formacao" className="section">
       <div className="wrap">
         <RevealOnScroll>
-          <p className="eyebrow">06</p>
+          <p className="eyebrow">07</p>
           <h2 className="h2">{e.title}</h2>
           <div className="card degrees" style={{ marginTop: 28 }}>
             {e.degrees.map((d) => (
@@ -166,7 +166,7 @@ export const Certifications = () => {
     <section id="certificacoes" className="section" ref={ref}>
       <div className="wrap">
         <RevealOnScroll>
-          <p className="eyebrow">07</p>
+          <p className="eyebrow">08</p>
           <h2 className="h2">{e.certTitle}</h2>
           <div className={`card certs collapsible${open ? ' open' : ''}`} style={{ marginTop: 28 }}>
             {e.certGroups.map((g) => {
@@ -177,7 +177,7 @@ export const Certifications = () => {
                   <h3>{g.title}</h3>
                   <ul className="cert-list">
                     {g.items.map((x, i) => (
-                      <li key={x.name} className={first + i >= CERTS_VISIBLE ? 'extra' : undefined}><b>{x.name}</b><span>{x.issuer}{x.date ? ` · ${x.date}` : ''}</span></li>
+                      <li key={x.name} className={first + i >= CERTS_VISIBLE ? 'extra' : undefined}><b>{x.name}</b><span>{[x.issuer, x.date].filter(Boolean).join(' · ')}</span></li>
                     ))}
                   </ul>
                 </div>
@@ -204,7 +204,7 @@ export const Contact = () => {
       <div className="wrap">
         <RevealOnScroll>
           <div className="card contact">
-            <p className="eyebrow">08</p>
+            <p className="eyebrow">09</p>
             <h2 className="h2">{c.contact.title}</h2>
             <p>{c.contact.text}</p>
             <div className="contact-actions">

@@ -55,13 +55,24 @@ export interface Project {
   details: { heading: string; items: string[] }[];
 }
 
+export interface CaseItem {
+  id: string;
+  category: string;
+  title: string;
+  situation: string;
+  metric: { label: string; from: number; to: number; unit: string; period: string };
+  stages: { letter: string; title: string; text: string }[];
+  takeaway: string;
+}
+
 interface Content {
-  nav: { about: string; value: string; skills: string; projects: string; experience: string; education: string; certs: string; contact: string; menu: string; theme: string; system: string; light: string; dark: string; language: string };
+  nav: { about: string; value: string; skills: string; projects: string; cases: string; experience: string; education: string; certs: string; contact: string; menu: string; theme: string; system: string; light: string; dark: string; language: string };
   hero: { kicker: string; title: string; intro: string; ctaProjects: string; ctaContact: string; ctaLinkedin: string; photoAlt: string; status: string; highlights: { title: string; text: string }[] };
   about: { title: string; paragraphs: string[]; facts: { value: string; label: string }[] };
   value: { title: string; lead: string; items: { title: string; text: string }[] };
   skills: { title: string; lead: string; groups: { title: string; items: string[] }[] };
   projects: { title: string; lead: string; question: string; details: string; close: string; more: string; less: string; items: Project[] };
+  cases: { title: string; lead: string; before: string; after: string; items: CaseItem[] };
   experience: { title: string; lead: string; items: { role: string; company: string; period: string; place: string; bullets: string[] }[] };
   education: { title: string; degrees: { course: string; school: string; period: string; status: string }[]; certTitle: string; certGroups: { title: string; items: { name: string; issuer: string; date?: string }[] }[] };
   contact: { title: string; text: string; email: string };
@@ -80,7 +91,7 @@ const IMG = {
 
 export const CONTENT: Record<Language, Content> = {
   pt: {
-    nav: { about: 'Sobre', value: 'Como ajudo', skills: 'Competências', projects: 'Projetos', experience: 'Experiência', education: 'Formação', certs: 'Certificações', contact: 'Contato', menu: 'Menu', theme: 'Tema', system: 'Sistema', light: 'Claro', dark: 'Escuro', language: 'Idioma' },
+    nav: { about: 'Sobre', value: 'Como ajudo', skills: 'Competências', projects: 'Projetos', cases: 'Cases', experience: 'Experiência', education: 'Formação', certs: 'Certificações', contact: 'Contato', menu: 'Menu', theme: 'Tema', system: 'Sistema', light: 'Claro', dark: 'Escuro', language: 'Idioma' },
     hero: {
       kicker: 'Processos · Melhoria contínua · Dados · Tecnologia',
       title: 'Processos mapeados, medidos e melhorados.',
@@ -247,6 +258,28 @@ export const CONTENT: Record<Language, Content> = {
         },
       ],
     },
+    cases: {
+      title: 'Cases',
+      lead: 'Situações reais de trabalho em que apliquei método para melhorar um resultado, do problema ao número.',
+      before: 'Antes',
+      after: 'Depois',
+      items: [
+        {
+          id: 'pdca-csat',
+          category: 'Melhoria contínua · Atendimento',
+          title: 'PDCA para elevar o CSAT da equipe',
+          situation: 'O CSAT da equipe de atendimento por chat estava abaixo da média. Como ponto focal de qualidade de uma equipe de 18 pessoas, conduzi o ciclo PDCA do plano de ação junto com a supervisão.',
+          metric: { label: 'CSAT da equipe', from: 80, to: 97, unit: '%', period: 'em 3 meses' },
+          stages: [
+            { letter: 'P', title: 'Planejar', text: 'Diagnóstico do CSAT abaixo da média e plano de ação, com a parte de cada analista definida.' },
+            { letter: 'D', title: 'Executar', text: 'Ações aplicadas no dia a dia do atendimento, com cada pessoa responsável pela sua parte do plano.' },
+            { letter: 'C', title: 'Verificar', text: 'Acompanhamento do CSAT, do TMI e do backlog para ver se as ações estavam funcionando.' },
+            { letter: 'A', title: 'Agir', text: 'Padronização do que funcionou, e novo ciclo onde ainda havia desvio.' },
+          ],
+          takeaway: 'O resultado veio de um ciclo medido e acompanhado, e não de uma ação isolada.',
+        },
+      ],
+    },
     experience: {
       title: 'Experiência',
       lead: 'Onde apliquei processos, melhoria contínua e dados no trabalho.',
@@ -334,6 +367,7 @@ export const CONTENT: Record<Language, Content> = {
           title: 'Processos e gestão do trabalho',
           items: [
             { name: 'Mapeamento e Automação de Processos', issuer: 'Enap', date: 'out. 2026' },
+            { name: 'BPM, BPMN e Modelagem de Processos', issuer: '', date: 'nov. 2026' },
             { name: 'Gestão de Riscos', issuer: 'Enap', date: 'out. 2026' },
             { name: 'Método Kanban & Scrum', issuer: 'FM2S', date: 'nov. 2026' },
             { name: 'Scrum Fundamentals Certified (SFC)', issuer: 'SCRUMstudy', date: 'nov. 2026' },
@@ -361,7 +395,7 @@ export const CONTENT: Record<Language, Content> = {
   },
 
   en: {
-    nav: { about: 'About', value: 'How I help', skills: 'Skills', projects: 'Projects', experience: 'Experience', education: 'Education', certs: 'Certifications', contact: 'Contact', menu: 'Menu', theme: 'Theme', system: 'System', light: 'Light', dark: 'Dark', language: 'Language' },
+    nav: { about: 'About', value: 'How I help', skills: 'Skills', projects: 'Projects', cases: 'Cases', experience: 'Experience', education: 'Education', certs: 'Certifications', contact: 'Contact', menu: 'Menu', theme: 'Theme', system: 'System', light: 'Light', dark: 'Dark', language: 'Language' },
     hero: {
       kicker: 'Processes · Continuous improvement · Data · Technology',
       title: 'Processes mapped, measured and improved.',
@@ -528,6 +562,28 @@ export const CONTENT: Record<Language, Content> = {
         },
       ],
     },
+    cases: {
+      title: 'Cases',
+      lead: 'Real work situations where I applied method to improve a result, from the problem to the number.',
+      before: 'Before',
+      after: 'After',
+      items: [
+        {
+          id: 'pdca-csat',
+          category: 'Continuous improvement · Support',
+          title: 'PDCA to raise the team CSAT',
+          situation: 'The chat support team CSAT was below average. As quality focal point of an 18-person team, I ran the PDCA cycle of the action plan together with the supervision.',
+          metric: { label: 'Team CSAT', from: 80, to: 97, unit: '%', period: 'in 3 months' },
+          stages: [
+            { letter: 'P', title: 'Plan', text: 'Diagnosis of the below-average CSAT and an action plan, with each analyst\'s part defined.' },
+            { letter: 'D', title: 'Do', text: 'Actions applied in daily support work, each person owning their part of the plan.' },
+            { letter: 'C', title: 'Check', text: 'Tracking CSAT, TMI and backlog to see whether the actions were working.' },
+            { letter: 'A', title: 'Act', text: 'Standardizing what worked, and a new cycle where deviation remained.' },
+          ],
+          takeaway: 'The result came from a measured, tracked cycle, not from a single action.',
+        },
+      ],
+    },
     experience: {
       title: 'Experience',
       lead: 'Where I applied processes, continuous improvement and data at work.',
@@ -615,6 +671,7 @@ export const CONTENT: Record<Language, Content> = {
           title: 'Processes and work management',
           items: [
             { name: 'Process Mapping and Automation', issuer: 'Enap', date: 'Oct 2026' },
+            { name: 'BPM, BPMN and Process Modeling', issuer: '', date: 'Nov 2026' },
             { name: 'Risk Management', issuer: 'Enap', date: 'Oct 2026' },
             { name: 'Kanban & Scrum Method', issuer: 'FM2S', date: 'Nov 2026' },
             { name: 'Scrum Fundamentals Certified (SFC)', issuer: 'SCRUMstudy', date: 'Nov 2026' },
