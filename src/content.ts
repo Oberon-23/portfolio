@@ -60,7 +60,7 @@ export interface CaseItem {
   category: string;
   title: string;
   situation: string;
-  metric: { label: string; from: number; to: number; unit: string; period: string };
+  metric: { label: string; from?: number; to: number; unit: string; period: string };
   stages: { letter: string; title: string; text: string }[];
   takeaway: string;
 }
@@ -72,7 +72,7 @@ interface Content {
   value: { title: string; lead: string; items: { title: string; text: string }[] };
   skills: { title: string; lead: string; groups: { title: string; items: string[] }[] };
   projects: { title: string; lead: string; question: string; details: string; close: string; more: string; less: string; items: Project[] };
-  cases: { title: string; lead: string; before: string; after: string; items: CaseItem[] };
+  cases: { title: string; lead: string; before: string; after: string; result: string; items: CaseItem[] };
   experience: { title: string; lead: string; items: { role: string; company: string; period: string; place: string; bullets: string[] }[] };
   education: { title: string; degrees: { course: string; school: string; period: string; status: string }[]; certTitle: string; certGroups: { title: string; items: { name: string; issuer: string; date?: string }[] }[] };
   contact: { title: string; text: string; email: string };
@@ -263,13 +263,14 @@ export const CONTENT: Record<Language, Content> = {
       lead: 'Situações reais de trabalho em que apliquei método para melhorar um resultado, do problema ao número.',
       before: 'Antes',
       after: 'Depois',
+      result: 'Resultado',
       items: [
         {
           id: 'pdca-csat',
           category: 'Melhoria contínua · Atendimento',
           title: 'PDCA para elevar o CSAT da equipe',
           situation: 'O CSAT da equipe de atendimento por chat estava abaixo da média. Como ponto focal de qualidade de uma equipe de 18 pessoas, conduzi o ciclo PDCA do plano de ação junto com a supervisão.',
-          metric: { label: 'CSAT da equipe', from: 80, to: 97, unit: '%', period: 'em 3 meses' },
+          metric: { label: 'CSAT da equipe', to: 98, unit: '%', period: 'maior resultado histórico' },
           stages: [
             { letter: 'P', title: 'Planejar', text: 'Diagnóstico do CSAT abaixo da média e plano de ação, com a parte de cada analista definida.' },
             { letter: 'D', title: 'Executar', text: 'Ações aplicadas no dia a dia do atendimento, com cada pessoa responsável pela sua parte do plano.' },
@@ -367,7 +368,7 @@ export const CONTENT: Record<Language, Content> = {
           title: 'Processos e gestão do trabalho',
           items: [
             { name: 'Mapeamento e Automação de Processos', issuer: 'Enap', date: 'out. 2026' },
-            { name: 'BPM, BPMN e Modelagem de Processos', issuer: '', date: 'nov. 2026' },
+            { name: 'BPM, BPMN e Modelagem de Processos', issuer: 'Udemy', date: 'nov. 2026' },
             { name: 'Gestão de Riscos', issuer: 'Enap', date: 'out. 2026' },
             { name: 'Método Kanban & Scrum', issuer: 'FM2S', date: 'nov. 2026' },
             { name: 'Scrum Fundamentals Certified (SFC)', issuer: 'SCRUMstudy', date: 'nov. 2026' },
@@ -567,13 +568,14 @@ export const CONTENT: Record<Language, Content> = {
       lead: 'Real work situations where I applied method to improve a result, from the problem to the number.',
       before: 'Before',
       after: 'After',
+      result: 'Result',
       items: [
         {
           id: 'pdca-csat',
           category: 'Continuous improvement · Support',
           title: 'PDCA to raise the team CSAT',
           situation: 'The chat support team CSAT was below average. As quality focal point of an 18-person team, I ran the PDCA cycle of the action plan together with the supervision.',
-          metric: { label: 'Team CSAT', from: 80, to: 97, unit: '%', period: 'in 3 months' },
+          metric: { label: 'Team CSAT', to: 98, unit: '%', period: 'all-time high' },
           stages: [
             { letter: 'P', title: 'Plan', text: 'Diagnosis of the below-average CSAT and an action plan, with each analyst\'s part defined.' },
             { letter: 'D', title: 'Do', text: 'Actions applied in daily support work, each person owning their part of the plan.' },
@@ -671,7 +673,7 @@ export const CONTENT: Record<Language, Content> = {
           title: 'Processes and work management',
           items: [
             { name: 'Process Mapping and Automation', issuer: 'Enap', date: 'Oct 2026' },
-            { name: 'BPM, BPMN and Process Modeling', issuer: '', date: 'Nov 2026' },
+            { name: 'BPM, BPMN and Process Modeling', issuer: 'Udemy', date: 'Nov 2026' },
             { name: 'Risk Management', issuer: 'Enap', date: 'Oct 2026' },
             { name: 'Kanban & Scrum Method', issuer: 'FM2S', date: 'Nov 2026' },
             { name: 'Scrum Fundamentals Certified (SFC)', issuer: 'SCRUMstudy', date: 'Nov 2026' },

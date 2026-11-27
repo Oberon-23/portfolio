@@ -6,7 +6,7 @@ import RevealOnScroll from '@/components/RevealOnScroll';
 const reduced = () => typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
 /** Número que sobe de `from` até `to` quando entra na tela (sem animação se o usuário pediu menos movimento). */
-const Counter = ({ from, to, unit }: { from: number; to: number; unit: string }) => {
+const Counter = ({ from = 0, to, unit }: { from?: number; to: number; unit: string }) => {
   const ref = useRef<HTMLSpanElement>(null);
   const [value, setValue] = useState(reduced() ? to : from);
 
@@ -52,13 +52,17 @@ const Cases = () => {
                 <h3>{x.title}</h3>
                 <p className="case-situation">{x.situation}</p>
                 <div className="case-metric">
-                  <div className="case-num before">
-                    <small>{k.before}</small>
-                    <b>{x.metric.from}{x.metric.unit}</b>
-                  </div>
-                  <ArrowRight className="case-arrow" aria-hidden="true" />
+                  {x.metric.from !== undefined && (
+                    <>
+                      <div className="case-num before">
+                        <small>{k.before}</small>
+                        <b>{x.metric.from}{x.metric.unit}</b>
+                      </div>
+                      <ArrowRight className="case-arrow" aria-hidden="true" />
+                    </>
+                  )}
                   <div className="case-num after">
-                    <small>{k.after}</small>
+                    <small>{x.metric.from !== undefined ? k.after : k.result}</small>
                     <b><Counter from={x.metric.from} to={x.metric.to} unit={x.metric.unit} /></b>
                   </div>
                   <p className="case-metric-label"><strong>{x.metric.label}</strong> · {x.metric.period}</p>
